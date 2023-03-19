@@ -5,8 +5,7 @@ alias:
 tag: 
 - class
 ---
-#class 
-Use the [[WorldManager]] to compute existing cell ([[Coordinate]]) and free cell toward/away.
+Use the [[WorldManager]] to compute existing cell ([[Coordinate]]) and free cell toward/away.\
 Also communicate with [[EntityManager]] to determine if a cell is free.
 
 ---

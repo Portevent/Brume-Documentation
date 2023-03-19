@@ -5,5 +5,4 @@ alias:
 tag: 
 - class
 ---
-#class 
 Centralized way to create Tilemap

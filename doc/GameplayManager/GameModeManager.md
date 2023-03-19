@@ -5,4 +5,3 @@ alias:
 tag: 
 - class
 ---
-#class 

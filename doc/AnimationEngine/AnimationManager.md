@@ -5,9 +5,8 @@ alias:
 tag: 
 - class
 ---
-#class 
-Register all animations that must be play and process them
-Animations are queued as AnimationData object, and animation are played first in first out
+Register all animations that must be play and process them\
+Animations are queued as AnimationData object, and animation are played first in first out\
 If an Entity is not Ready, the current animation will wait for it and thus delay all the other
 
 ---

@@ -5,5 +5,4 @@ alias:
 tag: 
 - class
 ---
-#class 
 A state correspond to a modification

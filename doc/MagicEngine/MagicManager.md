@@ -5,7 +5,6 @@ alias:
 tag: 
 - class
 ---
-#class 
 ManicManager is a class used for processing SpellEffect
 
 ---

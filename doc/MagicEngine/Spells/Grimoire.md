@@ -5,7 +5,6 @@ alias:
 tag: 
 - class
 ---
-#class 
 A grimoire represent the ability of entity to cast spell
 Grimoire hold a list of usable spell and their cooldown.
 
