@@ -1,3 +1,10 @@
+---
+title: AnimationData
+alias: 
+- Animation Data
+tag: 
+- struct
+---
 #struct 
 Structure holding data about an [[Entity]] doing an entityAnimation.
 Can hold a list of [[Entity]] to wait for

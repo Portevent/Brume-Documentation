@@ -1,3 +1,10 @@
+---
+title: HandSpell
+alias: 
+- Hand Spell
+tag: 
+- class
+---
 #class 
 A HandSpell is a MonoBehaviour object that link a spell in the player's DeckManager to UI Button
 It manage the icon and cooldown displayed

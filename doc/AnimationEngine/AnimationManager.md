@@ -1,3 +1,10 @@
+---
+title: AnimationManager
+alias: 
+- Animation Manager
+tag: 
+- class
+---
 #class 
 Register all animations that must be play and process them
 Animations are queued as AnimationData object, and animation are played first in first out

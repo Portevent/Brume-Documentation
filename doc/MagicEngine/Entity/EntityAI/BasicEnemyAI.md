@@ -1,3 +1,10 @@
+---
+title: BasicEnemyAI
+alias: 
+- Basic Enemy A I
+tag: 
+- class
+---
 #class 
 BasicEnemyAI is a AI that will use a grimoir to cast spell on Player
 It will always try to take the first available spell in the grimoir, and intent to cast it on the player

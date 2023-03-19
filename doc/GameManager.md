@@ -1,3 +1,10 @@
+---
+title: GameManager
+alias: 
+- Game Manager
+tag: 
+- class
+---
 #class 
 Keep track of the [[Player]]
 

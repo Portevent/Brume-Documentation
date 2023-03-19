@@ -1,3 +1,10 @@
+---
+title: Spell
+alias: 
+- Spell
+tag: 
+- class
+---
 #class 
 A Spell can be casted to apply several effect.
 Each Spell has a name, description and sprite describing it

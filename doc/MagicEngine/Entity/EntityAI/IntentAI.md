@@ -1,3 +1,10 @@
+---
+title: IntentAI
+alias: 
+- Intent A I
+tag: 
+- class
+---
 #class 
 An IntentAI is an AI that express Intent to do specific action
 An Intent is made of :

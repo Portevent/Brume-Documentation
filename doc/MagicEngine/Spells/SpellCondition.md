@@ -1,3 +1,10 @@
+---
+title: SpellCondition
+alias: 
+- Spell Condition
+tag: 
+- struct
+---
 #struct 
 A SpellCondition is a struct that summarize 4 information :
 - type : What is the ConditionType (cell occupied, free, has a state, alignment)

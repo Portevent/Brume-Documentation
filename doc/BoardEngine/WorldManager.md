@@ -1,3 +1,10 @@
+---
+title: WorldManager
+alias: 
+- World Manager
+tag: 
+- class
+---
 #class 
 Create and manage [[World]]
 Create any number of Tilemap needed, plus one for the [[Fog]] and assign it with the [[FogManager]]

@@ -1,3 +1,10 @@
+---
+title: Affliction
+alias: 
+- Affliction
+tag: 
+- class
+---
 #class 
 An affliction correspond to a State given to an Entity over a duration.
 The duration is decreased every turn

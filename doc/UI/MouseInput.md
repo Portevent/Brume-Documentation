@@ -1,3 +1,10 @@
+---
+title: MouseInput
+alias: 
+- Mouse Input
+tag: 
+- class
+---
 #class 
 Handle the MouseInput
 

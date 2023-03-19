@@ -1,3 +1,10 @@
+---
+title: EntityManager
+alias: 
+- Entity Manager
+tag: 
+- class
+---
 #class 
 Keep track of all [[Entity]], and register / unregister them as needed.
 Entity Manager also move [[Entity]] around using [[BoardManager]] to determine if a cell exist and can be used. The main task of Entity Manager is handling when two [[Entity]] need to switch places.

@@ -1,3 +1,10 @@
+---
+title: EntityAnimator
+alias: 
+- Entity Animator
+tag: 
+- class
+---
 #class 
 An EntityAnimator represent the state in which an Entity is for the animation
 The main parameter of an EntityAnimator is a boolean : ready

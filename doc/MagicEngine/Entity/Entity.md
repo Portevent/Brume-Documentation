@@ -1,3 +1,10 @@
+---
+title: Entity
+alias: 
+- Entity
+tag: 
+- class
+---
 #class 
 An entity represent a unit in the world, that move, interact and cast spell
 A basic entity hold at least
