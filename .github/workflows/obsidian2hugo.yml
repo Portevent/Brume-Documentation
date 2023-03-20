@@ -37,7 +37,7 @@ jobs:
           # Source directory from the origin directory
           source-directory: hugo
           # Name of the destination username/organization
-          destination-github-username: Portevent
+          destination-github-username: portevent
           # Destination repository
           destination-repository-name: Brume-Website
           # Email for the git commit
