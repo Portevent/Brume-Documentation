@@ -25,8 +25,12 @@ jobs:
           packages: |
             obsidian-to-hugo
           
-      - name: Create markdown documentation
+      - name: Create Hugo content
         run: python -m obsidian_to_hugo --obsidian-vault-dir=doc --hugo-content-dir=hugo
+        shell: sh
+          
+      - name: Count files in hugo folder
+        run: ll hugo/ | wc -l
         shell: sh
         
       - name: Push Hugo to Brume-Website
@@ -42,7 +46,9 @@ jobs:
           destination-repository-name: Brume-Website
           # Email for the git commit
           user-email: porte@magous.fr
+          # [Optional] set target branch name for the destination repository. Defaults to "main"
+          target-branch: main # optional, default is main
           # [Optional] commit message for the output repository. ORIGIN_COMMIT is replaced by the URL@commit in the origin repo
-          commit-message: Update documentation
+          commit-message: Update Doc content
           # [Optional] The directory to wipe and replace in the target repository
           target-directory: content/doc
