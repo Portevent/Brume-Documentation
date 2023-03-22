@@ -1,5 +1,6 @@
 ---
 title: EntityAnimatorEvent
+slug: EntityAnimatorEvent
 alias: 
 - Entity Animator Event
 tag: 

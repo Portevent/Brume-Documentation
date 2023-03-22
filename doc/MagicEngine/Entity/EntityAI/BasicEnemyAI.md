@@ -1,5 +1,6 @@
 ---
 title: BasicEnemyAI
+slug: BasicEnemyAI
 alias: 
 - Basic Enemy A I
 tag: 

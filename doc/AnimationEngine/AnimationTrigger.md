@@ -1,5 +1,6 @@
 ---
 title: AnimationTrigger
+slug: AnimationTrigger
 alias: 
 - Animation Trigger
 tag: 

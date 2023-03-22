@@ -1,5 +1,6 @@
 ---
 title: ChunkManager
+slug: ChunkManager
 alias: 
 - Chunk Manager
 tag: 

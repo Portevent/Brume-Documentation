@@ -1,5 +1,6 @@
 ---
 title: EntityAI
+slug: EntityAI
 alias: 
 - Entity A I
 tag: 

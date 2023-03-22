@@ -1,5 +1,6 @@
 ---
 title: Affliction
+slug: Affliction
 alias: 
 - Affliction
 tag: 

@@ -1,5 +1,6 @@
 ---
 title: GameManager
+slug: GameManager
 alias: 
 - Game Manager
 tag: 

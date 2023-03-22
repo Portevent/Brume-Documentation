@@ -1,5 +1,6 @@
 ---
 title: IntentAI
+slug: IntentAI
 alias: 
 - Intent A I
 tag: 

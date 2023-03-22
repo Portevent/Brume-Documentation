@@ -1,5 +1,6 @@
 ---
 title: Grimoire
+slug: Grimoire
 alias: 
 - Grimoire
 tag: 

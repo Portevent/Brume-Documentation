@@ -1,5 +1,6 @@
 ---
 title: AnimationManager
+slug: AnimationManager
 alias: 
 - Animation Manager
 tag: 

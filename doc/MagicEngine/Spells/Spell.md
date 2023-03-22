@@ -1,5 +1,6 @@
 ---
 title: Spell
+slug: Spell
 alias: 
 - Spell
 tag: 

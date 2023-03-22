@@ -1,5 +1,6 @@
 ---
 title: MouseInput
+slug: MouseInput
 alias: 
 - Mouse Input
 tag: 

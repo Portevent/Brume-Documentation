@@ -1,5 +1,6 @@
 ---
 title: FogManager
+slug: FogManager
 alias: 
 - Fog Manager
 tag: 

@@ -1,5 +1,6 @@
 ---
 title: State
+slug: State
 alias: 
 - State
 tag: 

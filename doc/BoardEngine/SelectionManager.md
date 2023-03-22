@@ -1,5 +1,6 @@
 ---
 title: SelectionManager
+slug: SelectionManager
 alias: 
 - Selection Manager
 tag: 

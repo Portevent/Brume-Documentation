@@ -1,5 +1,6 @@
 ---
 title: BoardManager
+slug: BoardManager
 alias: 
 - Board Manager
 tag: 

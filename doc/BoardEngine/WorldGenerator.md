@@ -1,5 +1,6 @@
 ---
 title: WorldGenerator
+slug: WorldGenerator
 alias: 
 - World Generator
 tag: 

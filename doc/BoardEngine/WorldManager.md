@@ -1,5 +1,6 @@
 ---
 title: WorldManager
+slug: WorldManager
 alias: 
 - World Manager
 tag: 

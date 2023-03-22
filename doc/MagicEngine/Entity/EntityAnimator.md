@@ -1,5 +1,6 @@
 ---
 title: EntityAnimator
+slug: EntityAnimator
 alias: 
 - Entity Animator
 tag: 

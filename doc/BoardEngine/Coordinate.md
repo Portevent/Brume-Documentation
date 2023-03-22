@@ -1,5 +1,6 @@
 ---
 title: Coordinate
+slug: Coordinate
 alias: 
 - Coordinate
 tag: 

@@ -1,5 +1,6 @@
 ---
 title: WorldGenerationParameter
+slug: WorldGenerationParameter
 alias: 
 - World Generation Parameter
 tag: 

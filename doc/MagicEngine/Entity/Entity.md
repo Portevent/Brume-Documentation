@@ -1,5 +1,6 @@
 ---
 title: Entity
+slug: Entity
 alias: 
 - Entity
 tag: 

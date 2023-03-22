@@ -1,5 +1,6 @@
 ---
 title: Movement
+slug: Movement
 alias: 
 - Movement
 tag: 

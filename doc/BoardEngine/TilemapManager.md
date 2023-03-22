@@ -1,5 +1,6 @@
 ---
 title: TilemapManager
+slug: TilemapManager
 alias: 
 - Tilemap Manager
 tag: 

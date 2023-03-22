@@ -1,5 +1,6 @@
 ---
 title: SpellCondition
+slug: SpellCondition
 alias: 
 - Spell Condition
 tag: 

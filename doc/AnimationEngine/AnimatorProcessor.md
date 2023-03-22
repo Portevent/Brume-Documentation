@@ -1,5 +1,6 @@
 ---
 title: AnimatorProcessor
+slug: AnimatorProcessor
 alias: 
 - Animator Processor
 tag: 

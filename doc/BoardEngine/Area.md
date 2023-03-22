@@ -1,5 +1,6 @@
 ---
 title: Area
+slug: Area
 alias: 
 - Area
 tag: 

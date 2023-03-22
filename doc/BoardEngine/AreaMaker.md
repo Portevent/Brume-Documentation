@@ -1,5 +1,6 @@
 ---
 title: AreaMaker
+slug: AreaMaker
 alias: 
 - Area Maker
 tag: 

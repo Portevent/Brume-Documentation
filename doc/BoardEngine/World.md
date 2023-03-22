@@ -1,5 +1,6 @@
 ---
 title: World
+slug: World
 alias: 
 - World
 tag: 

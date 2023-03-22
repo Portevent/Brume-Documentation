@@ -1,5 +1,6 @@
 ---
 title: InitiativeManager
+slug: InitiativeManager
 alias: 
 - Initiative Manager
 tag: 

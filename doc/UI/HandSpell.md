@@ -1,5 +1,6 @@
 ---
 title: HandSpell
+slug: HandSpell
 alias: 
 - Hand Spell
 tag: 

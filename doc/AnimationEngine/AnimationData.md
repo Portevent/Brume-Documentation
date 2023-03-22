@@ -1,5 +1,6 @@
 ---
 title: AnimationData
+slug: AnimationData
 alias: 
 - Animation Data
 tag: 

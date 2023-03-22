@@ -1,5 +1,6 @@
 ---
 title: FogVision
+slug: FogVision
 alias: 
 - Fog Vision
 tag: 

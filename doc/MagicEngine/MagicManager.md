@@ -1,5 +1,6 @@
 ---
 title: MagicManager
+slug: MagicManager
 alias: 
 - Magic Manager
 tag: 

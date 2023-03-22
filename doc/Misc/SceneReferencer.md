@@ -1,5 +1,6 @@
 ---
 title: SceneReferencer
+slug: SceneReferencer
 alias: 
 - Scene Referencer
 tag: 

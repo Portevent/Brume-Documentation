@@ -1,5 +1,6 @@
 ---
 title: EntityManager
+slug: EntityManager
 alias: 
 - Entity Manager
 tag: 

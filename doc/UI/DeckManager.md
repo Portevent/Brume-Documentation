@@ -1,5 +1,6 @@
 ---
 title: DeckManager
+slug: DeckManager
 alias: 
 - Deck Manager
 tag: 
