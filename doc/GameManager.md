@@ -5,7 +5,7 @@ alias:
 tag: 
 - class
 ---
-Keep track of the [[Player]]
+Keep track of the Player
 
 ---
 # Summary :

@@ -5,4 +5,4 @@ alias:
 tag: 
 - class
 ---
-Manage the [[Fog]], updating the material to reflect the player position
+Manage the Fog, updating the material to reflect the player position
