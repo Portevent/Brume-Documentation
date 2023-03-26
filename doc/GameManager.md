@@ -1,13 +1,33 @@
 ---
 title: GameManager
-slug: GameManager
+path: 
 alias: 
 - Game Manager
 tag: 
 - class
 ---
 Keep track of the Player
+```d2
+# Nodes :
+BoardEngine: {
+    Coordinate: Coordinate
+}
+MagicEngine: {
+    Entity: {
+        Entity: Entity
+        Movement: Movement
+    }
+    Spells: {
+        Spell: Spell
+    }
+}
 
+# Links :
+BoardEngine.Coordinate -- GameManager: {style.stroke-dash: 3}
+GameManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
+GameManager -- MagicEngine.Entity.Movement: {style.stroke-dash: 3}
+
+```
 ---
 # Summary :
 name|description
@@ -16,6 +36,9 @@ name|description
 [[#OnTelefrag\|OnTelefrag]] | `When a telefrag is generated, cast the Telefrag spell from the DeckManager`
 [[#PassTurn\|PassTurn]] | `Called when the player pass its turn`
 [[#UpdateDestinationGlyph\|UpdateDestinationGlyph]] | `Set a Glyph on the destination to indicate the user its entity will move there`
+
+---
+# Functions :
 
 ---
 ### PlayerCastSpell
@@ -30,6 +53,11 @@ name|type|description
 ---
 ### OnTelefrag
 When a telefrag is generated, cast the Telefrag spell from the DeckManager
+
+#### Parameters
+name|type|description
+-----|-----|-----
+**movement**|[[Movement]]|The telefrag Movement
 
 ---
 ### PassTurn

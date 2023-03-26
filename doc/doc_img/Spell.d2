@@ -1,0 +1,13 @@
+# Nodes :
+GameManager: Game Manager
+MagicEngine: {
+    Spells: {
+        Grimoire: Grimoire
+    }
+    MagicManager: Magic Manager
+}
+
+# Links :
+GameManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
+MagicEngine.Spells.Grimoire -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
+MagicEngine.MagicManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}

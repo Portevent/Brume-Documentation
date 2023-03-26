@@ -1,0 +1,13 @@
+# Nodes :
+MagicEngine: {
+    Entity: {
+        Entity: Entity
+    }
+    Spells: {
+        Spell: Spell
+    }
+}
+
+# Links :
+MagicEngine.Entity.Entity -- MagicEngine.Spells.Grimoire: {style.stroke-dash: 3}
+MagicEngine.Spells.Grimoire -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}

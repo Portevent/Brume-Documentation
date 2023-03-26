@@ -1,0 +1,9 @@
+# Nodes :
+BoardEngine: {
+    Area: Area
+    Coordinate: Coordinate
+}
+
+# Links :
+BoardEngine.AreaMaker -- BoardEngine.Coordinate: {style.stroke-dash: 3}
+BoardEngine.Area -- BoardEngine.AreaMaker: {style.stroke-dash: 3}

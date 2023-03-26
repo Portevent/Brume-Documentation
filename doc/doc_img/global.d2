@@ -1,0 +1,77 @@
+# Nodes :
+Misc: {
+    SceneReferencer: Scene Referencer
+}
+BoardEngine: {
+    ChunkManager: Chunk Manager
+    World: World
+    FogVision: Fog Vision
+    WorldManager: World Manager
+    AreaMaker: Area Maker
+    Area: Area
+    TilemapManager: Tilemap Manager
+    SelectionManager: Selection Manager
+    Coordinate: Coordinate
+    WorldGenerationParameter: World Generation Parameter
+    WorldGenerator: World Generator
+    FogManager: Fog Manager
+    BoardManager: Board Manager
+}
+GameManager: Game Manager
+UI: {
+    InputManager: Input Manager
+    DeckManager: Deck Manager
+    MouseInput: Mouse Input
+    HandSpell: Hand Spell
+}
+MagicEngine: {
+    Entity: {
+        EntityAnimator: Entity Animator
+        Affliction: Affliction
+        EntityManager: Entity Manager
+        State: State
+        Entity: Entity
+        EntityAI: {
+            IntentAI: IntentAI
+            EntityAI: EntityAI
+            BasicEnemyAI: Basic EnemyAI
+        }
+        EntityAnimatorEvent: Entity Animator Event
+        Movement: Movement
+    }
+    Spells: {
+        SpellCondition: Spell Condition
+        Grimoire: Grimoire
+        Spell: Spell
+    }
+    MagicManager: Magic Manager
+}
+GameplayManager: {
+    InitiativeManager: Initiative Manager
+    GameModeManager: Game Mode Manager
+}
+AnimationEngine: {
+    AnimationManager: Animation Manager
+    AnimatorProcessor: Animator Processor
+    AnimationTrigger: Animation Trigger
+    AnimationData: Animation Data
+}
+
+# Links :
+BoardEngine.AreaMaker -- BoardEngine.Coordinate: {style.stroke-dash: 3}
+BoardEngine.Area -- BoardEngine.AreaMaker: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- GameManager: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- UI.DeckManager: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- MagicEngine.Entity.EntityAnimator: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- MagicEngine.MagicManager: {style.stroke-dash: 3}
+BoardEngine.BoardManager -- BoardEngine.Coordinate: {style.stroke-dash: 3}
+GameManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
+GameManager -- MagicEngine.Entity.Movement: {style.stroke-dash: 3}
+MagicEngine.Entity.Entity -- MagicEngine.Entity.EntityManager: {style.stroke-dash: 3}
+MagicEngine.Entity.Entity -- MagicEngine.Entity.State: {style.stroke-dash: 3}
+MagicEngine.Entity.Entity -- MagicEngine.Spells.Grimoire: {style.stroke-dash: 3}
+MagicEngine.Entity.Entity -- MagicEngine.MagicManager: {style.stroke-dash: 3}
+MagicEngine.Spells.Grimoire -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
+MagicEngine.MagicManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
+MagicEngine.MagicManager -- MagicEngine.Spells.SpellCondition: {style.stroke-dash: 3}
+AnimationEngine.AnimationData -- AnimationEngine.AnimationManager: {style.stroke-dash: 3}

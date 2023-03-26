@@ -1,0 +1,19 @@
+# Nodes :
+BoardEngine: {
+    Coordinate: Coordinate
+}
+MagicEngine: {
+    Entity: {
+        Entity: Entity
+    }
+    Spells: {
+        SpellCondition: Spell Condition
+        Spell: Spell
+    }
+}
+
+# Links :
+BoardEngine.Coordinate -- MagicEngine.MagicManager: {style.stroke-dash: 3}
+MagicEngine.Entity.Entity -- MagicEngine.MagicManager: {style.stroke-dash: 3}
+MagicEngine.MagicManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
+MagicEngine.MagicManager -- MagicEngine.Spells.SpellCondition: {style.stroke-dash: 3}

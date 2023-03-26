@@ -1,6 +1,6 @@
 ---
 title: TilemapManager
-slug: TilemapManager
+path: /BoardEngine
 alias: 
 - Tilemap Manager
 tag: 

@@ -1,6 +1,6 @@
 ---
 title: AnimatorProcessor
-slug: AnimatorProcessor
+path: /AnimationEngine
 alias: 
 - Animator Processor
 tag: 

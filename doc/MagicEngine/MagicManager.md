@@ -1,13 +1,34 @@
 ---
 title: MagicManager
-slug: MagicManager
+path: /MagicEngine
 alias: 
 - Magic Manager
 tag: 
 - class
 ---
 ManicManager is a class used for processing SpellEffect
+```d2
+# Nodes :
+BoardEngine: {
+    Coordinate: Coordinate
+}
+MagicEngine: {
+    Entity: {
+        Entity: Entity
+    }
+    Spells: {
+        SpellCondition: Spell Condition
+        Spell: Spell
+    }
+}
 
+# Links :
+BoardEngine.Coordinate -- MagicEngine.MagicManager: {style.stroke-dash: 3}
+MagicEngine.Entity.Entity -- MagicEngine.MagicManager: {style.stroke-dash: 3}
+MagicEngine.MagicManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
+MagicEngine.MagicManager -- MagicEngine.Spells.SpellCondition: {style.stroke-dash: 3}
+
+```
 ---
 # Summary :
 name|description
@@ -19,6 +40,9 @@ name|description
 [[#ValidateSpellRange\|ValidateSpellRange]] | `Check if a caster can cast a spell from a point to a target (validate range Condition)`
 [[#ValidateSpellConditions\|ValidateSpellConditions]] | `Check if a caster can cast a spell from a point to a target (validate all SpellCondition)`
 [[#ValidateCondition\|ValidateCondition]] | `Validate a single SpellCondition`
+
+---
+# Functions :
 
 ---
 ### Cast

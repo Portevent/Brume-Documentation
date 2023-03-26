@@ -1,6 +1,6 @@
 ---
 title: InitiativeManager
-slug: InitiativeManager
+path: /GameplayManager
 alias: 
 - Initiative Manager
 tag: 

@@ -1,6 +1,6 @@
 ---
 title: ChunkManager
-slug: ChunkManager
+path: /BoardEngine
 alias: 
 - Chunk Manager
 tag: 

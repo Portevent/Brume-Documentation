@@ -1,6 +1,6 @@
 ---
 title: SceneReferencer
-slug: SceneReferencer
+path: /Misc
 alias: 
 - Scene Referencer
 tag: 

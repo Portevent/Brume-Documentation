@@ -1,6 +1,6 @@
 ---
 title: InputManager
-slug: InputManager
+path: /UI
 alias: 
 - Input Manager
 tag: 

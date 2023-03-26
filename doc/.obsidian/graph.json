@@ -1,0 +1,86 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "Misc",
+      "color": {
+        "a": 1,
+        "rgb": 7274740
+      }
+    },
+    {
+      "query": "BoardEngine",
+      "color": {
+        "a": 1,
+        "rgb": 5875
+      }
+    },
+    {
+      "query": "UI",
+      "color": {
+        "a": 1,
+        "rgb": 15204596
+      }
+    },
+    {
+      "query": "MagicEngine",
+      "color": {
+        "a": 1,
+        "rgb": 15991028
+      }
+    },
+    {
+      "query": "Entity",
+      "color": {
+        "a": 1,
+        "rgb": 16157440
+      }
+    },
+    {
+      "query": "EntityAI",
+      "color": {
+        "a": 1,
+        "rgb": 63848
+      }
+    },
+    {
+      "query": "Spells",
+      "color": {
+        "a": 1,
+        "rgb": 16056517
+      }
+    },
+    {
+      "query": "GameplayManager",
+      "color": {
+        "a": 1,
+        "rgb": 16056451
+      }
+    },
+    {
+      "query": "AnimationEngine",
+      "color": {
+        "a": 1,
+        "rgb": 8691
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 14.7916666666667,
+  "linkStrength": 1,
+  "linkDistance": 30,
+  "scale": 0.3283759346565619,
+  "close": false
+}

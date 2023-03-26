@@ -1,6 +1,6 @@
 ---
 title: FogManager
-slug: FogManager
+path: /BoardEngine
 alias: 
 - Fog Manager
 tag: 

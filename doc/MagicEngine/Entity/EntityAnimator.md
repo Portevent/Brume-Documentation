@@ -1,17 +1,26 @@
 ---
 title: EntityAnimator
-slug: EntityAnimator
+path: /MagicEngine/Entity
 alias: 
 - Entity Animator
 tag: 
 - class
 ---
-An EntityAnimator represent the state in which an Entity is for the animation\
-The main parameter of an EntityAnimator is a boolean : ready\
-This indicate to the AnimationManager whether this is Entity is idle and ready to make an animation, or busy doing\
+An EntityAnimator represent the state in which an Entity is for the animation
+The main parameter of an EntityAnimator is a boolean : ready
+This indicate to the AnimationManager whether this is Entity is idle and ready to make an animation, or busy doing
 one yet.
 Everytime "ready" change, AnimationManager.ProcessQueue() is called to check the next animation
+```d2
+# Nodes :
+BoardEngine: {
+    Coordinate: Coordinate
+}
 
+# Links :
+BoardEngine.Coordinate -- MagicEngine.Entity.EntityAnimator: {style.stroke-dash: 3}
+
+```
 ---
 # Summary :
 name|description
@@ -23,6 +32,9 @@ name|description
 [[#Hurt\|Hurt]] | `Call the Hurt animation`
 [[#PrepareTp\|PrepareTp]] | `Call the PrepareTp animation`
 [[#AnimationEnd\|AnimationEnd]] | `Called by EntityAnimatorEvent when the animator want to notify its animation is ended`
+
+---
+# Functions :
 
 ---
 ### ApplyMoveTo

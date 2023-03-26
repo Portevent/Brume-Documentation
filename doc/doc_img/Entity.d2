@@ -1,0 +1,18 @@
+# Nodes :
+MagicEngine: {
+    Entity: {
+        EntityManager: Entity Manager
+        State: State
+        Entity: Entity
+    }
+    Spells: {
+        Grimoire: Grimoire
+    }
+    MagicManager: Magic Manager
+}
+
+# Links :
+MagicEngine.Entity.Entity -- MagicEngine.Entity.EntityManager: {style.stroke-dash: 3}
+MagicEngine.Entity.Entity -- MagicEngine.Entity.State: {style.stroke-dash: 3}
+MagicEngine.Entity.Entity -- MagicEngine.Spells.Grimoire: {style.stroke-dash: 3}
+MagicEngine.Entity.Entity -- MagicEngine.MagicManager: {style.stroke-dash: 3}

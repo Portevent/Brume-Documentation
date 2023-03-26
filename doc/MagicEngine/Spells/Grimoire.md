@@ -1,6 +1,6 @@
 ---
 title: Grimoire
-slug: Grimoire
+path: /MagicEngine/Spells
 alias: 
 - Grimoire
 tag: 
@@ -8,7 +8,22 @@ tag:
 ---
 A grimoire represent the ability of entity to cast spell
 Grimoire hold a list of usable spell and their cooldown.
+```d2
+# Nodes :
+MagicEngine: {
+    Entity: {
+        Entity: Entity
+    }
+    Spells: {
+        Spell: Spell
+    }
+}
 
+# Links :
+MagicEngine.Entity.Entity -- MagicEngine.Spells.Grimoire: {style.stroke-dash: 3}
+MagicEngine.Spells.Grimoire -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
+
+```
 ---
 # Summary :
 name|description
@@ -24,6 +39,9 @@ name|description
 [[#GetFirstValidSpell\|GetFirstValidSpell]] | `Get the first spell that is not on cooldown`
 [[#GetFirstValidSpellOn\|GetFirstValidSpellOn]] | `Get the first spell that is not on cooldown and can be cast on target`
 [[#GetSpells\|GetSpells]] | `Return an Iterator of all spells`
+
+---
+# Functions :
 
 ---
 ### Awake

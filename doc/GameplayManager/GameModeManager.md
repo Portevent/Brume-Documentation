@@ -1,6 +1,6 @@
 ---
 title: GameModeManager
-slug: GameModeManager
+path: /GameplayManager
 alias: 
 - Game Mode Manager
 tag: 

@@ -1,21 +1,35 @@
 ---
 title: EntityManager
-slug: EntityManager
+path: /MagicEngine/Entity
 alias: 
 - Entity Manager
 tag: 
 - class
 ---
-Keep track of all [[Entity]], and register / unregister them as needed.\
-Entity Manager also move [[Entity]] around using [[BoardManager]] to determine if a cell exist and can be used. The main task of Entity Manager is handling when two [[Entity]] need to switch places.\
-Every displacement generate a [[Movement]]\
+Keep track of all [[Entity]], and register / unregister them as needed.
+Entity Manager also move [[Entity]] around using [[BoardManager]] to determine if a cell exist and can be used. The main task of Entity Manager is handling when two [[Entity]] need to switch places.
+Every displacement generate a [[Movement]]
 It is also where [[Entity]] are instancied.
+```d2
+# Nodes :
+MagicEngine: {
+    Entity: {
+        Entity: Entity
+    }
+}
 
+# Links :
+MagicEngine.Entity.Entity -- MagicEngine.Entity.EntityManager: {style.stroke-dash: 3}
+
+```
 ---
 # Summary :
 name|description
 ----|----
 [[#Unregister\|Unregister]] | `Remove an Entity from the game (remove it from EntityManager, delete its gameobject)`
+
+---
+# Functions :
 
 ---
 ### Unregister

@@ -1,12 +1,12 @@
 ---
 title: IntentAI
-slug: IntentAI
+path: /MagicEngine/Entity/EntityAI
 alias: 
-- Intent A I
+- IntentAI
 tag: 
 - class
 ---
-An IntentAI is an AI that express Intent to do specific action\
-An Intent is made of :\
-- a Spell to cast\
+An IntentAI is an AI that express Intent to do specific action
+An Intent is made of :
+- a Spell to cast
 - a list of Coordinate to indicate potential targets

@@ -1,6 +1,6 @@
 ---
 title: AnimationTrigger
-slug: AnimationTrigger
+path: /AnimationEngine
 alias: 
 - Animation Trigger
 tag: 

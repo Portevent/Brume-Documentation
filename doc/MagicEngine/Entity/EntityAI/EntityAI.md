@@ -1,10 +1,10 @@
 ---
 title: EntityAI
-slug: EntityAI
+path: /MagicEngine/Entity/EntityAI
 alias: 
-- Entity A I
+- EntityAI
 tag: 
 - class
 ---
-An EntityAI is an object computing what an entity will do on its turn, and how it behave\
+An EntityAI is an object computing what an entity will do on its turn, and how it behave
 A basic EntityAI has at least a Destination where it will move
