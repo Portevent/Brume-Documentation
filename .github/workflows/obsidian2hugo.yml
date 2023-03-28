@@ -30,7 +30,7 @@ jobs:
         shell: sh
           
       - name: Count files in hugo folder
-        run: ll hugo/ | wc -l
+        run: ls hugo/ | wc -l
         shell: sh
         
       - name: Push Hugo to Brume-Website
