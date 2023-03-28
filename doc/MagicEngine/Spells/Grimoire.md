@@ -11,17 +11,26 @@ Grimoire hold a list of usable spell and their cooldown.
 ```d2
 # Nodes :
 MagicEngine: {
-    Entity: {
-        Entity: Entity
+    EntityEngine: {
+        AI: {
+            BasicEnemyAI: Basic EnemyAI {
+               link: BasicEnemyAI
+            }
+        }
     }
     Spells: {
-        Spell: Spell
+        Spell: Spell {
+           link: Spell
+        }
     }
 }
 
 # Links :
-MagicEngine.Entity.Entity -- MagicEngine.Spells.Grimoire: {style.stroke-dash: 3}
 MagicEngine.Spells.Grimoire -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
+MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Has {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
 
 ```
 ---

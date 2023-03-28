@@ -11,7 +11,9 @@ It is in charged of understand the user intents, cast spell or move when need
 ```d2
 # Nodes :
 BoardEngine: {
-    Coordinate: Coordinate
+    Coordinate: Coordinate {
+       link: Coordinate
+    }
 }
 
 # Links :

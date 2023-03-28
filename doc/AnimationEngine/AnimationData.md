@@ -12,10 +12,15 @@ AnimationData are queued inside [[AnimationManager]], and are resolved one by on
 ```d2
 # Nodes :
 AnimationEngine: {
-    AnimationManager: Animation Manager
+    AnimationManager: Animation Manager {
+       link: AnimationManager
+    }
 }
 
 # Links :
-AnimationEngine.AnimationData -- AnimationEngine.AnimationManager: {style.stroke-dash: 3}
+AnimationEngine.AnimationManager -> AnimationEngine.AnimationData: Process {
+source-arrowhead: {}
+target-arrowhead: Queue of{shape: arrow}
+}
 
 ```

@@ -1,18 +1,56 @@
 # Nodes :
 BoardEngine: {
-    Coordinate: Coordinate
+    ChunkManager: Chunk Manager {
+       link: ChunkManager
+    }
 }
 MagicEngine: {
-    Entity: {
-        Entity: Entity
-        Movement: Movement
+    EntityEngine: {
+        AI: {
+            BasicEnemyAI: Basic EnemyAI {
+               link: BasicEnemyAI
+            }
+        }
+        Entity: Entity {
+           link: Entity
+        }
     }
-    Spells: {
-        Spell: Spell
+    MagicManager: Magic Manager {
+       link: MagicManager
+    }
+}
+GameplayManager: {
+    InitiativeManager: Initiative Manager {
+       link: InitiativeManager
     }
 }
 
 # Links :
-BoardEngine.Coordinate -- GameManager: {style.stroke-dash: 3}
-GameManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
-GameManager -- MagicEngine.Entity.Movement: {style.stroke-dash: 3}
+GameplayManager.GameManager -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Get Player {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+GameplayManager.GameManager -> MagicEngine.MagicManager: Cast Player's spells {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+GameplayManager.GameManager -> MagicEngine.MagicManager: Cast Telefrag {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.Entity -> GameplayManager.GameManager: Listen for OnTelefrag {
+source-arrowhead: Player{}
+target-arrowhead: {shape: arrow}
+}
+GameplayManager.GameManager -> BoardEngine.ChunkManager: Update Player coordinate {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+GameplayManager.InitiativeManager -> GameplayManager.GameManager: Get Initiative list {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+GameplayManager.GameManager -> MagicEngine.EntityEngine.Entity: Play Turn {
+source-arrowhead: {}
+target-arrowhead: All Entity{shape: arrow}
+}

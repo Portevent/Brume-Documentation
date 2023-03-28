@@ -14,7 +14,9 @@ A SpellCondition is a struct that summarize 4 information :
 ```d2
 # Nodes :
 MagicEngine: {
-    MagicManager: Magic Manager
+    MagicManager: Magic Manager {
+       link: MagicManager
+    }
 }
 
 # Links :

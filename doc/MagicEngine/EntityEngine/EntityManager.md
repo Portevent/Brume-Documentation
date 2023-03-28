@@ -1,6 +1,6 @@
 ---
 title: EntityManager
-path: /MagicEngine/Entity
+path: /MagicEngine/EntityEngine
 alias: 
 - Entity Manager
 tag: 
@@ -13,13 +13,18 @@ It is also where [[Entity]] are instancied.
 ```d2
 # Nodes :
 MagicEngine: {
-    Entity: {
-        Entity: Entity
+    EntityEngine: {
+        Entity: Entity {
+           link: Entity
+        }
     }
 }
 
 # Links :
-MagicEngine.Entity.Entity -- MagicEngine.Entity.EntityManager: {style.stroke-dash: 3}
+MagicEngine.EntityEngine.EntityManager -> MagicEngine.EntityEngine.Entity: Has {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
 
 ```
 ---

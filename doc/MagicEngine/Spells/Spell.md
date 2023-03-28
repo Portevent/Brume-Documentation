@@ -24,17 +24,30 @@ ties break by orientation (polar coordinates centered at target)
 All effects are applied before changing target
 ```d2
 # Nodes :
-GameManager: Game Manager
 MagicEngine: {
-    Spells: {
-        Grimoire: Grimoire
+    EntityEngine: {
+        AI: {
+            IntentAI: IntentAI {
+               link: IntentAI
+            }
+        }
     }
-    MagicManager: Magic Manager
+    Spells: {
+        Grimoire: Grimoire {
+           link: Grimoire
+        }
+    }
+    MagicManager: Magic Manager {
+       link: MagicManager
+    }
 }
 
 # Links :
-GameManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
 MagicEngine.Spells.Grimoire -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
 MagicEngine.MagicManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
+MagicEngine.Spells.Spell -> MagicEngine.EntityEngine.AI.IntentAI: Can have intent {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
 
 ```

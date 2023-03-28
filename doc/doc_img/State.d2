@@ -1,9 +1,14 @@
 # Nodes :
 MagicEngine: {
-    Entity: {
-        Entity: Entity
+    EntityEngine: {
+        Entity: Entity {
+           link: Entity
+        }
     }
 }
 
 # Links :
-MagicEngine.Entity.Entity -- MagicEngine.Entity.State: {style.stroke-dash: 3}
+MagicEngine.EntityEngine.Entity -> MagicEngine.EntityEngine.State: Has {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}

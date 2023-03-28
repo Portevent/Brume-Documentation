@@ -1,6 +1,6 @@
 ---
 title: Affliction
-path: /MagicEngine/Entity
+path: /MagicEngine/EntityEngine
 alias: 
 - Affliction
 tag: 

@@ -1,6 +1,6 @@
 ---
 title: EntityAnimator
-path: /MagicEngine/Entity
+path: /MagicEngine/EntityEngine
 alias: 
 - Entity Animator
 tag: 
@@ -14,11 +14,33 @@ Everytime "ready" change, AnimationManager.ProcessQueue() is called to check the
 ```d2
 # Nodes :
 BoardEngine: {
-    Coordinate: Coordinate
+    Coordinate: Coordinate {
+       link: Coordinate
+    }
+}
+MagicEngine: {
+    EntityEngine: {
+        Entity: Entity {
+           link: Entity
+        }
+    }
+}
+AnimationEngine: {
+    AnimationManager: Animation Manager {
+       link: AnimationManager
+    }
 }
 
 # Links :
-BoardEngine.Coordinate -- MagicEngine.Entity.EntityAnimator: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityAnimator: {style.stroke-dash: 3}
+MagicEngine.EntityEngine.EntityAnimator -> MagicEngine.EntityEngine.Entity: Linked to {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+AnimationEngine.AnimationManager -> MagicEngine.EntityEngine.EntityAnimator: Animate {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
 
 ```
 ---

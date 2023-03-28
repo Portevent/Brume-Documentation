@@ -1,9 +1,35 @@
 # Nodes :
 BoardEngine: {
-    Area: Area
-    Coordinate: Coordinate
+    Area: Area {
+       link: Area
+    }
+    SelectionManager: Selection Manager {
+       link: SelectionManager
+    }
+    Coordinate: Coordinate {
+       link: Coordinate
+    }
+}
+MagicEngine: {
+    MagicManager: Magic Manager {
+       link: MagicManager
+    }
 }
 
 # Links :
-BoardEngine.AreaMaker -- BoardEngine.Coordinate: {style.stroke-dash: 3}
-BoardEngine.Area -- BoardEngine.AreaMaker: {style.stroke-dash: 3}
+BoardEngine.AreaMaker -> BoardEngine.Coordinate: ...make a list of Coordinate {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+BoardEngine.Area -> BoardEngine.AreaMaker: Convert an Area to... {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+BoardEngine.AreaMaker -> MagicEngine.MagicManager: Get Spells' AoE {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+BoardEngine.AreaMaker -> BoardEngine.SelectionManager: Get Spells' range cast {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}

@@ -1,6 +1,6 @@
 ---
 title: EntityAnimatorEvent
-path: /MagicEngine/Entity
+path: /MagicEngine/EntityEngine
 alias: 
 - Entity Animator Event
 tag: 

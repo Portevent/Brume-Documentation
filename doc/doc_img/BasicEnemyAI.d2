@@ -1,0 +1,34 @@
+# Nodes :
+MagicEngine: {
+    EntityEngine: {
+        AI: {
+            IntentAI: IntentAI {
+               link: IntentAI
+            }
+        }
+    }
+    Spells: {
+        Grimoire: Grimoire {
+           link: Grimoire
+        }
+    }
+}
+GameplayManager: {
+    GameManager: Game Manager {
+       link: GameManager
+    }
+}
+
+# Links :
+MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Inherits {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Has {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+GameplayManager.GameManager -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Get Player {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
