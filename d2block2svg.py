@@ -7,7 +7,7 @@ def explore_directory(doc_folder, func):
         path = f'{doc_folder}/{file}'
         if os.path.isfile(path):
             if file.endswith('.md'):
-                func(path, file)
+                func(path, file.split('.')[-2])
         elif os.path.isdir(path):
             explore_directory(path, func)
 
@@ -19,7 +19,7 @@ def changeD2toSVG(file: str, filename: str):
         for line in f.readlines():
             if line.strip().startswith("```d2"):
                 inside_d2_block = True
-                markdown_content += f"![[{filename.replace('.md', '.svg')}]]\n\n"
+                markdown_content += f'\n![{filename}]({filename}.svg "{filename}")\n\n'
 
             if not inside_d2_block:
                 markdown_content += line
