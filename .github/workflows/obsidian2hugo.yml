@@ -28,6 +28,10 @@ jobs:
       - name: Create Hugo content
         run: python -m obsidian_to_hugo --obsidian-vault-dir=doc --hugo-content-dir=hugo
         shell: sh
+
+      - name: Create Hugo content
+        run: python -m d2block2svg
+        shell: sh
           
       - name: Count files in hugo folder
         run: ls hugo/ | wc -l
