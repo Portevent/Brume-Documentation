@@ -1,0 +1,12 @@
+# Nodes :
+AnimationEngine: {
+    AnimationManager: Animation Manager {
+       link: AnimationManager
+    }
+}
+
+# Links :
+AnimationEngine.AnimatorProcessor -> AnimationEngine.AnimationManager: Process Queue every tick {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}

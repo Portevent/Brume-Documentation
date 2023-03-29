@@ -1,0 +1,12 @@
+# Nodes :
+BoardEngine: {
+    FogManager: Fog Manager {
+       link: FogManager
+    }
+}
+
+# Links :
+BoardEngine.FogVision -> BoardEngine.FogManager: Update the Fog Vision {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}

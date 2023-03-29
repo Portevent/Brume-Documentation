@@ -1,0 +1,12 @@
+# Nodes :
+BoardEngine: {
+    AreaMaker: Area Maker {
+       link: AreaMaker
+    }
+}
+
+# Links :
+BoardEngine.Area -> BoardEngine.AreaMaker: Convert an Area to... {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}

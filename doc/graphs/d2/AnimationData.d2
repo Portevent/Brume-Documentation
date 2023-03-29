@@ -1,0 +1,12 @@
+# Nodes :
+AnimationEngine: {
+    AnimationManager: Animation Manager {
+       link: AnimationManager
+    }
+}
+
+# Links :
+AnimationEngine.AnimationManager -> AnimationEngine.AnimationData: Process {
+source-arrowhead: {}
+target-arrowhead: Queue of{shape: arrow}
+}

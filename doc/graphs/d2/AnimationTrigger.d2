@@ -1,0 +1,14 @@
+# Nodes :
+MagicEngine: {
+    Spells: {
+        SpellEffect: Spell Effect {
+           link: SpellEffect
+        }
+    }
+}
+
+# Links :
+MagicEngine.Spells.SpellEffect -> AnimationEngine.AnimationTrigger: Has {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}

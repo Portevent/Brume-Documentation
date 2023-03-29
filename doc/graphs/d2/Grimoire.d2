@@ -1,0 +1,22 @@
+# Nodes :
+MagicEngine: {
+    EntityEngine: {
+        AI: {
+            BasicEnemyAI: Basic EnemyAI {
+               link: BasicEnemyAI
+            }
+        }
+    }
+    Spells: {
+        Spell: Spell {
+           link: Spell
+        }
+    }
+}
+
+# Links :
+MagicEngine.Spells.Grimoire -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
+MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Has {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
