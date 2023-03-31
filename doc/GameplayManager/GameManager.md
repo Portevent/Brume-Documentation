@@ -33,10 +33,17 @@ GameplayManager: {
     InitiativeManager: Initiative Manager {
        link: InitiativeManager
     }
+    GameModeManager: Game Mode Manager {
+       link: GameModeManager
+    }
 }
 
 # Links :
 GameplayManager.GameManager -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Get Player {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+GameplayManager.GameModeManager -> GameplayManager.GameManager: Pass turns {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

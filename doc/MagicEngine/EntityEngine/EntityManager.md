@@ -19,9 +19,18 @@ MagicEngine: {
         }
     }
 }
+GameplayManager: {
+    GameModeManager: Game Mode Manager {
+       link: GameModeManager
+    }
+}
 
 # Links :
 MagicEngine.EntityEngine.EntityManager -> MagicEngine.EntityEngine.Entity: Has {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.EntityManager -> GameplayManager.GameModeManager: Listen to {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

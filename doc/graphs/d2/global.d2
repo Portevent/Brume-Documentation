@@ -233,6 +233,18 @@ BoardEngine.Coordinate -> MagicEngine.EntityEngine.AI.IntentAI: Can have fix tar
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
+MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.PlayerAI: Inherits {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+UI.InputManager -> MagicEngine.EntityEngine.AI.PlayerAI: Input {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.PlayerAI: Has {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
 MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Inherits {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
@@ -258,6 +270,18 @@ source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
 BoardEngine.BoardManager -> MagicEngine.MagicManager: Manipulate Cell {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.EntityManager -> GameplayManager.GameModeManager: Listen to {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+GameplayManager.PassTurnClock -> GameplayManager.GameModeManager: Get tempo from {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+GameplayManager.GameModeManager -> GameplayManager.GameManager: Pass turns {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

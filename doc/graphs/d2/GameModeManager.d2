@@ -1,0 +1,30 @@
+# Nodes :
+MagicEngine: {
+    EntityEngine: {
+        EntityManager: Entity Manager {
+           link: EntityManager
+        }
+    }
+}
+GameplayManager: {
+    GameManager: Game Manager {
+       link: GameManager
+    }
+    PassTurnClock: Pass Turn Clock {
+       link: PassTurnClock
+    }
+}
+
+# Links :
+MagicEngine.EntityEngine.EntityManager -> GameplayManager.GameModeManager: Listen to {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+GameplayManager.PassTurnClock -> GameplayManager.GameModeManager: Get tempo from {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+GameplayManager.GameModeManager -> GameplayManager.GameManager: Pass turns {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}

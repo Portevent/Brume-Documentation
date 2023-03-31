@@ -23,6 +23,9 @@ BoardEngine: {
 MagicEngine: {
     EntityEngine: {
         AI: {
+            PlayerAI: PlayerAI {
+               link: PlayerAI
+            }
             EntityAI: EntityAI {
                link: EntityAI
             }
@@ -59,6 +62,10 @@ source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
 BoardEngine.Coordinate -> MagicEngine.EntityEngine.AI.IntentAI: Can have fix target {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.PlayerAI: Inherits {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

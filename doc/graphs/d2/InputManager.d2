@@ -1,0 +1,16 @@
+# Nodes :
+MagicEngine: {
+    EntityEngine: {
+        AI: {
+            PlayerAI: PlayerAI {
+               link: PlayerAI
+            }
+        }
+    }
+}
+
+# Links :
+UI.InputManager -> MagicEngine.EntityEngine.AI.PlayerAI: Input {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
