@@ -6,7 +6,7 @@ alias:
 tag: 
 - class
 ---
-Start and stop [[QuestMode]] based on the number of [[Enemy]] [[Entity]]
+Start and stop QuestMode based on the number of Enemy [[Entity]]
 Hold a passturn event (trigger every time Quest Mode's end turn is called) that will be plug and unpluged to [[GameManager]].PassTurn()
 ```d2
 # Nodes :
