@@ -25,13 +25,21 @@ BoardEngine: {
        link: Coordinate
     }
 }
+GameplayManager: {
+    GameManager: Game Manager {
+       link: GameManager
+    }
+}
 MagicEngine: {
     EntityEngine: {
+        EntityManager: Entity Manager {
+           link: EntityManager
+        }
         EntityAnimator: Entity Animator {
            link: EntityAnimator
         }
-        EntityManager: Entity Manager {
-           link: EntityManager
+        State: State {
+           link: State
         }
         AI: {
             IntentAI: IntentAI {
@@ -41,27 +49,23 @@ MagicEngine: {
                link: EntityAI
             }
         }
-        State: State {
-           link: State
-        }
-    }
-}
-GameplayManager: {
-    GameManager: Game Manager {
-       link: GameManager
     }
 }
 
 # Links :
-MagicEngine.EntityEngine.EntityAnimator -> MagicEngine.EntityEngine.Entity: Linked to {style.stroke-dash: 3
-source-arrowhead: {}
+MagicEngine.EntityEngine.Entity -> GameplayManager.GameManager: Listen for OnTelefrag {
+source-arrowhead: Player{}
 target-arrowhead: {shape: arrow}
+}
+GameplayManager.GameManager -> MagicEngine.EntityEngine.Entity: Play Turn {
+source-arrowhead: {}
+target-arrowhead: All Entity{shape: arrow}
 }
 MagicEngine.EntityEngine.EntityManager -> MagicEngine.EntityEngine.Entity: Has {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.Entity -> MagicEngine.EntityEngine.AI.IntentAI: Can have pinned target {style.stroke-dash: 3
+MagicEngine.EntityEngine.EntityAnimator -> MagicEngine.EntityEngine.Entity: Linked to {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -77,13 +81,9 @@ MagicEngine.EntityEngine.Entity -> BoardEngine.Coordinate: Has {style.stroke-das
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.Entity -> GameplayManager.GameManager: Listen for OnTelefrag {
-source-arrowhead: Player{}
-target-arrowhead: {shape: arrow}
-}
-GameplayManager.GameManager -> MagicEngine.EntityEngine.Entity: Play Turn {
+MagicEngine.EntityEngine.Entity -> MagicEngine.EntityEngine.AI.IntentAI: Can have pinned target {style.stroke-dash: 3
 source-arrowhead: {}
-target-arrowhead: All Entity{shape: arrow}
+target-arrowhead: {shape: arrow}
 }
 
 ```

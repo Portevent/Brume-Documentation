@@ -10,11 +10,11 @@ Linked to a [[World]], generate and unload world part as the player moves around
 ```d2
 # Nodes :
 BoardEngine: {
-    World: World {
-       link: World
-    }
     WorldManager: World Manager {
        link: WorldManager
+    }
+    World: World {
+       link: World
     }
 }
 GameplayManager: {
@@ -24,15 +24,15 @@ GameplayManager: {
 }
 
 # Links :
+BoardEngine.WorldManager -> BoardEngine.ChunkManager: Update view coordinate {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
 BoardEngine.ChunkManager -> BoardEngine.World: Load Chunks {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
 BoardEngine.ChunkManager -> BoardEngine.World: Unload Chunks {
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-BoardEngine.WorldManager -> BoardEngine.ChunkManager: Update view coordinate {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

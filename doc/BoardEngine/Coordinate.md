@@ -10,11 +10,11 @@ Base Coordinate system used for the Board
 ```d2
 # Nodes :
 BoardEngine: {
-    AreaMaker: Area Maker {
-       link: AreaMaker
-    }
     BoardManager: Board Manager {
        link: BoardManager
+    }
+    AreaMaker: Area Maker {
+       link: AreaMaker
     }
 }
 UI: {
@@ -24,16 +24,19 @@ UI: {
 }
 MagicEngine: {
     EntityEngine: {
+        EntityManager: Entity Manager {
+           link: EntityManager
+        }
         EntityAnimator: Entity Animator {
            link: EntityAnimator
+        }
+        Entity: Entity {
+           link: Entity
         }
         AI: {
             IntentAI: IntentAI {
                link: IntentAI
             }
-        }
-        Entity: Entity {
-           link: Entity
         }
     }
     MagicManager: Magic Manager {
@@ -43,6 +46,7 @@ MagicEngine: {
 
 # Links :
 BoardEngine.Coordinate -- UI.DeckManager: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityManager: {style.stroke-dash: 3}
 BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityAnimator: {style.stroke-dash: 3}
 BoardEngine.Coordinate -- MagicEngine.MagicManager: {style.stroke-dash: 3}
 BoardEngine.BoardManager -- BoardEngine.Coordinate: {style.stroke-dash: 3}
@@ -50,11 +54,11 @@ BoardEngine.AreaMaker -> BoardEngine.Coordinate: ...make a list of Coordinate {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.Coordinate -> MagicEngine.EntityEngine.AI.IntentAI: Can have fix target {style.stroke-dash: 3
+MagicEngine.EntityEngine.Entity -> BoardEngine.Coordinate: Has {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.Entity -> BoardEngine.Coordinate: Has {style.stroke-dash: 3
+BoardEngine.Coordinate -> MagicEngine.EntityEngine.AI.IntentAI: Can have fix target {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

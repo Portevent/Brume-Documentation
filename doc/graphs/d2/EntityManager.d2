@@ -1,9 +1,7 @@
 # Nodes :
-MagicEngine: {
-    EntityEngine: {
-        Entity: Entity {
-           link: Entity
-        }
+BoardEngine: {
+    Coordinate: Coordinate {
+       link: Coordinate
     }
 }
 GameplayManager: {
@@ -11,13 +9,21 @@ GameplayManager: {
        link: GameModeManager
     }
 }
+MagicEngine: {
+    EntityEngine: {
+        Entity: Entity {
+           link: Entity
+        }
+    }
+}
 
 # Links :
-MagicEngine.EntityEngine.EntityManager -> MagicEngine.EntityEngine.Entity: Has {style.stroke-dash: 3
+BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityManager: {style.stroke-dash: 3}
+MagicEngine.EntityEngine.EntityManager -> GameplayManager.GameModeManager: Listen to {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.EntityManager -> GameplayManager.GameModeManager: Listen to {style.stroke-dash: 3
+MagicEngine.EntityEngine.EntityManager -> MagicEngine.EntityEngine.Entity: Has {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

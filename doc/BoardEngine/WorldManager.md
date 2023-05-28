@@ -12,21 +12,25 @@ Make uses of [[TilemapManager]]
 ```d2
 # Nodes :
 BoardEngine: {
+    BoardManager: Board Manager {
+       link: BoardManager
+    }
+    TilemapManager: Tilemap Manager {
+       link: TilemapManager
+    }
     ChunkManager: Chunk Manager {
        link: ChunkManager
     }
     World: World {
        link: World
     }
-    TilemapManager: Tilemap Manager {
-       link: TilemapManager
-    }
-    BoardManager: Board Manager {
-       link: BoardManager
-    }
 }
 
 # Links :
+BoardEngine.WorldManager -> BoardEngine.BoardManager: Get active World {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
 BoardEngine.WorldManager -> BoardEngine.ChunkManager: Update view coordinate {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
@@ -36,10 +40,6 @@ source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
 BoardEngine.WorldManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-BoardEngine.WorldManager -> BoardEngine.BoardManager: Get active World {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

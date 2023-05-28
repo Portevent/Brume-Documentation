@@ -11,13 +11,6 @@ Animations are queued as [[AnimationData]] object, and animation are played firs
 If an Entity is not Ready, the current animation will wait for it and thus delay all the other
 ```d2
 # Nodes :
-MagicEngine: {
-    EntityEngine: {
-        EntityAnimator: Entity Animator {
-           link: EntityAnimator
-        }
-    }
-}
 AnimationEngine: {
     AnimatorProcessor: Animator Processor {
        link: AnimatorProcessor
@@ -26,17 +19,24 @@ AnimationEngine: {
        link: AnimationData
     }
 }
+MagicEngine: {
+    EntityEngine: {
+        EntityAnimator: Entity Animator {
+           link: EntityAnimator
+        }
+    }
+}
 
 # Links :
+AnimationEngine.AnimatorProcessor -> AnimationEngine.AnimationManager: Process Queue every tick {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
 AnimationEngine.AnimationManager -> AnimationEngine.AnimationData: Process {
 source-arrowhead: {}
 target-arrowhead: Queue of{shape: arrow}
 }
 AnimationEngine.AnimationManager -> MagicEngine.EntityEngine.EntityAnimator: Animate {
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-AnimationEngine.AnimatorProcessor -> AnimationEngine.AnimationManager: Process Queue every tick {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

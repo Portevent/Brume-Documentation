@@ -1,138 +1,5 @@
 # Nodes :
-Misc: {
-    SceneReferencer: Scene Referencer {
-       link: SceneReferencer
-    }
-}
-BoardEngine: {
-    ChunkManager: Chunk Manager {
-       link: ChunkManager
-    }
-    World: World {
-       link: World
-    }
-    FogVision: Fog Vision {
-       link: FogVision
-    }
-    WorldManager: World Manager {
-       link: WorldManager
-    }
-    AreaMaker: Area Maker {
-       link: AreaMaker
-    }
-    Area: Area {
-       link: Area
-    }
-    TilemapManager: Tilemap Manager {
-       link: TilemapManager
-    }
-    SelectionManager: Selection Manager {
-       link: SelectionManager
-    }
-    Coordinate: Coordinate {
-       link: Coordinate
-    }
-    WorldGenerationParameter: World Generation Parameter {
-       link: WorldGenerationParameter
-    }
-    WorldGenerator: World Generator {
-       link: WorldGenerator
-    }
-    FogManager: Fog Manager {
-       link: FogManager
-    }
-    BoardManager: Board Manager {
-       link: BoardManager
-    }
-}
-UI: {
-    InputManager: Input Manager {
-       link: InputManager
-    }
-    DeckManager: Deck Manager {
-       link: DeckManager
-    }
-    MouseInput: Mouse Input {
-       link: MouseInput
-    }
-    HandSpell: Hand Spell {
-       link: HandSpell
-    }
-}
-MagicEngine: {
-    EntityEngine: {
-        EntityAnimator: Entity Animator {
-           link: EntityAnimator
-        }
-        Affliction: Affliction {
-           link: Affliction
-        }
-        EntityManager: Entity Manager {
-           link: EntityManager
-        }
-        AI: {
-            IntentAI: IntentAI {
-               link: IntentAI
-            }
-            PlayerAI: PlayerAI {
-               link: PlayerAI
-            }
-            EntityAI: EntityAI {
-               link: EntityAI
-            }
-            BasicEnemyAI: Basic EnemyAI {
-               link: BasicEnemyAI
-            }
-        }
-        State: State {
-           link: State
-        }
-        Entity: Entity {
-           link: Entity
-        }
-        EntityAnimatorEvent: Entity Animator Event {
-           link: EntityAnimatorEvent
-        }
-        Movement: Movement {
-           link: Movement
-        }
-    }
-    Spells: {
-        SpellEffect: Spell Effect {
-           link: SpellEffect
-        }
-        SpellCondition: Spell Condition {
-           link: SpellCondition
-        }
-        Grimoire: Grimoire {
-           link: Grimoire
-        }
-        Spell: Spell {
-           link: Spell
-        }
-    }
-    MagicManager: Magic Manager {
-       link: MagicManager
-    }
-}
-GameplayManager: {
-    InitiativeManager: Initiative Manager {
-       link: InitiativeManager
-    }
-    GameModeManager: Game Mode Manager {
-       link: GameModeManager
-    }
-    GameManager: Game Manager {
-       link: GameManager
-    }
-    PassTurnClock: Pass Turn Clock {
-       link: PassTurnClock
-    }
-}
 AnimationEngine: {
-    AnimationManager: Animation Manager {
-       link: AnimationManager
-    }
     AnimatorProcessor: Animator Processor {
        link: AnimatorProcessor
     }
@@ -142,10 +9,144 @@ AnimationEngine: {
     AnimationData: Animation Data {
        link: AnimationData
     }
+    AnimationManager: Animation Manager {
+       link: AnimationManager
+    }
+}
+BoardEngine: {
+    FogVision: Fog Vision {
+       link: FogVision
+    }
+    SelectionManager: Selection Manager {
+       link: SelectionManager
+    }
+    BoardManager: Board Manager {
+       link: BoardManager
+    }
+    AreaMaker: Area Maker {
+       link: AreaMaker
+    }
+    Coordinate: Coordinate {
+       link: Coordinate
+    }
+    TilemapManager: Tilemap Manager {
+       link: TilemapManager
+    }
+    Area: Area {
+       link: Area
+    }
+    FogManager: Fog Manager {
+       link: FogManager
+    }
+    WorldGenerationParameter: World Generation Parameter {
+       link: WorldGenerationParameter
+    }
+    WorldGenerator: World Generator {
+       link: WorldGenerator
+    }
+    WorldManager: World Manager {
+       link: WorldManager
+    }
+    ChunkManager: Chunk Manager {
+       link: ChunkManager
+    }
+    World: World {
+       link: World
+    }
+}
+GameplayManager: {
+    PassTurnClock: Pass Turn Clock {
+       link: PassTurnClock
+    }
+    GameManager: Game Manager {
+       link: GameManager
+    }
+    InitiativeManager: Initiative Manager {
+       link: InitiativeManager
+    }
+    GameModeManager: Game Mode Manager {
+       link: GameModeManager
+    }
+}
+UI: {
+    DeckManager: Deck Manager {
+       link: DeckManager
+    }
+    HandSpell: Hand Spell {
+       link: HandSpell
+    }
+    MouseInput: Mouse Input {
+       link: MouseInput
+    }
+    InputManager: Input Manager {
+       link: InputManager
+    }
+}
+Misc: {
+    SceneReferencer: Scene Referencer {
+       link: SceneReferencer
+    }
+}
+MagicEngine: {
+    Spells: {
+        Spell: Spell {
+           link: Spell
+        }
+        SpellCondition: Spell Condition {
+           link: SpellCondition
+        }
+        SpellEffect: Spell Effect {
+           link: SpellEffect
+        }
+        Grimoire: Grimoire {
+           link: Grimoire
+        }
+    }
+    EntityEngine: {
+        EntityManager: Entity Manager {
+           link: EntityManager
+        }
+        EntityAnimator: Entity Animator {
+           link: EntityAnimator
+        }
+        Affliction: Affliction {
+           link: Affliction
+        }
+        Entity: Entity {
+           link: Entity
+        }
+        Movement: Movement {
+           link: Movement
+        }
+        State: State {
+           link: State
+        }
+        EntityAnimatorEvent: Entity Animator Event {
+           link: EntityAnimatorEvent
+        }
+        AI: {
+            IntentAI: IntentAI {
+               link: IntentAI
+            }
+            EntityAI: EntityAI {
+               link: EntityAI
+            }
+            BasicEnemyAI: Basic EnemyAI {
+               link: BasicEnemyAI
+            }
+            PlayerAI: PlayerAI {
+               link: PlayerAI
+            }
+        }
+    }
+    MagicManager: Magic Manager {
+       link: MagicManager
+    }
 }
 
 # Links :
 BoardEngine.Coordinate -- UI.DeckManager: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityManager: {style.stroke-dash: 3}
 BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityAnimator: {style.stroke-dash: 3}
 BoardEngine.Coordinate -- MagicEngine.MagicManager: {style.stroke-dash: 3}
 MagicEngine.Spells.Grimoire -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
@@ -153,15 +154,19 @@ MagicEngine.MagicManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
 MagicEngine.MagicManager -- MagicEngine.Spells.SpellEffect: {style.stroke-dash: 3}
 MagicEngine.MagicManager -- MagicEngine.Spells.SpellCondition: {style.stroke-dash: 3}
 BoardEngine.BoardManager -- BoardEngine.Coordinate: {style.stroke-dash: 3}
-BoardEngine.ChunkManager -> BoardEngine.World: Load Chunks {
+AnimationEngine.AnimatorProcessor -> AnimationEngine.AnimationManager: Process Queue every tick {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.ChunkManager -> BoardEngine.World: Unload Chunks {
+MagicEngine.Spells.SpellEffect -> AnimationEngine.AnimationTrigger: Has {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.WorldGenerator -> BoardEngine.World: Generated by {style.stroke-dash: 3
+AnimationEngine.AnimationManager -> AnimationEngine.AnimationData: Process {
+source-arrowhead: {}
+target-arrowhead: Queue of{shape: arrow}
+}
+AnimationEngine.AnimationManager -> MagicEngine.EntityEngine.EntityAnimator: Animate {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -169,15 +174,11 @@ BoardEngine.FogVision -> BoardEngine.FogManager: Update the Fog Vision {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.WorldManager -> BoardEngine.ChunkManager: Update view coordinate {
+BoardEngine.SelectionManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.WorldManager -> BoardEngine.World: Instantiate {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-BoardEngine.WorldManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
+BoardEngine.WorldManager -> BoardEngine.BoardManager: Get active World {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -197,91 +198,27 @@ BoardEngine.AreaMaker -> BoardEngine.SelectionManager: Get Spells' range cast {s
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.SelectionManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
+BoardEngine.WorldManager -> BoardEngine.ChunkManager: Update view coordinate {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.WorldManager -> BoardEngine.BoardManager: Get active World {style.stroke-dash: 3
+BoardEngine.WorldManager -> BoardEngine.World: Instantiate {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.EntityAnimator -> MagicEngine.EntityEngine.Entity: Linked to {style.stroke-dash: 3
+BoardEngine.WorldManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.EntityManager -> MagicEngine.EntityEngine.Entity: Has {style.stroke-dash: 3
+BoardEngine.ChunkManager -> BoardEngine.World: Load Chunks {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.AI.IntentAI -> BoardEngine.SelectionManager: Shows Intent {
+BoardEngine.ChunkManager -> BoardEngine.World: Unload Chunks {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.AI.EntityAI -> MagicEngine.EntityEngine.AI.IntentAI: Inherits {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-MagicEngine.Spells.Spell -> MagicEngine.EntityEngine.AI.IntentAI: Can have intent {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-MagicEngine.EntityEngine.Entity -> MagicEngine.EntityEngine.AI.IntentAI: Can have pinned target {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-BoardEngine.Coordinate -> MagicEngine.EntityEngine.AI.IntentAI: Can have fix target {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.PlayerAI: Inherits {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-UI.InputManager -> MagicEngine.EntityEngine.AI.PlayerAI: Input {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.PlayerAI: Has {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Inherits {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Has {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-GameplayManager.GameManager -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Get Player {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-MagicEngine.EntityEngine.Entity <-> MagicEngine.EntityEngine.AI.EntityAI: Play turn {
-source-arrowhead: {shape: arrow}
-target-arrowhead: {shape: arrow}
-}
-MagicEngine.EntityEngine.Entity -> MagicEngine.EntityEngine.State: Has {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-MagicEngine.EntityEngine.Entity -> BoardEngine.Coordinate: Has {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-BoardEngine.BoardManager -> MagicEngine.MagicManager: Manipulate Cell {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-MagicEngine.EntityEngine.EntityManager -> GameplayManager.GameModeManager: Listen to {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-GameplayManager.PassTurnClock -> GameplayManager.GameModeManager: Get tempo from {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-GameplayManager.GameModeManager -> GameplayManager.GameManager: Pass turns {
+BoardEngine.WorldGenerator -> BoardEngine.World: Generated by {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -309,19 +246,83 @@ GameplayManager.GameManager -> MagicEngine.EntityEngine.Entity: Play Turn {
 source-arrowhead: {}
 target-arrowhead: All Entity{shape: arrow}
 }
-AnimationEngine.AnimationManager -> AnimationEngine.AnimationData: Process {
-source-arrowhead: {}
-target-arrowhead: Queue of{shape: arrow}
-}
-AnimationEngine.AnimationManager -> MagicEngine.EntityEngine.EntityAnimator: Animate {
+MagicEngine.EntityEngine.EntityManager -> GameplayManager.GameModeManager: Listen to {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-AnimationEngine.AnimatorProcessor -> AnimationEngine.AnimationManager: Process Queue every tick {
+GameplayManager.PassTurnClock -> GameplayManager.GameModeManager: Get tempo from {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.Spells.SpellEffect -> AnimationEngine.AnimationTrigger: Has {
+GameplayManager.GameModeManager -> GameplayManager.GameManager: Pass turns {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.EntityManager -> MagicEngine.EntityEngine.Entity: Has {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.EntityAnimator -> MagicEngine.EntityEngine.Entity: Linked to {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.Entity <-> MagicEngine.EntityEngine.AI.EntityAI: Play turn {
+source-arrowhead: {shape: arrow}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.Entity -> MagicEngine.EntityEngine.State: Has {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.Entity -> BoardEngine.Coordinate: Has {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.AI.IntentAI -> BoardEngine.SelectionManager: Shows Intent {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.AI.EntityAI -> MagicEngine.EntityEngine.AI.IntentAI: Inherits {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.Spells.Spell -> MagicEngine.EntityEngine.AI.IntentAI: Can have intent {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.Entity -> MagicEngine.EntityEngine.AI.IntentAI: Can have pinned target {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+BoardEngine.Coordinate -> MagicEngine.EntityEngine.AI.IntentAI: Can have fix target {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Inherits {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Has {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+GameplayManager.GameManager -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Get Player {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.PlayerAI: Inherits {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+UI.InputManager -> MagicEngine.EntityEngine.AI.PlayerAI: Input {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.PlayerAI: Has {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+BoardEngine.BoardManager -> MagicEngine.MagicManager: Manipulate Cell {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

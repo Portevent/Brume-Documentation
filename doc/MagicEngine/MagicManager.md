@@ -10,32 +10,32 @@ ManicManager is a class used for processing SpellEffect
 ```d2
 # Nodes :
 BoardEngine: {
+    BoardManager: Board Manager {
+       link: BoardManager
+    }
     AreaMaker: Area Maker {
        link: AreaMaker
     }
     Coordinate: Coordinate {
        link: Coordinate
     }
-    BoardManager: Board Manager {
-       link: BoardManager
-    }
-}
-MagicEngine: {
-    Spells: {
-        SpellEffect: Spell Effect {
-           link: SpellEffect
-        }
-        SpellCondition: Spell Condition {
-           link: SpellCondition
-        }
-        Spell: Spell {
-           link: Spell
-        }
-    }
 }
 GameplayManager: {
     GameManager: Game Manager {
        link: GameManager
+    }
+}
+MagicEngine: {
+    Spells: {
+        Spell: Spell {
+           link: Spell
+        }
+        SpellCondition: Spell Condition {
+           link: SpellCondition
+        }
+        SpellEffect: Spell Effect {
+           link: SpellEffect
+        }
     }
 }
 
@@ -48,15 +48,15 @@ BoardEngine.AreaMaker -> MagicEngine.MagicManager: Get Spells' AoE {style.stroke
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.BoardManager -> MagicEngine.MagicManager: Manipulate Cell {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
 GameplayManager.GameManager -> MagicEngine.MagicManager: Cast Player's spells {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
 GameplayManager.GameManager -> MagicEngine.MagicManager: Cast Telefrag {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+BoardEngine.BoardManager -> MagicEngine.MagicManager: Manipulate Cell {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

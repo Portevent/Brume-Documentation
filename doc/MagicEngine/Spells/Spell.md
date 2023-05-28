@@ -25,16 +25,16 @@ All effects are applied before changing target
 ```d2
 # Nodes :
 MagicEngine: {
+    Spells: {
+        Grimoire: Grimoire {
+           link: Grimoire
+        }
+    }
     EntityEngine: {
         AI: {
             IntentAI: IntentAI {
                link: IntentAI
             }
-        }
-    }
-    Spells: {
-        Grimoire: Grimoire {
-           link: Grimoire
         }
     }
     MagicManager: Magic Manager {

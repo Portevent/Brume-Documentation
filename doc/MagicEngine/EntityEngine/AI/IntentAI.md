@@ -21,25 +21,25 @@ BoardEngine: {
     }
 }
 MagicEngine: {
+    Spells: {
+        Spell: Spell {
+           link: Spell
+        }
+    }
     EntityEngine: {
+        Entity: Entity {
+           link: Entity
+        }
         AI: {
-            PlayerAI: PlayerAI {
-               link: PlayerAI
-            }
             EntityAI: EntityAI {
                link: EntityAI
             }
             BasicEnemyAI: Basic EnemyAI {
                link: BasicEnemyAI
             }
-        }
-        Entity: Entity {
-           link: Entity
-        }
-    }
-    Spells: {
-        Spell: Spell {
-           link: Spell
+            PlayerAI: PlayerAI {
+               link: PlayerAI
+            }
         }
     }
 }
@@ -65,11 +65,11 @@ BoardEngine.Coordinate -> MagicEngine.EntityEngine.AI.IntentAI: Can have fix tar
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.PlayerAI: Inherits {style.stroke-dash: 3
+MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Inherits {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Inherits {style.stroke-dash: 3
+MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.PlayerAI: Inherits {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

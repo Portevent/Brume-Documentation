@@ -13,6 +13,11 @@ one yet.
 Everytime "ready" change, AnimationManager.ProcessQueue() is called to check the next animation
 ```d2
 # Nodes :
+AnimationEngine: {
+    AnimationManager: Animation Manager {
+       link: AnimationManager
+    }
+}
 BoardEngine: {
     Coordinate: Coordinate {
        link: Coordinate
@@ -25,19 +30,14 @@ MagicEngine: {
         }
     }
 }
-AnimationEngine: {
-    AnimationManager: Animation Manager {
-       link: AnimationManager
-    }
-}
 
 # Links :
 BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityAnimator: {style.stroke-dash: 3}
-MagicEngine.EntityEngine.EntityAnimator -> MagicEngine.EntityEngine.Entity: Linked to {style.stroke-dash: 3
+AnimationEngine.AnimationManager -> MagicEngine.EntityEngine.EntityAnimator: Animate {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-AnimationEngine.AnimationManager -> MagicEngine.EntityEngine.EntityAnimator: Animate {
+MagicEngine.EntityEngine.EntityAnimator -> MagicEngine.EntityEngine.Entity: Linked to {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

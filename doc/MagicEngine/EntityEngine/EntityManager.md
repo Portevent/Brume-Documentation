@@ -12,11 +12,9 @@ Every displacement generate a [[Movement]]
 It is also where [[Entity]] are instancied.
 ```d2
 # Nodes :
-MagicEngine: {
-    EntityEngine: {
-        Entity: Entity {
-           link: Entity
-        }
+BoardEngine: {
+    Coordinate: Coordinate {
+       link: Coordinate
     }
 }
 GameplayManager: {
@@ -24,13 +22,21 @@ GameplayManager: {
        link: GameModeManager
     }
 }
+MagicEngine: {
+    EntityEngine: {
+        Entity: Entity {
+           link: Entity
+        }
+    }
+}
 
 # Links :
-MagicEngine.EntityEngine.EntityManager -> MagicEngine.EntityEngine.Entity: Has {style.stroke-dash: 3
+BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityManager: {style.stroke-dash: 3}
+MagicEngine.EntityEngine.EntityManager -> GameplayManager.GameModeManager: Listen to {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.EntityManager -> GameplayManager.GameModeManager: Listen to {style.stroke-dash: 3
+MagicEngine.EntityEngine.EntityManager -> MagicEngine.EntityEngine.Entity: Has {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -40,10 +46,21 @@ target-arrowhead: {shape: arrow}
 # Summary :
 name|description
 ----|----
+[[#RegisterEntity\|RegisterEntity]] | `Add a new entity to the board`
 [[#Unregister\|Unregister]] | `Remove an Entity from the game (remove it from EntityManager, delete its gameobject)`
 
 ---
 # Functions :
+
+---
+### RegisterEntity
+Add a new entity to the board
+
+#### Parameters
+name|type|description
+-----|-----|-----
+**entity**|[[Entity]]|Entity to register
+**coordinates**|[[Coordinate]]|Coordiantes
 
 ---
 ### Unregister

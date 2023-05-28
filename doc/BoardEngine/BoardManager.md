@@ -11,11 +11,11 @@ Also communicate with [[EntityManager]] to determine if a cell is free.
 ```d2
 # Nodes :
 BoardEngine: {
-    WorldManager: World Manager {
-       link: WorldManager
-    }
     Coordinate: Coordinate {
        link: Coordinate
+    }
+    WorldManager: World Manager {
+       link: WorldManager
     }
 }
 MagicEngine: {

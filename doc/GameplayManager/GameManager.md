@@ -14,21 +14,6 @@ BoardEngine: {
        link: ChunkManager
     }
 }
-MagicEngine: {
-    EntityEngine: {
-        AI: {
-            BasicEnemyAI: Basic EnemyAI {
-               link: BasicEnemyAI
-            }
-        }
-        Entity: Entity {
-           link: Entity
-        }
-    }
-    MagicManager: Magic Manager {
-       link: MagicManager
-    }
-}
 GameplayManager: {
     InitiativeManager: Initiative Manager {
        link: InitiativeManager
@@ -37,16 +22,23 @@ GameplayManager: {
        link: GameModeManager
     }
 }
+MagicEngine: {
+    EntityEngine: {
+        Entity: Entity {
+           link: Entity
+        }
+        AI: {
+            BasicEnemyAI: Basic EnemyAI {
+               link: BasicEnemyAI
+            }
+        }
+    }
+    MagicManager: Magic Manager {
+       link: MagicManager
+    }
+}
 
 # Links :
-GameplayManager.GameManager -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Get Player {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-GameplayManager.GameModeManager -> GameplayManager.GameManager: Pass turns {
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
 GameplayManager.GameManager -> MagicEngine.MagicManager: Cast Player's spells {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
@@ -70,6 +62,14 @@ target-arrowhead: {shape: arrow}
 GameplayManager.GameManager -> MagicEngine.EntityEngine.Entity: Play Turn {
 source-arrowhead: {}
 target-arrowhead: All Entity{shape: arrow}
+}
+GameplayManager.GameModeManager -> GameplayManager.GameManager: Pass turns {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+GameplayManager.GameManager -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Get Player {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
 }
 
 ```

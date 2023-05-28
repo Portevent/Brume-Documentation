@@ -8,66 +8,66 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "Misc",
+      "query": "AnimationEngine",
       "color": {
         "a": 1,
-        "rgb": 63864
+        "rgb": 16139264
       }
     },
     {
       "query": "BoardEngine",
       "color": {
         "a": 1,
-        "rgb": 12842752
-      }
-    },
-    {
-      "query": "UI",
-      "color": {
-        "a": 1,
-        "rgb": 13304052
-      }
-    },
-    {
-      "query": "MagicEngine",
-      "color": {
-        "a": 1,
-        "rgb": 7078132
-      }
-    },
-    {
-      "query": "EntityEngine",
-      "color": {
-        "a": 1,
-        "rgb": 7600128
-      }
-    },
-    {
-      "query": "AI",
-      "color": {
-        "a": 1,
-        "rgb": 15991023
-      }
-    },
-    {
-      "query": "Spells",
-      "color": {
-        "a": 1,
-        "rgb": 2095104
+        "rgb": 16149760
       }
     },
     {
       "query": "GameplayManager",
       "color": {
         "a": 1,
-        "rgb": 16056497
+        "rgb": 16056473
       }
     },
     {
-      "query": "AnimationEngine",
+      "query": "UI",
       "color": {
         "a": 1,
-        "rgb": 196851
+        "rgb": 33522
+      }
+    },
+    {
+      "query": "Misc",
+      "color": {
+        "a": 1,
+        "rgb": 12711680
+      }
+    },
+    {
+      "query": "MagicEngine",
+      "color": {
+        "a": 1,
+        "rgb": 5240832
+      }
+    },
+    {
+      "query": "Spells",
+      "color": {
+        "a": 1,
+        "rgb": 26098
+      }
+    },
+    {
+      "query": "EntityEngine",
+      "color": {
+        "a": 1,
+        "rgb": 15991017
+      }
+    },
+    {
+      "query": "AI",
+      "color": {
+        "a": 1,
+        "rgb": 42482
       }
     }
   ],
