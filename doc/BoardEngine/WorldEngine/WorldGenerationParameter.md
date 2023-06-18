@@ -1,6 +1,6 @@
 ---
 title: WorldGenerationParameter
-path: /BoardEngine
+path: /BoardEngine/WorldEngine
 alias: 
 - World Generation Parameter
 tag: 

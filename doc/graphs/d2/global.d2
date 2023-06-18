@@ -3,34 +3,63 @@ AnimationEngine: {
     AnimatorProcessor: Animator Processor {
        link: AnimatorProcessor
     }
+    AnimationManager: Animation Manager {
+       link: AnimationManager
+    }
     AnimationTrigger: Animation Trigger {
        link: AnimationTrigger
     }
     AnimationData: Animation Data {
        link: AnimationData
     }
-    AnimationManager: Animation Manager {
-       link: AnimationManager
-    }
 }
 BoardEngine: {
-    FogVision: Fog Vision {
-       link: FogVision
+    AreaMaker: Area Maker {
+       link: AreaMaker
     }
-    SelectionManager: Selection Manager {
-       link: SelectionManager
+    TilemapManager: Tilemap Manager {
+       link: TilemapManager
+    }
+    ChunkManager: Chunk Manager {
+       link: ChunkManager
     }
     BoardManager: Board Manager {
        link: BoardManager
     }
-    AreaMaker: Area Maker {
-       link: AreaMaker
+    SelectionManager: Selection Manager {
+       link: SelectionManager
     }
     Coordinate: Coordinate {
        link: Coordinate
     }
-    TilemapManager: Tilemap Manager {
-       link: TilemapManager
+    FogVision: Fog Vision {
+       link: FogVision
+    }
+    WorldEngine: {
+        World: World {
+           link: World
+        }
+        CoolNoiseGenerator: Cool Noise Generator {
+           link: CoolNoiseGenerator
+        }
+        WorldManager: World Manager {
+           link: WorldManager
+        }
+        BiomeGenerator: Biome Generator {
+           link: BiomeGenerator
+        }
+        AdvancedWorldGenerator: Advanced World Generator {
+           link: AdvancedWorldGenerator
+        }
+        NoiseWorldGenerator: Noise World Generator {
+           link: NoiseWorldGenerator
+        }
+        WorldGenerationParameter: World Generation Parameter {
+           link: WorldGenerationParameter
+        }
+        WorldGenerator: World Generator {
+           link: WorldGenerator
+        }
     }
     Area: Area {
        link: Area
@@ -38,48 +67,19 @@ BoardEngine: {
     FogManager: Fog Manager {
        link: FogManager
     }
-    WorldGenerationParameter: World Generation Parameter {
-       link: WorldGenerationParameter
-    }
-    WorldGenerator: World Generator {
-       link: WorldGenerator
-    }
-    WorldManager: World Manager {
-       link: WorldManager
-    }
-    ChunkManager: Chunk Manager {
-       link: ChunkManager
-    }
-    World: World {
-       link: World
-    }
 }
 GameplayManager: {
+    GameModeManager: Game Mode Manager {
+       link: GameModeManager
+    }
+    InitiativeManager: Initiative Manager {
+       link: InitiativeManager
+    }
     PassTurnClock: Pass Turn Clock {
        link: PassTurnClock
     }
     GameManager: Game Manager {
        link: GameManager
-    }
-    InitiativeManager: Initiative Manager {
-       link: InitiativeManager
-    }
-    GameModeManager: Game Mode Manager {
-       link: GameModeManager
-    }
-}
-UI: {
-    DeckManager: Deck Manager {
-       link: DeckManager
-    }
-    HandSpell: Hand Spell {
-       link: HandSpell
-    }
-    MouseInput: Mouse Input {
-       link: MouseInput
-    }
-    InputManager: Input Manager {
-       link: InputManager
     }
 }
 Misc: {
@@ -88,43 +88,20 @@ Misc: {
     }
 }
 MagicEngine: {
-    Spells: {
-        Spell: Spell {
-           link: Spell
-        }
-        SpellCondition: Spell Condition {
-           link: SpellCondition
-        }
-        SpellEffect: Spell Effect {
-           link: SpellEffect
-        }
-        Grimoire: Grimoire {
-           link: Grimoire
-        }
+    MagicManager: Magic Manager {
+       link: MagicManager
     }
     EntityEngine: {
-        EntityManager: Entity Manager {
-           link: EntityManager
-        }
-        EntityAnimator: Entity Animator {
-           link: EntityAnimator
-        }
-        Affliction: Affliction {
-           link: Affliction
-        }
-        Entity: Entity {
-           link: Entity
-        }
         Movement: Movement {
            link: Movement
         }
-        State: State {
-           link: State
-        }
-        EntityAnimatorEvent: Entity Animator Event {
-           link: EntityAnimatorEvent
+        EntityManager: Entity Manager {
+           link: EntityManager
         }
         AI: {
+            PlayerAI: PlayerAI {
+               link: PlayerAI
+            }
             IntentAI: IntentAI {
                link: IntentAI
             }
@@ -134,31 +111,68 @@ MagicEngine: {
             BasicEnemyAI: Basic EnemyAI {
                link: BasicEnemyAI
             }
-            PlayerAI: PlayerAI {
-               link: PlayerAI
-            }
+        }
+        EntityAnimatorEvent: Entity Animator Event {
+           link: EntityAnimatorEvent
+        }
+        EntityAnimator: Entity Animator {
+           link: EntityAnimator
+        }
+        Affliction: Affliction {
+           link: Affliction
+        }
+        State: State {
+           link: State
+        }
+        Entity: Entity {
+           link: Entity
         }
     }
-    MagicManager: Magic Manager {
-       link: MagicManager
+    Spells: {
+        Grimoire: Grimoire {
+           link: Grimoire
+        }
+        SpellCondition: Spell Condition {
+           link: SpellCondition
+        }
+        Spell: Spell {
+           link: Spell
+        }
+        SpellEffect: Spell Effect {
+           link: SpellEffect
+        }
+    }
+}
+UI: {
+    InputManager: Input Manager {
+       link: InputManager
+    }
+    MouseInput: Mouse Input {
+       link: MouseInput
+    }
+    HandSpell: Hand Spell {
+       link: HandSpell
+    }
+    DeckManager: Deck Manager {
+       link: DeckManager
     }
 }
 
 # Links :
-BoardEngine.Coordinate -- UI.DeckManager: {style.stroke-dash: 3}
-BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityManager: {style.stroke-dash: 3}
-BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityAnimator: {style.stroke-dash: 3}
 BoardEngine.Coordinate -- MagicEngine.MagicManager: {style.stroke-dash: 3}
-MagicEngine.Spells.Grimoire -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityManager: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- MagicEngine.EntityEngine.AI.PlayerAI: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityAnimator: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- UI.DeckManager: {style.stroke-dash: 3}
 MagicEngine.MagicManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
 MagicEngine.MagicManager -- MagicEngine.Spells.SpellEffect: {style.stroke-dash: 3}
 MagicEngine.MagicManager -- MagicEngine.Spells.SpellCondition: {style.stroke-dash: 3}
+MagicEngine.Spells.Grimoire -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
 BoardEngine.BoardManager -- BoardEngine.Coordinate: {style.stroke-dash: 3}
+BoardEngine.WorldEngine.CoolNoiseGenerator -- BoardEngine.WorldEngine.World: {style.stroke-dash: 3}
+BoardEngine.WorldEngine.BiomeGenerator -- BoardEngine.WorldEngine.World: {style.stroke-dash: 3}
+BoardEngine.WorldEngine.AdvancedWorldGenerator -- BoardEngine.WorldEngine.World: {style.stroke-dash: 3}
 AnimationEngine.AnimatorProcessor -> AnimationEngine.AnimationManager: Process Queue every tick {
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-MagicEngine.Spells.SpellEffect -> AnimationEngine.AnimationTrigger: Has {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -170,15 +184,7 @@ AnimationEngine.AnimationManager -> MagicEngine.EntityEngine.EntityAnimator: Ani
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.FogVision -> BoardEngine.FogManager: Update the Fog Vision {
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-BoardEngine.SelectionManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-BoardEngine.WorldManager -> BoardEngine.BoardManager: Get active World {style.stroke-dash: 3
+MagicEngine.Spells.SpellEffect -> AnimationEngine.AnimationTrigger: Has {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -198,27 +204,51 @@ BoardEngine.AreaMaker -> BoardEngine.SelectionManager: Get Spells' range cast {s
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.WorldManager -> BoardEngine.ChunkManager: Update view coordinate {
+BoardEngine.ChunkManager -> BoardEngine.WorldEngine.World: Load Chunks {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.WorldManager -> BoardEngine.World: Instantiate {style.stroke-dash: 3
+BoardEngine.ChunkManager -> BoardEngine.WorldEngine.World: Unload Chunks {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.WorldManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
+BoardEngine.WorldEngine.WorldManager -> BoardEngine.BoardManager: Get active World {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.ChunkManager -> BoardEngine.World: Load Chunks {
+BoardEngine.SelectionManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.ChunkManager -> BoardEngine.World: Unload Chunks {
+BoardEngine.FogVision -> BoardEngine.FogManager: Update the Fog Vision {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.WorldGenerator -> BoardEngine.World: Generated by {style.stroke-dash: 3
+BoardEngine.WorldEngine.WorldGenerator -> BoardEngine.WorldEngine.World: Generated by {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+BoardEngine.WorldEngine.WorldManager -> BoardEngine.ChunkManager: Update view coordinate {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+BoardEngine.WorldEngine.WorldManager -> BoardEngine.WorldEngine.World: Instantiate {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+BoardEngine.WorldEngine.WorldManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.EntityManager -> GameplayManager.GameModeManager: Listen to {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+GameplayManager.PassTurnClock -> GameplayManager.GameModeManager: Get tempo from {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+GameplayManager.GameModeManager -> GameplayManager.GameManager: Pass turns {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -246,15 +276,7 @@ GameplayManager.GameManager -> MagicEngine.EntityEngine.Entity: Play Turn {
 source-arrowhead: {}
 target-arrowhead: All Entity{shape: arrow}
 }
-MagicEngine.EntityEngine.EntityManager -> GameplayManager.GameModeManager: Listen to {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-GameplayManager.PassTurnClock -> GameplayManager.GameModeManager: Get tempo from {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-GameplayManager.GameModeManager -> GameplayManager.GameManager: Pass turns {
+BoardEngine.BoardManager -> MagicEngine.MagicManager: Manipulate Cell {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -262,19 +284,15 @@ MagicEngine.EntityEngine.EntityManager -> MagicEngine.EntityEngine.Entity: Has {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.EntityAnimator -> MagicEngine.EntityEngine.Entity: Linked to {style.stroke-dash: 3
+MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.PlayerAI: Inherits {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.Entity <-> MagicEngine.EntityEngine.AI.EntityAI: Play turn {
-source-arrowhead: {shape: arrow}
-target-arrowhead: {shape: arrow}
-}
-MagicEngine.EntityEngine.Entity -> MagicEngine.EntityEngine.State: Has {style.stroke-dash: 3
+UI.InputManager -> MagicEngine.EntityEngine.AI.PlayerAI: Input {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.Entity -> BoardEngine.Coordinate: Has {style.stroke-dash: 3
+MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.PlayerAI: Has {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -310,19 +328,19 @@ GameplayManager.GameManager -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Get Pla
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.PlayerAI: Inherits {style.stroke-dash: 3
+MagicEngine.EntityEngine.EntityAnimator -> MagicEngine.EntityEngine.Entity: Linked to {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-UI.InputManager -> MagicEngine.EntityEngine.AI.PlayerAI: Input {style.stroke-dash: 3
+MagicEngine.EntityEngine.Entity <-> MagicEngine.EntityEngine.AI.EntityAI: Play turn {
+source-arrowhead: {shape: arrow}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.Entity -> MagicEngine.EntityEngine.State: Has {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.PlayerAI: Has {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-BoardEngine.BoardManager -> MagicEngine.MagicManager: Manipulate Cell {style.stroke-dash: 3
+MagicEngine.EntityEngine.Entity -> BoardEngine.Coordinate: Has {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

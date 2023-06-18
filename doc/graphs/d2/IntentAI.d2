@@ -8,30 +8,34 @@ BoardEngine: {
     }
 }
 MagicEngine: {
-    Spells: {
-        Spell: Spell {
-           link: Spell
-        }
-    }
     EntityEngine: {
-        Entity: Entity {
-           link: Entity
-        }
         AI: {
+            PlayerAI: PlayerAI {
+               link: PlayerAI
+            }
             EntityAI: EntityAI {
                link: EntityAI
             }
             BasicEnemyAI: Basic EnemyAI {
                link: BasicEnemyAI
             }
-            PlayerAI: PlayerAI {
-               link: PlayerAI
-            }
+        }
+        Entity: Entity {
+           link: Entity
+        }
+    }
+    Spells: {
+        Spell: Spell {
+           link: Spell
         }
     }
 }
 
 # Links :
+MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.PlayerAI: Inherits {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
 MagicEngine.EntityEngine.AI.IntentAI -> BoardEngine.SelectionManager: Shows Intent {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
@@ -53,10 +57,6 @@ source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
 MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Inherits {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.PlayerAI: Inherits {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

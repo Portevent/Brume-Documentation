@@ -1,6 +1,6 @@
 ---
 title: WorldManager
-path: /BoardEngine
+path: /BoardEngine/WorldEngine
 alias: 
 - World Manager
 tag: 
@@ -12,34 +12,36 @@ Make uses of [[TilemapManager]]
 ```d2
 # Nodes :
 BoardEngine: {
-    BoardManager: Board Manager {
-       link: BoardManager
-    }
     TilemapManager: Tilemap Manager {
        link: TilemapManager
     }
     ChunkManager: Chunk Manager {
        link: ChunkManager
     }
-    World: World {
-       link: World
+    BoardManager: Board Manager {
+       link: BoardManager
+    }
+    WorldEngine: {
+        World: World {
+           link: World
+        }
     }
 }
 
 # Links :
-BoardEngine.WorldManager -> BoardEngine.BoardManager: Get active World {style.stroke-dash: 3
+BoardEngine.WorldEngine.WorldManager -> BoardEngine.BoardManager: Get active World {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.WorldManager -> BoardEngine.ChunkManager: Update view coordinate {
+BoardEngine.WorldEngine.WorldManager -> BoardEngine.ChunkManager: Update view coordinate {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.WorldManager -> BoardEngine.World: Instantiate {style.stroke-dash: 3
+BoardEngine.WorldEngine.WorldManager -> BoardEngine.WorldEngine.World: Instantiate {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.WorldManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
+BoardEngine.WorldEngine.WorldManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

@@ -14,8 +14,10 @@ BoardEngine: {
     Coordinate: Coordinate {
        link: Coordinate
     }
-    WorldManager: World Manager {
-       link: WorldManager
+    WorldEngine: {
+        WorldManager: World Manager {
+           link: WorldManager
+        }
     }
 }
 MagicEngine: {
@@ -26,7 +28,7 @@ MagicEngine: {
 
 # Links :
 BoardEngine.BoardManager -- BoardEngine.Coordinate: {style.stroke-dash: 3}
-BoardEngine.WorldManager -> BoardEngine.BoardManager: Get active World {style.stroke-dash: 3
+BoardEngine.WorldEngine.WorldManager -> BoardEngine.BoardManager: Get active World {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

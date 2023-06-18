@@ -17,16 +17,16 @@ GameplayManager: {
     }
 }
 MagicEngine: {
-    Spells: {
-        Grimoire: Grimoire {
-           link: Grimoire
-        }
-    }
     EntityEngine: {
         AI: {
             IntentAI: IntentAI {
                link: IntentAI
             }
+        }
+    }
+    Spells: {
+        Grimoire: Grimoire {
+           link: Grimoire
         }
     }
 }

@@ -29,11 +29,11 @@ MagicEngine: {
 }
 
 # Links :
-BoardEngine.SelectionManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
+BoardEngine.AreaMaker -> BoardEngine.SelectionManager: Get Spells' range cast {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.AreaMaker -> BoardEngine.SelectionManager: Get Spells' range cast {style.stroke-dash: 3
+BoardEngine.SelectionManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

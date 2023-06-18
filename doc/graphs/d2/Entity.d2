@@ -14,12 +14,6 @@ MagicEngine: {
         EntityManager: Entity Manager {
            link: EntityManager
         }
-        EntityAnimator: Entity Animator {
-           link: EntityAnimator
-        }
-        State: State {
-           link: State
-        }
         AI: {
             IntentAI: IntentAI {
                link: IntentAI
@@ -27,6 +21,12 @@ MagicEngine: {
             EntityAI: EntityAI {
                link: EntityAI
             }
+        }
+        EntityAnimator: Entity Animator {
+           link: EntityAnimator
+        }
+        State: State {
+           link: State
         }
     }
 }
@@ -44,6 +44,10 @@ MagicEngine.EntityEngine.EntityManager -> MagicEngine.EntityEngine.Entity: Has {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
+MagicEngine.EntityEngine.Entity -> MagicEngine.EntityEngine.AI.IntentAI: Can have pinned target {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
 MagicEngine.EntityEngine.EntityAnimator -> MagicEngine.EntityEngine.Entity: Linked to {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
@@ -57,10 +61,6 @@ source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
 MagicEngine.EntityEngine.Entity -> BoardEngine.Coordinate: Has {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-MagicEngine.EntityEngine.Entity -> MagicEngine.EntityEngine.AI.IntentAI: Can have pinned target {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

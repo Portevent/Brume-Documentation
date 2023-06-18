@@ -1,0 +1,11 @@
+# Nodes :
+BoardEngine: {
+    WorldEngine: {
+        World: World {
+           link: World
+        }
+    }
+}
+
+# Links :
+BoardEngine.WorldEngine.AdvancedWorldGenerator -- BoardEngine.WorldEngine.World: {style.stroke-dash: 3}

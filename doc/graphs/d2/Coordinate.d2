@@ -1,21 +1,27 @@
 # Nodes :
 BoardEngine: {
-    BoardManager: Board Manager {
-       link: BoardManager
-    }
     AreaMaker: Area Maker {
        link: AreaMaker
     }
-}
-UI: {
-    DeckManager: Deck Manager {
-       link: DeckManager
+    BoardManager: Board Manager {
+       link: BoardManager
     }
 }
 MagicEngine: {
+    MagicManager: Magic Manager {
+       link: MagicManager
+    }
     EntityEngine: {
         EntityManager: Entity Manager {
            link: EntityManager
+        }
+        AI: {
+            PlayerAI: PlayerAI {
+               link: PlayerAI
+            }
+            IntentAI: IntentAI {
+               link: IntentAI
+            }
         }
         EntityAnimator: Entity Animator {
            link: EntityAnimator
@@ -23,32 +29,30 @@ MagicEngine: {
         Entity: Entity {
            link: Entity
         }
-        AI: {
-            IntentAI: IntentAI {
-               link: IntentAI
-            }
-        }
     }
-    MagicManager: Magic Manager {
-       link: MagicManager
+}
+UI: {
+    DeckManager: Deck Manager {
+       link: DeckManager
     }
 }
 
 # Links :
-BoardEngine.Coordinate -- UI.DeckManager: {style.stroke-dash: 3}
-BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityManager: {style.stroke-dash: 3}
-BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityAnimator: {style.stroke-dash: 3}
 BoardEngine.Coordinate -- MagicEngine.MagicManager: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityManager: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- MagicEngine.EntityEngine.AI.PlayerAI: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityAnimator: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- UI.DeckManager: {style.stroke-dash: 3}
 BoardEngine.BoardManager -- BoardEngine.Coordinate: {style.stroke-dash: 3}
 BoardEngine.AreaMaker -> BoardEngine.Coordinate: ...make a list of Coordinate {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.Entity -> BoardEngine.Coordinate: Has {style.stroke-dash: 3
+BoardEngine.Coordinate -> MagicEngine.EntityEngine.AI.IntentAI: Can have fix target {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.Coordinate -> MagicEngine.EntityEngine.AI.IntentAI: Can have fix target {style.stroke-dash: 3
+MagicEngine.EntityEngine.Entity -> BoardEngine.Coordinate: Has {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

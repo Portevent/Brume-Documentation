@@ -1,15 +1,10 @@
 # Nodes :
-UI: {
-    InputManager: Input Manager {
-       link: InputManager
+BoardEngine: {
+    Coordinate: Coordinate {
+       link: Coordinate
     }
 }
 MagicEngine: {
-    Spells: {
-        Grimoire: Grimoire {
-           link: Grimoire
-        }
-    }
     EntityEngine: {
         AI: {
             IntentAI: IntentAI {
@@ -17,9 +12,20 @@ MagicEngine: {
             }
         }
     }
+    Spells: {
+        Grimoire: Grimoire {
+           link: Grimoire
+        }
+    }
+}
+UI: {
+    InputManager: Input Manager {
+       link: InputManager
+    }
 }
 
 # Links :
+BoardEngine.Coordinate -- MagicEngine.EntityEngine.AI.PlayerAI: {style.stroke-dash: 3}
 MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.PlayerAI: Inherits {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}

@@ -10,11 +10,11 @@ ManicManager is a class used for processing SpellEffect
 ```d2
 # Nodes :
 BoardEngine: {
-    BoardManager: Board Manager {
-       link: BoardManager
-    }
     AreaMaker: Area Maker {
        link: AreaMaker
+    }
+    BoardManager: Board Manager {
+       link: BoardManager
     }
     Coordinate: Coordinate {
        link: Coordinate
@@ -27,11 +27,11 @@ GameplayManager: {
 }
 MagicEngine: {
     Spells: {
-        Spell: Spell {
-           link: Spell
-        }
         SpellCondition: Spell Condition {
            link: SpellCondition
+        }
+        Spell: Spell {
+           link: Spell
         }
         SpellEffect: Spell Effect {
            link: SpellEffect

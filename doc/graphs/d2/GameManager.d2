@@ -5,30 +5,34 @@ BoardEngine: {
     }
 }
 GameplayManager: {
-    InitiativeManager: Initiative Manager {
-       link: InitiativeManager
-    }
     GameModeManager: Game Mode Manager {
        link: GameModeManager
     }
+    InitiativeManager: Initiative Manager {
+       link: InitiativeManager
+    }
 }
 MagicEngine: {
+    MagicManager: Magic Manager {
+       link: MagicManager
+    }
     EntityEngine: {
-        Entity: Entity {
-           link: Entity
-        }
         AI: {
             BasicEnemyAI: Basic EnemyAI {
                link: BasicEnemyAI
             }
         }
-    }
-    MagicManager: Magic Manager {
-       link: MagicManager
+        Entity: Entity {
+           link: Entity
+        }
     }
 }
 
 # Links :
+GameplayManager.GameModeManager -> GameplayManager.GameManager: Pass turns {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
 GameplayManager.GameManager -> MagicEngine.MagicManager: Cast Player's spells {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
@@ -52,10 +56,6 @@ target-arrowhead: {shape: arrow}
 GameplayManager.GameManager -> MagicEngine.EntityEngine.Entity: Play Turn {
 source-arrowhead: {}
 target-arrowhead: All Entity{shape: arrow}
-}
-GameplayManager.GameModeManager -> GameplayManager.GameManager: Pass turns {
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
 }
 GameplayManager.GameManager -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Get Player {style.stroke-dash: 3
 source-arrowhead: {}

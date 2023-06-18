@@ -13,8 +13,10 @@ BoardEngine: {
     SelectionManager: Selection Manager {
        link: SelectionManager
     }
-    WorldManager: World Manager {
-       link: WorldManager
+    WorldEngine: {
+        WorldManager: World Manager {
+           link: WorldManager
+        }
     }
 }
 
@@ -23,7 +25,7 @@ BoardEngine.SelectionManager -> BoardEngine.TilemapManager: Uses {style.stroke-d
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.WorldManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
+BoardEngine.WorldEngine.WorldManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
