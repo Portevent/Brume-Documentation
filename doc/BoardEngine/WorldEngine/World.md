@@ -21,12 +21,6 @@ BoardEngine: {
         WorldManager: World Manager {
            link: WorldManager
         }
-        BiomeGenerator: Biome Generator {
-           link: BiomeGenerator
-        }
-        AdvancedWorldGenerator: Advanced World Generator {
-           link: AdvancedWorldGenerator
-        }
         WorldGenerator: World Generator {
            link: WorldGenerator
         }
@@ -35,8 +29,6 @@ BoardEngine: {
 
 # Links :
 BoardEngine.WorldEngine.CoolNoiseGenerator -- BoardEngine.WorldEngine.World: {style.stroke-dash: 3}
-BoardEngine.WorldEngine.BiomeGenerator -- BoardEngine.WorldEngine.World: {style.stroke-dash: 3}
-BoardEngine.WorldEngine.AdvancedWorldGenerator -- BoardEngine.WorldEngine.World: {style.stroke-dash: 3}
 BoardEngine.ChunkManager -> BoardEngine.WorldEngine.World: Load Chunks {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}

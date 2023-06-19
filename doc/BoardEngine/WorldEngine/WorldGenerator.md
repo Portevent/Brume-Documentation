@@ -30,6 +30,7 @@ target-arrowhead: {shape: arrow}
 name|description
 ----|----
 [[#Rebuild\|Rebuild]] | `Return the number of tilemaps required for this world`
+[[#Setup\|Setup]] | `Setup function called when World is created`
 
 ---
 # Functions :
@@ -37,3 +38,12 @@ name|description
 ---
 ### Rebuild
 Return the number of tilemaps required for this world
+
+---
+### Setup
+Setup function called when World is created
+
+#### Parameters
+name|type|description
+-----|-----|-----
+**world**|[[World]]|Reference to the parent World

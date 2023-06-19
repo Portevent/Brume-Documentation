@@ -6,38 +6,7 @@ alias:
 tag: 
 - class
 ---
-Basic Biome Generator
-```d2
-# Nodes :
-BoardEngine: {
-    WorldEngine: {
-        World: World {
-           link: World
-        }
-    }
-}
-
-# Links :
-BoardEngine.WorldEngine.BiomeGenerator -- BoardEngine.WorldEngine.World: {style.stroke-dash: 3}
-
-```
----
-# Summary :
-name|description
-----|----
-[[#Setup\|Setup]] | `Setup function called when World is created`
-
----
-# Functions :
-
----
-### Setup
-Setup function called when World is created
-
-#### Parameters
-name|type|description
------|-----|-----
-**world**|[[World]]|Reference to the parent World
-
-#### Exceptions
-- `ArgumentOutOfRangeException` : 
+Abstract class that define the basis of a Biome
+Biome are generated chunk by chunk (a cache is populated when ChunkManager ask to prepare a zone)
+Biome can spawn mobGroups and prop along the generation.
+The RNG is seeded (need to review if done correctly)

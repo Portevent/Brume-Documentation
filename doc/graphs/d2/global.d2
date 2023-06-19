@@ -57,6 +57,9 @@ BoardEngine: {
         AdvancedWorldGenerator: Advanced World Generator {
            link: AdvancedWorldGenerator
         }
+        DebugBiomeGenerator: Debug Biome Generator {
+           link: DebugBiomeGenerator
+        }
         NoiseWorldGenerator: Noise World Generator {
            link: NoiseWorldGenerator
         }
@@ -185,8 +188,6 @@ MagicEngine.MagicManager -- MagicEngine.Spells.SpellCondition: {style.stroke-das
 MagicEngine.Spells.Grimoire -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
 BoardEngine.BoardManager -- BoardEngine.Coordinate: {style.stroke-dash: 3}
 BoardEngine.WorldEngine.CoolNoiseGenerator -- BoardEngine.WorldEngine.World: {style.stroke-dash: 3}
-BoardEngine.WorldEngine.BiomeGenerator -- BoardEngine.WorldEngine.World: {style.stroke-dash: 3}
-BoardEngine.WorldEngine.AdvancedWorldGenerator -- BoardEngine.WorldEngine.World: {style.stroke-dash: 3}
 AnimationEngine.AnimatorProcessor -> AnimationEngine.AnimationManager: Process Queue every tick {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
