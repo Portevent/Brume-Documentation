@@ -6,8 +6,9 @@ alias:
 tag: 
 - class
 ---
-Scriptable Object that hold [[WorldGenerationParameter]] used by a semi random procedural world builder.
-For a given [[Coordinate]], will return a list of Tile.
+Semi random procedural WorldGenerator, using hotspots to generate smooth cloud.
+Clone of CoolNoiseGenerator. The class is in StandBy while working on BiomeGenerator, and will be
+rework to support chunk generation and Biome system
 ```d2
 # Nodes :
 BoardEngine: {

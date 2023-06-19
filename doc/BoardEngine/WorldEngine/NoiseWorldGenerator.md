@@ -6,8 +6,8 @@ alias:
 tag: 
 - class
 ---
-Scriptable Object that hold [[WorldGenerationParameter]] used by a semi random procedural world builder.
-For a given [[Coordinate]], will return a list of Tile.
+Abstract class to define Noise World Generator bases
+Seems unused, probably need to be integrated with CoolNoiseGenerator or AdvancedWorldGenerator
 
 ---
 # Summary :

@@ -6,7 +6,7 @@ alias:
 tag: 
 - class
 ---
-Scriptable Object that hold [[WorldGenerationParameter]] used by a semi random procedural world builder.
+Abstract class that define the base of a WorldGenerator as a Scriptable Object.
 For a given [[Coordinate]], will return a list of Tile.
 ```d2
 # Nodes :

@@ -11,70 +11,70 @@
       "query": "AnimationEngine",
       "color": {
         "a": 1,
-        "rgb": 16161536
+        "rgb": 7993344
       }
     },
     {
       "query": "BoardEngine",
       "color": {
         "a": 1,
-        "rgb": 2684928
+        "rgb": 16056505
       }
     },
     {
       "query": "WorldEngine",
       "color": {
         "a": 1,
-        "rgb": 12275
+        "rgb": 13555
       }
     },
     {
       "query": "GameplayManager",
       "color": {
         "a": 1,
-        "rgb": 2425075
+        "rgb": 63872
       }
     },
     {
       "query": "Misc",
       "color": {
         "a": 1,
-        "rgb": 63915
+        "rgb": 12779764
       }
     },
     {
       "query": "MagicEngine",
       "color": {
         "a": 1,
-        "rgb": 63825
+        "rgb": 14677760
       }
     },
     {
       "query": "EntityEngine",
       "color": {
         "a": 1,
-        "rgb": 59890
+        "rgb": 38642
       }
     },
     {
       "query": "AI",
       "color": {
         "a": 1,
-        "rgb": 16125440
+        "rgb": 7469056
       }
     },
     {
       "query": "Spells",
       "color": {
         "a": 1,
-        "rgb": 37618
+        "rgb": 786675
       }
     },
     {
       "query": "UI",
       "color": {
         "a": 1,
-        "rgb": 17907
+        "rgb": 13435124
       }
     }
   ],

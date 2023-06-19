@@ -36,6 +36,9 @@ BoardEngine: {
        link: FogVision
     }
     WorldEngine: {
+        PrefabWorldGenerator: Prefab World Generator {
+           link: PrefabWorldGenerator
+        }
         World: World {
            link: World
         }
@@ -48,11 +51,23 @@ BoardEngine: {
         BiomeGenerator: Biome Generator {
            link: BiomeGenerator
         }
+        Hotspot: Hotspot {
+           link: Hotspot
+        }
         AdvancedWorldGenerator: Advanced World Generator {
            link: AdvancedWorldGenerator
         }
         NoiseWorldGenerator: Noise World Generator {
            link: NoiseWorldGenerator
+        }
+        ElevationTile: Elevation Tile {
+           link: ElevationTile
+        }
+        MobGroupSpawnData: Mob Group Spawn Data {
+           link: MobGroupSpawnData
+        }
+        WorldTile: World Tile {
+           link: WorldTile
         }
         WorldGenerationParameter: World Generation Parameter {
            link: WorldGenerationParameter
