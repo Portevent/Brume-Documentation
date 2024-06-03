@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "UI/DeckManager.md",
+                "file": "BoardEngine/AreaMaker.md",
                 "mode": "source",
                 "source": false
               }
@@ -64,6 +64,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "a8f7734defe62113",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -85,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "UI/DeckManager.md",
+                "file": "BoardEngine/AreaMaker.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "UI/DeckManager.md",
+                "file": "BoardEngine/AreaMaker.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,16 +133,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "UI/DeckManager.md"
+                "file": "BoardEngine/AreaMaker.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -146,6 +154,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "afd39e055ea31830",
-  "lastOpenFiles": []
+  "active": "bf8236ea6a9543d5",
+  "lastOpenFiles": [
+    "AnimationEngine/AnimationData.md",
+    "BoardEngine/FogManager.md",
+    "BoardEngine/SelectionManager.md",
+    "UI/HandSpell.md",
+    "UI/DeckManager.md",
+    "BoardEngine/WorldManager.md",
+    "BoardEngine/World.md",
+    "BoardEngine/BoardManager.md"
+  ]
 }

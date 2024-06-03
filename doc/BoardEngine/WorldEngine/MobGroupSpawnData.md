@@ -6,4 +6,4 @@ alias:
 tag: 
 - struct
 ---
-Struct holding information about a group to spawn
+Struct holding information about a group to spawn  

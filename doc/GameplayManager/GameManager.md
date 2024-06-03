@@ -6,7 +6,7 @@ alias:
 tag: 
 - class
 ---
-Keep track of the Player
+Keep track of the Player  
 ```d2
 # Nodes :
 BoardEngine: {
@@ -14,18 +14,7 @@ BoardEngine: {
        link: ChunkManager
     }
 }
-GameplayManager: {
-    GameModeManager: Game Mode Manager {
-       link: GameModeManager
-    }
-    InitiativeManager: Initiative Manager {
-       link: InitiativeManager
-    }
-}
 MagicEngine: {
-    MagicManager: Magic Manager {
-       link: MagicManager
-    }
     EntityEngine: {
         AI: {
             BasicEnemyAI: Basic EnemyAI {
@@ -36,10 +25,21 @@ MagicEngine: {
            link: Entity
         }
     }
+    MagicManager: Magic Manager {
+       link: MagicManager
+    }
+}
+GameplayManager: {
+    GameModeManager: Game Mode Manager {
+       link: GameModeManager
+    }
+    InitiativeManager: Initiative Manager {
+       link: InitiativeManager
+    }
 }
 
 # Links :
-GameplayManager.GameModeManager -> GameplayManager.GameManager: Pass turns {
+GameplayManager.GameManager -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Get Player {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -67,7 +67,7 @@ GameplayManager.GameManager -> MagicEngine.EntityEngine.Entity: Play Turn {
 source-arrowhead: {}
 target-arrowhead: All Entity{shape: arrow}
 }
-GameplayManager.GameManager -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Get Player {style.stroke-dash: 3
+GameplayManager.GameModeManager -> GameplayManager.GameManager: Pass turns {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

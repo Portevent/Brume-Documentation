@@ -6,7 +6,7 @@ alias:
 tag: 
 - class
 ---
-Handle the MouseInput
+Handle the MouseInput  
 
 ---
 # Summary :

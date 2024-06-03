@@ -21,30 +21,34 @@ The casting effect are applied according to a Pattern (cast)
 Each entity within that pattern undergo the effect
 The order of application is from closest to farthest (from target cell)
 ties break by orientation (polar coordinates centered at target)
-All effects are applied before changing target
+All effects are applied before changing target  
 ```d2
 # Nodes :
 MagicEngine: {
-    MagicManager: Magic Manager {
-       link: MagicManager
+    Spells: {
+        Grimoire: Grimoire {
+           link: Grimoire
+        }
     }
     EntityEngine: {
+        EntityManager: Entity Manager {
+           link: EntityManager
+        }
         AI: {
             IntentAI: IntentAI {
                link: IntentAI
             }
         }
     }
-    Spells: {
-        Grimoire: Grimoire {
-           link: Grimoire
-        }
+    MagicManager: Magic Manager {
+       link: MagicManager
     }
 }
 
 # Links :
-MagicEngine.MagicManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
 MagicEngine.Spells.Grimoire -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
+MagicEngine.MagicManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
+MagicEngine.EntityEngine.EntityManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
 MagicEngine.Spells.Spell -> MagicEngine.EntityEngine.AI.IntentAI: Can have intent {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}

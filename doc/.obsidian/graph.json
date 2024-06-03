@@ -8,73 +8,73 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "AnimationEngine",
-      "color": {
-        "a": 1,
-        "rgb": 16153600
-      }
-    },
-    {
       "query": "BoardEngine",
       "color": {
         "a": 1,
-        "rgb": 16148224
+        "rgb": 63897
       }
     },
     {
       "query": "WorldEngine",
       "color": {
         "a": 1,
-        "rgb": 16246016
-      }
-    },
-    {
-      "query": "GameplayManager",
-      "color": {
-        "a": 1,
-        "rgb": 16142080
-      }
-    },
-    {
-      "query": "Misc",
-      "color": {
-        "a": 1,
-        "rgb": 8691
-      }
-    },
-    {
-      "query": "MagicEngine",
-      "color": {
-        "a": 1,
-        "rgb": 63854
-      }
-    },
-    {
-      "query": "EntityEngine",
-      "color": {
-        "a": 1,
-        "rgb": 12646144
-      }
-    },
-    {
-      "query": "AI",
-      "color": {
-        "a": 1,
-        "rgb": 16883
-      }
-    },
-    {
-      "query": "Spells",
-      "color": {
-        "a": 1,
-        "rgb": 2490611
+        "rgb": 16240896
       }
     },
     {
       "query": "UI",
       "color": {
         "a": 1,
-        "rgb": 10614528
+        "rgb": 63544
+      }
+    },
+    {
+      "query": "Misc",
+      "color": {
+        "a": 1,
+        "rgb": 16141056
+      }
+    },
+    {
+      "query": "MagicEngine",
+      "color": {
+        "a": 1,
+        "rgb": 6029556
+      }
+    },
+    {
+      "query": "Spells",
+      "color": {
+        "a": 1,
+        "rgb": 7602420
+      }
+    },
+    {
+      "query": "EntityEngine",
+      "color": {
+        "a": 1,
+        "rgb": 13043
+      }
+    },
+    {
+      "query": "AI",
+      "color": {
+        "a": 1,
+        "rgb": 63923
+      }
+    },
+    {
+      "query": "GameplayManager",
+      "color": {
+        "a": 1,
+        "rgb": 16125440
+      }
+    },
+    {
+      "query": "AnimationEngine",
+      "color": {
+        "a": 1,
+        "rgb": 11269888
       }
     }
   ],

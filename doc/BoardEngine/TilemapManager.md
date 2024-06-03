@@ -6,26 +6,26 @@ alias:
 tag: 
 - class
 ---
-Centralized way to create Tilemap
+Centralized way to create Tilemap  
 ```d2
 # Nodes :
 BoardEngine: {
-    SelectionManager: Selection Manager {
-       link: SelectionManager
-    }
     WorldEngine: {
         WorldManager: World Manager {
            link: WorldManager
         }
     }
+    SelectionManager: Selection Manager {
+       link: SelectionManager
+    }
 }
 
 # Links :
-BoardEngine.SelectionManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
+BoardEngine.WorldEngine.WorldManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.WorldEngine.WorldManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
+BoardEngine.SelectionManager -> BoardEngine.TilemapManager: Uses {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

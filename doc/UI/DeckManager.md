@@ -7,7 +7,7 @@ tag:
 - class
 ---
 A DeckManager link the player Grimoire to the UI and the GameController
-It is in charged of understand the user intents, cast spell or move when need
+It is in charged of understand the user intents, cast spell or move when need  
 ```d2
 # Nodes :
 BoardEngine: {

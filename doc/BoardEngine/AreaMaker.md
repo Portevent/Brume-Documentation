@@ -6,18 +6,18 @@ alias:
 tag: 
 - class
 ---
-Convert Area to Coordinates[]
+Convert Area to Coordinates[]  
 ```d2
 # Nodes :
 BoardEngine: {
-    SelectionManager: Selection Manager {
-       link: SelectionManager
-    }
     Coordinate: Coordinate {
        link: Coordinate
     }
     Area: Area {
        link: Area
+    }
+    SelectionManager: Selection Manager {
+       link: SelectionManager
     }
 }
 MagicEngine: {

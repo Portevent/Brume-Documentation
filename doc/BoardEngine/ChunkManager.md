@@ -6,7 +6,7 @@ alias:
 tag: 
 - class
 ---
-Linked to a [[World]], generate and unload world part as the player moves around
+Linked to a [[World]], generate and unload world part as the player moves around  
 ```d2
 # Nodes :
 BoardEngine: {
@@ -26,15 +26,15 @@ GameplayManager: {
 }
 
 # Links :
+BoardEngine.WorldEngine.WorldManager -> BoardEngine.ChunkManager: Update view coordinate {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
 BoardEngine.ChunkManager -> BoardEngine.WorldEngine.World: Load Chunks {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
 BoardEngine.ChunkManager -> BoardEngine.WorldEngine.World: Unload Chunks {
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-BoardEngine.WorldEngine.WorldManager -> BoardEngine.ChunkManager: Update view coordinate {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

@@ -8,22 +8,22 @@ tag:
 ---
 Register all animations that must be play and process them
 Animations are queued as [[AnimationData]] object, and animation are played first in first out
-If an Entity is not Ready, the current animation will wait for it and thus delay all the other
+If an Entity is not Ready, the current animation will wait for it and thus delay all the other  
 ```d2
 # Nodes :
-AnimationEngine: {
-    AnimatorProcessor: Animator Processor {
-       link: AnimatorProcessor
-    }
-    AnimationData: Animation Data {
-       link: AnimationData
-    }
-}
 MagicEngine: {
     EntityEngine: {
         EntityAnimator: Entity Animator {
            link: EntityAnimator
         }
+    }
+}
+AnimationEngine: {
+    AnimationData: Animation Data {
+       link: AnimationData
+    }
+    AnimatorProcessor: Animator Processor {
+       link: AnimatorProcessor
     }
 }
 

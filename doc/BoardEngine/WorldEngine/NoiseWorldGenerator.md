@@ -6,8 +6,8 @@ alias:
 tag: 
 - class
 ---
-Abstract class to define Noise World Generator bases
-Seems unused, probably need to be integrated with CoolNoiseGenerator or AdvancedWorldGenerator
+Abstract class to define Noise World Generator bases  
+Seems unused, probably need to be integrated with CoolNoiseGenerator or AdvancedWorldGenerator  
 
 ---
 # Summary :

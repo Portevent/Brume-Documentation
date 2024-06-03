@@ -6,17 +6,17 @@ alias:
 tag: 
 - struct
 ---
-A Spell's effect
+A Spell's effect  
 ```d2
 # Nodes :
-AnimationEngine: {
-    AnimationTrigger: Animation Trigger {
-       link: AnimationTrigger
-    }
-}
 MagicEngine: {
     MagicManager: Magic Manager {
        link: MagicManager
+    }
+}
+AnimationEngine: {
+    AnimationTrigger: Animation Trigger {
+       link: AnimationTrigger
     }
 }
 

@@ -4,26 +4,36 @@ BoardEngine: {
        link: Coordinate
     }
 }
-GameplayManager: {
-    GameModeManager: Game Mode Manager {
-       link: GameModeManager
-    }
-}
 MagicEngine: {
+    Spells: {
+        Spell: Spell {
+           link: Spell
+        }
+    }
     EntityEngine: {
+        Movement: Movement {
+           link: Movement
+        }
         Entity: Entity {
            link: Entity
         }
     }
 }
+GameplayManager: {
+    GameModeManager: Game Mode Manager {
+       link: GameModeManager
+    }
+}
 
 # Links :
 BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityManager: {style.stroke-dash: 3}
-MagicEngine.EntityEngine.EntityManager -> GameplayManager.GameModeManager: Listen to {style.stroke-dash: 3
+MagicEngine.EntityEngine.EntityManager -- MagicEngine.EntityEngine.Movement: {style.stroke-dash: 3}
+MagicEngine.EntityEngine.EntityManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
+MagicEngine.EntityEngine.EntityManager -> MagicEngine.EntityEngine.Entity: Has {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.EntityManager -> MagicEngine.EntityEngine.Entity: Has {style.stroke-dash: 3
+MagicEngine.EntityEngine.EntityManager -> GameplayManager.GameModeManager: Listen to {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

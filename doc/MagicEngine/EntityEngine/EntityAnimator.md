@@ -9,15 +9,10 @@ tag:
 An EntityAnimator represent the state in which an Entity is for the animation
 The main parameter of an EntityAnimator is a boolean : ready
 This indicate to the AnimationManager whether this is Entity is idle and ready to make an animation, or busy doing
-one yet.
-Everytime "ready" change, AnimationManager.ProcessQueue() is called to check the next animation
+one yet.  
+Everytime "ready" change, AnimationManager.ProcessQueue() is called to check the next animation  
 ```d2
 # Nodes :
-AnimationEngine: {
-    AnimationManager: Animation Manager {
-       link: AnimationManager
-    }
-}
 BoardEngine: {
     Coordinate: Coordinate {
        link: Coordinate
@@ -30,14 +25,19 @@ MagicEngine: {
         }
     }
 }
+AnimationEngine: {
+    AnimationManager: Animation Manager {
+       link: AnimationManager
+    }
+}
 
 # Links :
 BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityAnimator: {style.stroke-dash: 3}
-AnimationEngine.AnimationManager -> MagicEngine.EntityEngine.EntityAnimator: Animate {
+MagicEngine.EntityEngine.EntityAnimator -> MagicEngine.EntityEngine.Entity: Linked to {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.EntityAnimator -> MagicEngine.EntityEngine.Entity: Linked to {style.stroke-dash: 3
+AnimationEngine.AnimationManager -> MagicEngine.EntityEngine.EntityAnimator: Animate {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

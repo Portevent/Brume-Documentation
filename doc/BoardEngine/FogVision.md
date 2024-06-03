@@ -7,7 +7,7 @@ tag:
 - class
 ---
 MonoBehavior Object feeding the [[FogManager]] position from its own.
-e.g. attach to the player game object to have the fog vision
+e.g. attach to the player game object to have the fog vision  
 ```d2
 # Nodes :
 BoardEngine: {

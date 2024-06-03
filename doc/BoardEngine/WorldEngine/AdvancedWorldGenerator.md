@@ -6,9 +6,9 @@ alias:
 tag: 
 - class
 ---
-Semi random procedural WorldGenerator, using hotspots to generate smooth cloud.
+Semi random procedural WorldGenerator, using hotspots to generate smooth cloud.  
 Clone of CoolNoiseGenerator. The class is in StandBy while working on BiomeGenerator, and will be
-rework to support chunk generation and Biome system
+rework to support chunk generation and Biome system  
 
 ---
 # Summary :

@@ -6,28 +6,15 @@ alias:
 tag: 
 - class
 ---
-Semi random procedural WorldGenerator, using hotspots to generate smooth cloud.
+Semi random procedural WorldGenerator, using hotspots to generate smooth cloud.  
 Clone of CoolNoiseGenerator. The class is in StandBy while working on BiomeGenerator, and will be
-rework to support chunk generation and Biome system
-```d2
-# Nodes :
-BoardEngine: {
-    WorldEngine: {
-        World: World {
-           link: World
-        }
-    }
-}
+rework to support chunk generation and Biome system  
 
-# Links :
-BoardEngine.WorldEngine.CoolNoiseGenerator -- BoardEngine.WorldEngine.World: {style.stroke-dash: 3}
-
-```
 ---
 # Summary :
 name|description
 ----|----
-[[#Setup\|Setup]] | `Setup function called when World is created`
+[[#SetupGenerator\|SetupGenerator]] | `Setup function called when World is created`
 [[#GetNoiseValue\|GetNoiseValue]] | `Generate a value from the parameted noise, that range from Min to Max (or -1 if outside of Noise)`
 [[#GetHeightValue\|GetHeightValue]] | `Generate a value from GetNoiseValue, that range from Min to Max (or -1 if outside of Noise)`
 
@@ -35,13 +22,8 @@ name|description
 # Functions :
 
 ---
-### Setup
+### SetupGenerator
 Setup function called when World is created
-
-#### Parameters
-name|type|description
------|-----|-----
-**world**|[[World]]|Reference to the parent World
 
 #### Exceptions
 - `ArgumentOutOfRangeException` : 

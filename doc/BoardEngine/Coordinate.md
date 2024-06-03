@@ -6,7 +6,7 @@ alias:
 tag: 
 - class
 ---
-Base Coordinate system used for the Board
+Base Coordinate system used for the Board  
 ```d2
 # Nodes :
 BoardEngine: {
@@ -17,13 +17,18 @@ BoardEngine: {
        link: BoardManager
     }
 }
-MagicEngine: {
-    MagicManager: Magic Manager {
-       link: MagicManager
+UI: {
+    DeckManager: Deck Manager {
+       link: DeckManager
     }
+}
+MagicEngine: {
     EntityEngine: {
         EntityManager: Entity Manager {
            link: EntityManager
+        }
+        EntityAnimator: Entity Animator {
+           link: EntityAnimator
         }
         AI: {
             PlayerAI: PlayerAI {
@@ -33,26 +38,21 @@ MagicEngine: {
                link: IntentAI
             }
         }
-        EntityAnimator: Entity Animator {
-           link: EntityAnimator
-        }
         Entity: Entity {
            link: Entity
         }
     }
-}
-UI: {
-    DeckManager: Deck Manager {
-       link: DeckManager
+    MagicManager: Magic Manager {
+       link: MagicManager
     }
 }
 
 # Links :
-BoardEngine.Coordinate -- MagicEngine.MagicManager: {style.stroke-dash: 3}
-BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityManager: {style.stroke-dash: 3}
-BoardEngine.Coordinate -- MagicEngine.EntityEngine.AI.PlayerAI: {style.stroke-dash: 3}
-BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityAnimator: {style.stroke-dash: 3}
 BoardEngine.Coordinate -- UI.DeckManager: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityManager: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityAnimator: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- MagicEngine.EntityEngine.AI.PlayerAI: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- MagicEngine.MagicManager: {style.stroke-dash: 3}
 BoardEngine.BoardManager -- BoardEngine.Coordinate: {style.stroke-dash: 3}
 BoardEngine.AreaMaker -> BoardEngine.Coordinate: ...make a list of Coordinate {
 source-arrowhead: {}

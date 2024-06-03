@@ -6,7 +6,7 @@ alias:
 tag: 
 - class
 ---
-MonoBehaviour Object that calls [[AnimationManager]].ProcessQueue() every tick
+MonoBehaviour Object that calls [[AnimationManager]].ProcessQueue() every tick  
 ```d2
 # Nodes :
 AnimationEngine: {

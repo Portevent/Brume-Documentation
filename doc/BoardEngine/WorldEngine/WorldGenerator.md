@@ -7,7 +7,7 @@ tag:
 - class
 ---
 Abstract class that define the base of a WorldGenerator as a Scriptable Object.
-For a given [[Coordinate]], will return a list of Tile.
+For a given [[Coordinate]], will return a list of Tile.  
 ```d2
 # Nodes :
 BoardEngine: {

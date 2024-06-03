@@ -4,23 +4,23 @@ BoardEngine: {
        link: Coordinate
     }
 }
+UI: {
+    InputManager: Input Manager {
+       link: InputManager
+    }
+}
 MagicEngine: {
+    Spells: {
+        Grimoire: Grimoire {
+           link: Grimoire
+        }
+    }
     EntityEngine: {
         AI: {
             IntentAI: IntentAI {
                link: IntentAI
             }
         }
-    }
-    Spells: {
-        Grimoire: Grimoire {
-           link: Grimoire
-        }
-    }
-}
-UI: {
-    InputManager: Input Manager {
-       link: InputManager
     }
 }
 

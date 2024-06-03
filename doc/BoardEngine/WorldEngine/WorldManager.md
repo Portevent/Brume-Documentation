@@ -8,16 +8,10 @@ tag:
 ---
 Create and manage [[World]]
 Create any number of Tilemap needed, plus one for the Fog and assign it with the [[FogManager]]
-Make uses of [[TilemapManager]]
+Make uses of [[TilemapManager]]  
 ```d2
 # Nodes :
 BoardEngine: {
-    TilemapManager: Tilemap Manager {
-       link: TilemapManager
-    }
-    ChunkManager: Chunk Manager {
-       link: ChunkManager
-    }
     BoardManager: Board Manager {
        link: BoardManager
     }
@@ -25,6 +19,12 @@ BoardEngine: {
         World: World {
            link: World
         }
+    }
+    TilemapManager: Tilemap Manager {
+       link: TilemapManager
+    }
+    ChunkManager: Chunk Manager {
+       link: ChunkManager
     }
 }
 

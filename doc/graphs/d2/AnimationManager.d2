@@ -1,17 +1,17 @@
 # Nodes :
-AnimationEngine: {
-    AnimatorProcessor: Animator Processor {
-       link: AnimatorProcessor
-    }
-    AnimationData: Animation Data {
-       link: AnimationData
-    }
-}
 MagicEngine: {
     EntityEngine: {
         EntityAnimator: Entity Animator {
            link: EntityAnimator
         }
+    }
+}
+AnimationEngine: {
+    AnimationData: Animation Data {
+       link: AnimationData
+    }
+    AnimatorProcessor: Animator Processor {
+       link: AnimatorProcessor
     }
 }
 

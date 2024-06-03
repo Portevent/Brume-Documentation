@@ -6,7 +6,7 @@ alias:
 tag: 
 - class
 ---
-PlayerAI is an IntentAI that listen to InputManager to setup Intent and actually play turn
+PlayerAI is an IntentAI that listen to InputManager to setup Intent and actually play turn  
 ```d2
 # Nodes :
 BoardEngine: {
@@ -14,23 +14,23 @@ BoardEngine: {
        link: Coordinate
     }
 }
+UI: {
+    InputManager: Input Manager {
+       link: InputManager
+    }
+}
 MagicEngine: {
+    Spells: {
+        Grimoire: Grimoire {
+           link: Grimoire
+        }
+    }
     EntityEngine: {
         AI: {
             IntentAI: IntentAI {
                link: IntentAI
             }
         }
-    }
-    Spells: {
-        Grimoire: Grimoire {
-           link: Grimoire
-        }
-    }
-}
-UI: {
-    InputManager: Input Manager {
-       link: InputManager
     }
 }
 
@@ -55,6 +55,8 @@ target-arrowhead: {shape: arrow}
 name|description
 ----|----
 [[#CheckWorldInteraction\|CheckWorldInteraction]] | `Called when Player move around. If in quest mode, will allow interaction with WorldInteractionAction`
+[[#PathFindTo\|PathFindTo]] | `PathFindToward a destination
+Called by DeckManager`
 
 ---
 # Functions :
@@ -67,3 +69,13 @@ Called when Player move around. If in quest mode, will allow interaction with Wo
 name|type|description
 -----|-----|-----
 **coordinate**|[[Coordinate]]|Coordinates
+
+---
+### PathFindTo
+PathFindToward a destination
+Called by DeckManager
+
+#### Parameters
+name|type|description
+-----|-----|-----
+**coordinate**|[[Coordinate]]|

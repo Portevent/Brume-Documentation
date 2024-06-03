@@ -6,4 +6,4 @@ alias:
 tag: 
 - struct
 ---
-Struct representing a tile on the Board and its height
+Struct representing a tile on the Board and its height  

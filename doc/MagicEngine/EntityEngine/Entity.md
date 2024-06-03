@@ -17,7 +17,7 @@ A basic entity hold at least
 - summons : dictionnary, associating spell name with a list of Entity they summoned
 
 - destination : coordinate where the entity is moving
-- afflictions : list of afflictions
+- afflictions : list of afflictions  
 ```d2
 # Nodes :
 BoardEngine: {
@@ -25,23 +25,10 @@ BoardEngine: {
        link: Coordinate
     }
 }
-GameplayManager: {
-    GameManager: Game Manager {
-       link: GameManager
-    }
-}
 MagicEngine: {
     EntityEngine: {
         EntityManager: Entity Manager {
            link: EntityManager
-        }
-        AI: {
-            IntentAI: IntentAI {
-               link: IntentAI
-            }
-            EntityAI: EntityAI {
-               link: EntityAI
-            }
         }
         EntityAnimator: Entity Animator {
            link: EntityAnimator
@@ -49,27 +36,32 @@ MagicEngine: {
         State: State {
            link: State
         }
+        AI: {
+            EntityAI: EntityAI {
+               link: EntityAI
+            }
+            IntentAI: IntentAI {
+               link: IntentAI
+            }
+        }
+    }
+}
+GameplayManager: {
+    GameManager: Game Manager {
+       link: GameManager
     }
 }
 
 # Links :
-MagicEngine.EntityEngine.Entity -> GameplayManager.GameManager: Listen for OnTelefrag {
-source-arrowhead: Player{}
-target-arrowhead: {shape: arrow}
-}
-GameplayManager.GameManager -> MagicEngine.EntityEngine.Entity: Play Turn {
-source-arrowhead: {}
-target-arrowhead: All Entity{shape: arrow}
-}
 MagicEngine.EntityEngine.EntityManager -> MagicEngine.EntityEngine.Entity: Has {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.Entity -> MagicEngine.EntityEngine.AI.IntentAI: Can have pinned target {style.stroke-dash: 3
+MagicEngine.EntityEngine.EntityAnimator -> MagicEngine.EntityEngine.Entity: Linked to {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.EntityAnimator -> MagicEngine.EntityEngine.Entity: Linked to {style.stroke-dash: 3
+MagicEngine.EntityEngine.Entity -> MagicEngine.EntityEngine.AI.IntentAI: Can have pinned target {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -84,6 +76,14 @@ target-arrowhead: {shape: arrow}
 MagicEngine.EntityEngine.Entity -> BoardEngine.Coordinate: Has {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.Entity -> GameplayManager.GameManager: Listen for OnTelefrag {
+source-arrowhead: Player{}
+target-arrowhead: {shape: arrow}
+}
+GameplayManager.GameManager -> MagicEngine.EntityEngine.Entity: Play Turn {
+source-arrowhead: {}
+target-arrowhead: All Entity{shape: arrow}
 }
 
 ```

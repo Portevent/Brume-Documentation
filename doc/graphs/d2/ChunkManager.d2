@@ -16,15 +16,15 @@ GameplayManager: {
 }
 
 # Links :
+BoardEngine.WorldEngine.WorldManager -> BoardEngine.ChunkManager: Update view coordinate {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
 BoardEngine.ChunkManager -> BoardEngine.WorldEngine.World: Load Chunks {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
 BoardEngine.ChunkManager -> BoardEngine.WorldEngine.World: Unload Chunks {
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-BoardEngine.WorldEngine.WorldManager -> BoardEngine.ChunkManager: Update view coordinate {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
