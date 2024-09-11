@@ -9,15 +9,20 @@ tag:
 ManicManager is a class used for processing SpellEffect  
 ```d2
 # Nodes :
+GameplayManager: {
+    GameManager: Game Manager {
+       link: GameManager
+    }
+}
 BoardEngine: {
     AreaMaker: Area Maker {
        link: AreaMaker
     }
-    Coordinate: Coordinate {
-       link: Coordinate
-    }
     BoardManager: Board Manager {
        link: BoardManager
+    }
+    Coordinate: Coordinate {
+       link: Coordinate
     }
 }
 MagicEngine: {
@@ -33,30 +38,25 @@ MagicEngine: {
         }
     }
 }
-GameplayManager: {
-    GameManager: Game Manager {
-       link: GameManager
-    }
-}
 
 # Links :
 BoardEngine.Coordinate -- MagicEngine.MagicManager: {style.stroke-dash: 3}
 MagicEngine.MagicManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
 MagicEngine.MagicManager -- MagicEngine.Spells.SpellEffect: {style.stroke-dash: 3}
 MagicEngine.MagicManager -- MagicEngine.Spells.SpellCondition: {style.stroke-dash: 3}
-BoardEngine.AreaMaker -> MagicEngine.MagicManager: Get Spells' AoE {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-BoardEngine.BoardManager -> MagicEngine.MagicManager: Manipulate Cell {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
 GameplayManager.GameManager -> MagicEngine.MagicManager: Cast Player's spells {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
 GameplayManager.GameManager -> MagicEngine.MagicManager: Cast Telefrag {
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+BoardEngine.AreaMaker -> MagicEngine.MagicManager: Get Spells' AoE {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+BoardEngine.BoardManager -> MagicEngine.MagicManager: Manipulate Cell {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

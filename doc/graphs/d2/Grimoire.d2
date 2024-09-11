@@ -1,29 +1,39 @@
 # Nodes :
-MagicEngine: {
-    Spells: {
-        Spell: Spell {
-           link: Spell
-        }
+BoardEngine: {
+    Coordinate: Coordinate {
+       link: Coordinate
     }
+}
+MagicEngine: {
     EntityEngine: {
         AI: {
-            BasicEnemyAI: Basic EnemyAI {
-               link: BasicEnemyAI
-            }
             PlayerAI: PlayerAI {
                link: PlayerAI
             }
+            BasicEnemyAI: Basic EnemyAI {
+               link: BasicEnemyAI
+            }
+        }
+    }
+    Spells: {
+        GrimoirePage: Grimoire Page {
+           link: GrimoirePage
+        }
+        Spell: Spell {
+           link: Spell
         }
     }
 }
 
 # Links :
+BoardEngine.Coordinate -- MagicEngine.Spells.Grimoire: {style.stroke-dash: 3}
+MagicEngine.Spells.Grimoire -- MagicEngine.Spells.GrimoirePage: {style.stroke-dash: 3}
 MagicEngine.Spells.Grimoire -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
-MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Has {style.stroke-dash: 3
+MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.PlayerAI: Has {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.PlayerAI: Has {style.stroke-dash: 3
+MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Has {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

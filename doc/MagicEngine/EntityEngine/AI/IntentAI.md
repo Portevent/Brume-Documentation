@@ -13,46 +13,38 @@ An Intent is made of :
 ```d2
 # Nodes :
 BoardEngine: {
-    Coordinate: Coordinate {
-       link: Coordinate
-    }
     SelectionManager: Selection Manager {
        link: SelectionManager
     }
+    Coordinate: Coordinate {
+       link: Coordinate
+    }
 }
 MagicEngine: {
-    Spells: {
-        Spell: Spell {
-           link: Spell
-        }
-    }
     EntityEngine: {
         AI: {
             EntityAI: EntityAI {
                link: EntityAI
             }
-            BasicEnemyAI: Basic EnemyAI {
-               link: BasicEnemyAI
-            }
             PlayerAI: PlayerAI {
                link: PlayerAI
+            }
+            BasicEnemyAI: Basic EnemyAI {
+               link: BasicEnemyAI
             }
         }
         Entity: Entity {
            link: Entity
         }
     }
+    Spells: {
+        Spell: Spell {
+           link: Spell
+        }
+    }
 }
 
 # Links :
-MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Inherits {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.PlayerAI: Inherits {style.stroke-dash: 3
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
 MagicEngine.EntityEngine.AI.IntentAI -> BoardEngine.SelectionManager: Shows Intent {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
@@ -70,6 +62,14 @@ source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
 BoardEngine.Coordinate -> MagicEngine.EntityEngine.AI.IntentAI: Can have fix target {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.PlayerAI: Inherits {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}
+MagicEngine.EntityEngine.AI.IntentAI -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Inherits {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

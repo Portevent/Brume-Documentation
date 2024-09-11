@@ -1,25 +1,25 @@
 # Nodes :
-BoardEngine: {
-    Coordinate: Coordinate {
-       link: Coordinate
-    }
-}
 UI: {
     InputManager: Input Manager {
        link: InputManager
     }
 }
-MagicEngine: {
-    Spells: {
-        Grimoire: Grimoire {
-           link: Grimoire
-        }
+BoardEngine: {
+    Coordinate: Coordinate {
+       link: Coordinate
     }
+}
+MagicEngine: {
     EntityEngine: {
         AI: {
             IntentAI: IntentAI {
                link: IntentAI
             }
+        }
+    }
+    Spells: {
+        Grimoire: Grimoire {
+           link: Grimoire
         }
     }
 }

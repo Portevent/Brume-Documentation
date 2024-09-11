@@ -12,17 +12,17 @@ Every displacement generate a [[Movement]]
 It is also where [[Entity]] are instancied.  
 ```d2
 # Nodes :
+GameplayManager: {
+    GameModeManager: Game Mode Manager {
+       link: GameModeManager
+    }
+}
 BoardEngine: {
     Coordinate: Coordinate {
        link: Coordinate
     }
 }
 MagicEngine: {
-    Spells: {
-        Spell: Spell {
-           link: Spell
-        }
-    }
     EntityEngine: {
         Movement: Movement {
            link: Movement
@@ -31,10 +31,10 @@ MagicEngine: {
            link: Entity
         }
     }
-}
-GameplayManager: {
-    GameModeManager: Game Mode Manager {
-       link: GameModeManager
+    Spells: {
+        Spell: Spell {
+           link: Spell
+        }
     }
 }
 
@@ -42,11 +42,11 @@ GameplayManager: {
 BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityManager: {style.stroke-dash: 3}
 MagicEngine.EntityEngine.EntityManager -- MagicEngine.EntityEngine.Movement: {style.stroke-dash: 3}
 MagicEngine.EntityEngine.EntityManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
-MagicEngine.EntityEngine.EntityManager -> MagicEngine.EntityEngine.Entity: Has {style.stroke-dash: 3
+MagicEngine.EntityEngine.EntityManager -> GameplayManager.GameModeManager: Listen to {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.EntityEngine.EntityManager -> GameplayManager.GameModeManager: Listen to {style.stroke-dash: 3
+MagicEngine.EntityEngine.EntityManager -> MagicEngine.EntityEngine.Entity: Has {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -62,17 +62,12 @@ name|description
 [[#RegisterEntity\|RegisterEntity]] | `Add a new entity to the board`
 [[#CellFree\|CellFree]] | `Check if a cell contains no entity`
 [[#CellOccupied\|CellOccupied]] | `Check if a cell contains an entity`
-[[#MoveEntity\|MoveEntity]] | `Move an Entity toward a Cell. Will check if destination cell is free, and will return a failing Movement if not.
-Will also trigger animation move to`
-[[#MoveEntity\|MoveEntity]] | `Move an Entity from a Cell toward another Cell. Will check if "from" cell is occupied,
-and if destination cell is free, and will return a failing Movement if not.
-Will also trigger animation move to`
-[[#TpEntity\|TpEntity]] | `Tp an Entity to a Cell.
-Will Trigger animation tp to, and also trigger a Telefrag if target cell is occupied.`
-[[#TpEntity\|TpEntity]] | `Tp an Entity from a Cell to another Cell.
-Will Trigger animation tp to, and also trigger a Telefrag if target cell is occupied.`
-[[#Kill\|Kill]] | `Kill an Entity`
+[[#MoveEntity\|MoveEntity]] | `Move an Entity toward a Cell`
+[[#MoveEntity\|MoveEntity]] | `Move an Entity from a Cell toward another Cell`
+[[#TpEntity\|TpEntity]] | `Tp an Entity to a Cell.`
+[[#TpEntity\|TpEntity]] | `Tp an Entity from a Cell to another Cell.`
 [[#Unregister\|Unregister]] | `Remove an Entity from the game (remove it from EntityManager, delete its gameobject)`
+[[#ClearCell\|ClearCell]] | `Clear a cell, removing Entity of it`
 [[#Summons\|Summons]] | `Create an Entity linked to a summoner's spell`
 [[#CreateEntity\|CreateEntity]] | `Create an Entity`
 [[#InstantiateGameObject\|InstantiateGameObject]] | `Instantiate a Gameobject linked to an entityName`
@@ -140,8 +135,7 @@ name|type|description
 
 ---
 ### MoveEntity
-Move an Entity toward a Cell. Will check if destination cell is free, and will return a failing Movement if not.
-Will also trigger animation move to
+Move an Entity toward a Cell
 
 #### Parameters
 name|type|description
@@ -154,9 +148,7 @@ name|type|description
 
 ---
 ### MoveEntity
-Move an Entity from a Cell toward another Cell. Will check if "from" cell is occupied,
-and if destination cell is free, and will return a failing Movement if not.
-Will also trigger animation move to
+Move an Entity from a Cell toward another Cell
 
 #### Parameters
 name|type|description
@@ -171,7 +163,6 @@ NoEntity, NoDestination, Obstructed or Success
 ---
 ### TpEntity
 Tp an Entity to a Cell.
-Will Trigger animation tp to, and also trigger a Telefrag if target cell is occupied.
 
 #### Parameters
 name|type|description
@@ -186,7 +177,6 @@ NoDestination, Telefrag or Success
 ---
 ### TpEntity
 Tp an Entity from a Cell to another Cell.
-Will Trigger animation tp to, and also trigger a Telefrag if target cell is occupied.
 
 #### Parameters
 name|type|description
@@ -199,15 +189,6 @@ name|type|description
 NoDestination, Telefrag or Success
 
 ---
-### Kill
-Kill an Entity
-
-#### Parameters
-name|type|description
------|-----|-----
-**entity**|[[Entity]]|Entity
-
----
 ### Unregister
 Remove an Entity from the game (remove it from EntityManager, delete its gameobject)
 
@@ -215,7 +196,11 @@ Remove an Entity from the game (remove it from EntityManager, delete its gameobj
 name|type|description
 -----|-----|-----
 **entity**|[[Entity]]|Entity to unregister
-**checkSummoner**|`bool`|Set this to false to not check if the entity is summoned by another one. Will cause issue if properly set to false
+**checkSummoner**|`bool`|Set this to false to not check if the entity is summoned by another one. Will cause issue if incorrectly set to false
+
+---
+### ClearCell
+Clear a cell, removing Entity of it
 
 ---
 ### Summons

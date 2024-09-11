@@ -9,6 +9,14 @@ tag:
 Keep track of the Player  
 ```d2
 # Nodes :
+GameplayManager: {
+    InitiativeManager: Initiative Manager {
+       link: InitiativeManager
+    }
+    GameModeManager: Game Mode Manager {
+       link: GameModeManager
+    }
+}
 BoardEngine: {
     ChunkManager: Chunk Manager {
        link: ChunkManager
@@ -29,17 +37,9 @@ MagicEngine: {
        link: MagicManager
     }
 }
-GameplayManager: {
-    GameModeManager: Game Mode Manager {
-       link: GameModeManager
-    }
-    InitiativeManager: Initiative Manager {
-       link: InitiativeManager
-    }
-}
 
 # Links :
-GameplayManager.GameManager -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Get Player {style.stroke-dash: 3
+GameplayManager.GameModeManager -> GameplayManager.GameManager: Pass turns {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -67,7 +67,7 @@ GameplayManager.GameManager -> MagicEngine.EntityEngine.Entity: Play Turn {
 source-arrowhead: {}
 target-arrowhead: All Entity{shape: arrow}
 }
-GameplayManager.GameModeManager -> GameplayManager.GameManager: Pass turns {
+GameplayManager.GameManager -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Get Player {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

@@ -7,8 +7,14 @@ tag:
 - class
 ---
 Base Coordinate system used for the Board  
+Coordinates are nullable, and must be checked with .HasValue  
 ```d2
 # Nodes :
+UI: {
+    DeckManager: Deck Manager {
+       link: DeckManager
+    }
+}
 BoardEngine: {
     AreaMaker: Area Maker {
        link: AreaMaker
@@ -17,42 +23,43 @@ BoardEngine: {
        link: BoardManager
     }
 }
-UI: {
-    DeckManager: Deck Manager {
-       link: DeckManager
-    }
-}
 MagicEngine: {
     EntityEngine: {
-        EntityManager: Entity Manager {
-           link: EntityManager
-        }
-        EntityAnimator: Entity Animator {
-           link: EntityAnimator
-        }
         AI: {
-            PlayerAI: PlayerAI {
-               link: PlayerAI
-            }
             IntentAI: IntentAI {
                link: IntentAI
             }
+            PlayerAI: PlayerAI {
+               link: PlayerAI
+            }
+        }
+        EntityManager: Entity Manager {
+           link: EntityManager
         }
         Entity: Entity {
            link: Entity
+        }
+        EntityAnimator: Entity Animator {
+           link: EntityAnimator
         }
     }
     MagicManager: Magic Manager {
        link: MagicManager
     }
+    Spells: {
+        Grimoire: Grimoire {
+           link: Grimoire
+        }
+    }
 }
 
 # Links :
 BoardEngine.Coordinate -- UI.DeckManager: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- MagicEngine.EntityEngine.AI.PlayerAI: {style.stroke-dash: 3}
 BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityManager: {style.stroke-dash: 3}
 BoardEngine.Coordinate -- MagicEngine.EntityEngine.EntityAnimator: {style.stroke-dash: 3}
-BoardEngine.Coordinate -- MagicEngine.EntityEngine.AI.PlayerAI: {style.stroke-dash: 3}
 BoardEngine.Coordinate -- MagicEngine.MagicManager: {style.stroke-dash: 3}
+BoardEngine.Coordinate -- MagicEngine.Spells.Grimoire: {style.stroke-dash: 3}
 BoardEngine.BoardManager -- BoardEngine.Coordinate: {style.stroke-dash: 3}
 BoardEngine.AreaMaker -> BoardEngine.Coordinate: ...make a list of Coordinate {
 source-arrowhead: {}

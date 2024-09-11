@@ -10,31 +10,41 @@ A grimoire represent the ability of entity to cast spell
 Grimoire hold a list of usable spell and their cooldown.  
 ```d2
 # Nodes :
-MagicEngine: {
-    Spells: {
-        Spell: Spell {
-           link: Spell
-        }
+BoardEngine: {
+    Coordinate: Coordinate {
+       link: Coordinate
     }
+}
+MagicEngine: {
     EntityEngine: {
         AI: {
-            BasicEnemyAI: Basic EnemyAI {
-               link: BasicEnemyAI
-            }
             PlayerAI: PlayerAI {
                link: PlayerAI
             }
+            BasicEnemyAI: Basic EnemyAI {
+               link: BasicEnemyAI
+            }
+        }
+    }
+    Spells: {
+        GrimoirePage: Grimoire Page {
+           link: GrimoirePage
+        }
+        Spell: Spell {
+           link: Spell
         }
     }
 }
 
 # Links :
+BoardEngine.Coordinate -- MagicEngine.Spells.Grimoire: {style.stroke-dash: 3}
+MagicEngine.Spells.Grimoire -- MagicEngine.Spells.GrimoirePage: {style.stroke-dash: 3}
 MagicEngine.Spells.Grimoire -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
-MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Has {style.stroke-dash: 3
+MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.PlayerAI: Has {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.PlayerAI: Has {style.stroke-dash: 3
+MagicEngine.Spells.Grimoire -> MagicEngine.EntityEngine.AI.BasicEnemyAI: Has {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -45,16 +55,11 @@ target-arrowhead: {shape: arrow}
 name|description
 ----|----
 [[#Awake\|Awake]] | `Take a list of spells and create a Grimoire with theses spells in the same order (0 to n)`
-[[#AddSpell\|AddSpell]] | `Add a spell to a position`
-[[#RemoveSpell\|RemoveSpell]] | `Remove Spell from the Grimoire`
-[[#SetCooldown\|SetCooldown]] | `Set the Cooldown of specified to value`
-[[#GetCooldown\|GetCooldown]] | `Return the cooldown of a Spell`
-[[#GetCooldownEvent\|GetCooldownEvent]] | `Return the CooldownEvent of a spell`
-[[#ReduceAllCooldown\|ReduceAllCooldown]] | `Reduce all cooldown duration`
-[[#ApplyCooldown\|ApplyCooldown]] | `Set a spell cooldown to its cooldown duration`
-[[#GetFirstValidSpell\|GetFirstValidSpell]] | `Get the first spell that is not on cooldown`
-[[#GetFirstValidSpellOn\|GetFirstValidSpellOn]] | `Get the first spell that is not on cooldown and can be cast on target`
-[[#GetSpells\|GetSpells]] | `Return an Iterator of all spells`
+[[#AddSpell\|AddSpell]] | `Add a new Page with specified Spell`
+[[#ReduceAllCooldown\|ReduceAllCooldown]] | `Reduce all cooldown durations`
+[[#GetFirstValidPage\|GetFirstValidPage]] | `Get the first page that is not on cooldown`
+[[#GetFirstValidPageOnTarget\|GetFirstValidPageOnTarget]] | `Get the first page that is not on cooldown and can be cast on target`
+[[#GetFirstValidPageOnCell\|GetFirstValidPageOnCell]] | `Get the first page that is not on cooldown and can be cast on cell`
 
 ---
 # Functions :
@@ -65,68 +70,21 @@ Take a list of spells and create a Grimoire with theses spells in the same order
 
 ---
 ### AddSpell
-Add a spell to a position
+Add a new Page with specified Spell
 
 #### Parameters
 name|type|description
 -----|-----|-----
 **spell**|[[Spell]]|Spell to add to the Grimoire
-**position**|`int`|index where to set the Spell
+**position**|`int`|index where to set the Page (0 by default, first page)
 **cooldown**|`int`|cooldown of the Spell once in the Grimoire
 
 #### Return
-- `CooldownEvent` : Return the CooldownEvent linked to the Spell
-
----
-### RemoveSpell
-Remove Spell from the Grimoire
-
-#### Parameters
-name|type|description
------|-----|-----
-**spell**|[[Spell]]|Spell to remove
-
----
-### SetCooldown
-Set the Cooldown of specified to value
-
-#### Parameters
-name|type|description
------|-----|-----
-**spell**|[[Spell]]|Spell to which the cooldown is applied
-**value**|`int`|duration of the cooldown
-
-#### Return
-- `int` : cooldown applied
-
----
-### GetCooldown
-Return the cooldown of a Spell
-
-#### Parameters
-name|type|description
------|-----|-----
-**spell**|[[Spell]]|Spell to check
-**defaultCooldown**|`int`|value to return if not present
-
-#### Return
-- `int` : cooldown (turns count)
-
----
-### GetCooldownEvent
-Return the CooldownEvent of a spell
-
-#### Parameters
-name|type|description
------|-----|-----
-**spell**|[[Spell]]|Spell to check
-
-#### Return
-- `CooldownEvent` : CooldownEvent of the spell
+- [[GrimoirePage]] : Return the Page linked to the Spell
 
 ---
 ### ReduceAllCooldown
-Reduce all cooldown duration
+Reduce all cooldown durations
 
 #### Parameters
 name|type|description
@@ -134,41 +92,32 @@ name|type|description
 **value**|`int`|number of turn to remove (-1 to reset it to 0)
 
 ---
-### ApplyCooldown
-Set a spell cooldown to its cooldown duration
+### GetFirstValidPage
+Get the first page that is not on cooldown
+
+#### Return
+- `Page` : Page, or null if all are on cooldown
+
+---
+### GetFirstValidPageOnTarget
+Get the first page that is not on cooldown and can be cast on target
 
 #### Parameters
 name|type|description
 -----|-----|-----
-**spell**|[[Spell]]|Spell to apply cooldown on
-**duration**|`int`|duration to apply (-1 to use the spell cooldown duration)
-
-#### Return
-- `int` : the cooldown duration applied
-
----
-### GetFirstValidSpell
-Get the first spell that is not on cooldown
-
-#### Return
-- [[Spell]] : Spell, or null if all are on cooldown
-
----
-### GetFirstValidSpellOn
-Get the first spell that is not on cooldown and can be cast on target
-
-#### Parameters
-name|type|description
------|-----|-----
-**caster**|[[Entity]]|Entity casting
 **target**|[[Entity]]|Entity targeted
 
 #### Return
-- [[Spell]] : Spell, or null if all are on cooldown
+- `Page` : Page, or null if all are on cooldown
 
 ---
-### GetSpells
-Return an Iterator of all spells
+### GetFirstValidPageOnCell
+Get the first page that is not on cooldown and can be cast on cell
+
+#### Parameters
+name|type|description
+-----|-----|-----
+**target**|[[Coordinate]]|Cell targeted
 
 #### Return
-- `IEnumerable` : IEnumerable with all spells
+- `Page` : Page, or null if all are on cooldown

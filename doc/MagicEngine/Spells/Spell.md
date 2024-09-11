@@ -25,29 +25,29 @@ All effects are applied before changing target
 ```d2
 # Nodes :
 MagicEngine: {
-    Spells: {
-        Grimoire: Grimoire {
-           link: Grimoire
-        }
-    }
     EntityEngine: {
-        EntityManager: Entity Manager {
-           link: EntityManager
-        }
         AI: {
             IntentAI: IntentAI {
                link: IntentAI
             }
         }
+        EntityManager: Entity Manager {
+           link: EntityManager
+        }
     }
     MagicManager: Magic Manager {
        link: MagicManager
     }
+    Spells: {
+        Grimoire: Grimoire {
+           link: Grimoire
+        }
+    }
 }
 
 # Links :
-MagicEngine.Spells.Grimoire -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
 MagicEngine.MagicManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
+MagicEngine.Spells.Grimoire -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
 MagicEngine.EntityEngine.EntityManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
 MagicEngine.Spells.Spell -> MagicEngine.EntityEngine.AI.IntentAI: Can have intent {style.stroke-dash: 3
 source-arrowhead: {}

@@ -9,14 +9,14 @@ tag:
 A Spell's effect  
 ```d2
 # Nodes :
-MagicEngine: {
-    MagicManager: Magic Manager {
-       link: MagicManager
-    }
-}
 AnimationEngine: {
     AnimationTrigger: Animation Trigger {
        link: AnimationTrigger
+    }
+}
+MagicEngine: {
+    MagicManager: Magic Manager {
+       link: MagicManager
     }
 }
 

@@ -11,12 +11,12 @@ It will always try to take the first available spell in the grimoir, and intent 
 If it can't cast any spell on the player, it will move toward it  
 ```d2
 # Nodes :
-MagicEngine: {
-    Spells: {
-        Grimoire: Grimoire {
-           link: Grimoire
-        }
+GameplayManager: {
+    GameManager: Game Manager {
+       link: GameManager
     }
+}
+MagicEngine: {
     EntityEngine: {
         AI: {
             IntentAI: IntentAI {
@@ -24,10 +24,10 @@ MagicEngine: {
             }
         }
     }
-}
-GameplayManager: {
-    GameManager: Game Manager {
-       link: GameManager
+    Spells: {
+        Grimoire: Grimoire {
+           link: Grimoire
+        }
     }
 }
 

@@ -9,27 +9,27 @@ tag:
 PlayerAI is an IntentAI that listen to InputManager to setup Intent and actually play turn  
 ```d2
 # Nodes :
-BoardEngine: {
-    Coordinate: Coordinate {
-       link: Coordinate
-    }
-}
 UI: {
     InputManager: Input Manager {
        link: InputManager
     }
 }
-MagicEngine: {
-    Spells: {
-        Grimoire: Grimoire {
-           link: Grimoire
-        }
+BoardEngine: {
+    Coordinate: Coordinate {
+       link: Coordinate
     }
+}
+MagicEngine: {
     EntityEngine: {
         AI: {
             IntentAI: IntentAI {
                link: IntentAI
             }
+        }
+    }
+    Spells: {
+        Grimoire: Grimoire {
+           link: Grimoire
         }
     }
 }

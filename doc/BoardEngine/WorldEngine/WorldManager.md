@@ -12,6 +12,12 @@ Make uses of [[TilemapManager]]
 ```d2
 # Nodes :
 BoardEngine: {
+    ChunkManager: Chunk Manager {
+       link: ChunkManager
+    }
+    TilemapManager: Tilemap Manager {
+       link: TilemapManager
+    }
     BoardManager: Board Manager {
        link: BoardManager
     }
@@ -19,12 +25,6 @@ BoardEngine: {
         World: World {
            link: World
         }
-    }
-    TilemapManager: Tilemap Manager {
-       link: TilemapManager
-    }
-    ChunkManager: Chunk Manager {
-       link: ChunkManager
     }
 }
 

@@ -10,14 +10,14 @@ Convert Area to Coordinates[]
 ```d2
 # Nodes :
 BoardEngine: {
-    Coordinate: Coordinate {
-       link: Coordinate
+    SelectionManager: Selection Manager {
+       link: SelectionManager
     }
     Area: Area {
        link: Area
     }
-    SelectionManager: Selection Manager {
-       link: SelectionManager
+    Coordinate: Coordinate {
+       link: Coordinate
     }
 }
 MagicEngine: {

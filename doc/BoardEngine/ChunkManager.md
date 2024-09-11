@@ -9,24 +9,24 @@ tag:
 Linked to a [[World]], generate and unload world part as the player moves around  
 ```d2
 # Nodes :
-BoardEngine: {
-    WorldEngine: {
-        World: World {
-           link: World
-        }
-        WorldManager: World Manager {
-           link: WorldManager
-        }
-    }
-}
 GameplayManager: {
     GameManager: Game Manager {
        link: GameManager
     }
 }
+BoardEngine: {
+    WorldEngine: {
+        WorldManager: World Manager {
+           link: WorldManager
+        }
+        World: World {
+           link: World
+        }
+    }
+}
 
 # Links :
-BoardEngine.WorldEngine.WorldManager -> BoardEngine.ChunkManager: Update view coordinate {
+GameplayManager.GameManager -> BoardEngine.ChunkManager: Update Player coordinate {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -38,7 +38,7 @@ BoardEngine.ChunkManager -> BoardEngine.WorldEngine.World: Unload Chunks {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-GameplayManager.GameManager -> BoardEngine.ChunkManager: Update Player coordinate {
+BoardEngine.WorldEngine.WorldManager -> BoardEngine.ChunkManager: Update view coordinate {
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
