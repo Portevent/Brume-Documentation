@@ -15,7 +15,9 @@ Each have an event associated for when that value is changed
 
 Hold a InputType value, for whether the user use a mouse or a controller
 
-It is also linked to the DeckManager  
+It is also linked to the DeckManager
+
+Outdated comment  
 ```d2
 # Nodes :
 MagicEngine: {
