@@ -1,0 +1,23 @@
+# Nodes :
+EntityEngine: {
+    EntityManagement: {
+        EntityRegistry: Entity Registry {
+           link: EntityRegistry
+        }
+    }
+}
+MagicEngine: {
+    MagicManager: Magic Manager {
+       link: MagicManager
+    }
+    GrimoireEngine: {
+        Grimoire: Grimoire {
+           link: Grimoire
+        }
+    }
+}
+
+# Links :
+BoardEngine.DimensionCoordinate -- EntityEngine.EntityManagement.EntityRegistry: {style.stroke-dash: 3}
+BoardEngine.DimensionCoordinate -- MagicEngine.MagicManager: {style.stroke-dash: 3}
+BoardEngine.DimensionCoordinate -- MagicEngine.GrimoireEngine.Grimoire: {style.stroke-dash: 3}

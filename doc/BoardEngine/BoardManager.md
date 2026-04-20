@@ -7,7 +7,7 @@ tag:
 - class
 ---
 Use the [[DimensionManager]] to compute existing cell ([[DimensionCoordinate]]) and free cell toward/away.
-Also communicate with [[EntityManager]] to determine if a cell is free.  
+Also communicate with [[EntityRegistry]] to determine if a cell is free.  
 ```d2
 # Nodes :
 WorldEngine: {

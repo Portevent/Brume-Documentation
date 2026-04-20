@@ -10,6 +10,11 @@ A grimoire represent the ability of entity to cast spell
 Grimoire hold a list of usable spell and their cooldown.  
 ```d2
 # Nodes :
+BoardEngine: {
+    DimensionCoordinate: Dimension Coordinate {
+       link: DimensionCoordinate
+    }
+}
 SpellEngine: {
     Spell: Spell {
        link: Spell
@@ -26,6 +31,7 @@ MagicEngine: {
 # Links :
 MagicEngine.GrimoireEngine.Grimoire -- MagicEngine.GrimoireEngine.GrimoirePage: {style.stroke-dash: 3}
 MagicEngine.GrimoireEngine.Grimoire -- SpellEngine.Spell: {style.stroke-dash: 3}
+BoardEngine.DimensionCoordinate -- MagicEngine.GrimoireEngine.Grimoire: {style.stroke-dash: 3}
 
 ```
 ---
@@ -93,7 +99,7 @@ Get the first page that is not on cooldown and can be cast on cell
 name|type|description
 -----|-----|-----
 **caster**|`IEntity`|Caster
-**target**|`DimensionCoordinate`|Cell targeted
+**target**|[[DimensionCoordinate]]|Cell targeted
 
 #### Return
 - [[GrimoirePage]] : Page, or null if all are on cooldown

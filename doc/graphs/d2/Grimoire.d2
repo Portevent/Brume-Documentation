@@ -1,4 +1,9 @@
 # Nodes :
+BoardEngine: {
+    DimensionCoordinate: Dimension Coordinate {
+       link: DimensionCoordinate
+    }
+}
 SpellEngine: {
     Spell: Spell {
        link: Spell
@@ -15,3 +20,4 @@ MagicEngine: {
 # Links :
 MagicEngine.GrimoireEngine.Grimoire -- MagicEngine.GrimoireEngine.GrimoirePage: {style.stroke-dash: 3}
 MagicEngine.GrimoireEngine.Grimoire -- SpellEngine.Spell: {style.stroke-dash: 3}
+BoardEngine.DimensionCoordinate -- MagicEngine.GrimoireEngine.Grimoire: {style.stroke-dash: 3}

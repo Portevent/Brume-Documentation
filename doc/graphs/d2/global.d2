@@ -50,6 +50,9 @@ EntityEngine: {
     }
 }
 BoardEngine: {
+    DimensionCoordinate: Dimension Coordinate {
+       link: DimensionCoordinate
+    }
     BoardManager: Board Manager {
        link: BoardManager
     }
@@ -212,6 +215,9 @@ BoardEngine.Coordinate -- EntityEngine.EntityComposition.в_Positional.Positiona
 BoardEngine.Coordinate -- WorldEngine.CanvasEngine.DimensionCanvasTilemap: {style.stroke-dash: 3}
 BoardEngine.Coordinate -- WorldEngine.CanvasEngine.DimensionCanvas: {style.stroke-dash: 3}
 BoardEngine.Coordinate -- WorldGeneratorEngine.Tools.QuickPainter: {style.stroke-dash: 3}
+BoardEngine.DimensionCoordinate -- EntityEngine.EntityManagement.EntityRegistry: {style.stroke-dash: 3}
+BoardEngine.DimensionCoordinate -- MagicEngine.MagicManager: {style.stroke-dash: 3}
+BoardEngine.DimensionCoordinate -- MagicEngine.GrimoireEngine.Grimoire: {style.stroke-dash: 3}
 WorldEngine.DimensionEngine.Dimension -- WorldEngine.CanvasEngine.DimensionCanvas: {style.stroke-dash: 3}
 WorldEngine.DimensionEngine.Dimension -- WorldEngine.DimensionEngine.DimensionManager: {style.stroke-dash: 3}
 WorldEngine.DimensionEngine.Dimension -- WorldEngine.WorldGenerationEngine.WorldGenerator: {style.stroke-dash: 3}

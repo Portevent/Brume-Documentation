@@ -13,9 +13,15 @@ EntityEngine: {
         }
     }
 }
+BoardEngine: {
+    DimensionCoordinate: Dimension Coordinate {
+       link: DimensionCoordinate
+    }
+}
 
 # Links :
 EntityEngine.EntityComposition.с_Entity.Entity -- EntityEngine.EntityManagement.EntityRegistry: {style.stroke-dash: 3}
+BoardEngine.DimensionCoordinate -- EntityEngine.EntityManagement.EntityRegistry: {style.stroke-dash: 3}
 EntityEngine.EntityManagement.EntityRegistry -> EntityEngine.EntityComposition.в_Positional.Positional: Has {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}

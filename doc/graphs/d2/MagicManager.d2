@@ -1,5 +1,8 @@
 # Nodes :
 BoardEngine: {
+    DimensionCoordinate: Dimension Coordinate {
+       link: DimensionCoordinate
+    }
     BoardManager: Board Manager {
        link: BoardManager
     }
@@ -23,6 +26,7 @@ SpellEngine: {
 MagicEngine.MagicManager -- SpellEngine.Spell: {style.stroke-dash: 3}
 MagicEngine.MagicManager -- SpellEngine.SpellEffect: {style.stroke-dash: 3}
 MagicEngine.MagicManager -- SpellEngine.SpellCondition: {style.stroke-dash: 3}
+BoardEngine.DimensionCoordinate -- MagicEngine.MagicManager: {style.stroke-dash: 3}
 BoardEngine.AreaMaker -> MagicEngine.MagicManager: Get Spells' AoE {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}

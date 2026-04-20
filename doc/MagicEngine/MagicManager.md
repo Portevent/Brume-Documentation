@@ -10,6 +10,9 @@ ManicManager is a class used for processing SpellEffect
 ```d2
 # Nodes :
 BoardEngine: {
+    DimensionCoordinate: Dimension Coordinate {
+       link: DimensionCoordinate
+    }
     BoardManager: Board Manager {
        link: BoardManager
     }
@@ -33,6 +36,7 @@ SpellEngine: {
 MagicEngine.MagicManager -- SpellEngine.Spell: {style.stroke-dash: 3}
 MagicEngine.MagicManager -- SpellEngine.SpellEffect: {style.stroke-dash: 3}
 MagicEngine.MagicManager -- SpellEngine.SpellCondition: {style.stroke-dash: 3}
+BoardEngine.DimensionCoordinate -- MagicEngine.MagicManager: {style.stroke-dash: 3}
 BoardEngine.AreaMaker -> MagicEngine.MagicManager: Get Spells' AoE {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
@@ -66,8 +70,8 @@ name|type|description
 -----|-----|-----
 **spell**|[[Spell]]|Spell being casted
 **caster**|[[Entity]]|Entity casting the spell
-**origin**|`DimensionCoordinate`|DimensionCoordinate from which the spell is cast
-**target**|`DimensionCoordinate`|DimensionCoordinate on which the spell is cast
+**origin**|[[DimensionCoordinate]]|DimensionCoordinate from which the spell is cast
+**target**|[[DimensionCoordinate]]|DimensionCoordinate on which the spell is cast
 
 ---
 ### CastEffect
@@ -79,8 +83,8 @@ name|type|description
 **spell**|[[Spell]]|The spell from which the effect is from
 **caster**|[[Entity]]|Entity casting the spell
 **effect**|[[SpellEffect]]|The effect being cast
-**origin**|`DimensionCoordinate`|DimensionCoordinate from which the spell is cast
-**target**|`DimensionCoordinate`|DimensionCoordinate on which the spell is cast
+**origin**|[[DimensionCoordinate]]|DimensionCoordinate from which the spell is cast
+**target**|[[DimensionCoordinate]]|DimensionCoordinate on which the spell is cast
 
 #### Exceptions
 - `ArgumentOutOfRangeException` : 
@@ -110,8 +114,8 @@ Check if a caster can cast a spell from a point to a target (validate range Cond
 name|type|description
 -----|-----|-----
 **spell**|[[Spell]]|Spell intended
-**origin**|`DimensionCoordinate`|from which the spell is cast
-**target**|`DimensionCoordinate`|target where the spell is intended 
+**origin**|[[DimensionCoordinate]]|from which the spell is cast
+**target**|[[DimensionCoordinate]]|target where the spell is intended 
 
 #### Return
 - `bool` : boolean, true if the spell can be cast on that tile
@@ -125,8 +129,8 @@ name|type|description
 -----|-----|-----
 **spell**|[[Spell]]|Spell intended
 **caster**|[[Entity]]|Entity trying to cast the spell
-**origin**|`DimensionCoordinate`|from which the spell is cast
-**target**|`DimensionCoordinate`|target where the spell is intended 
+**origin**|[[DimensionCoordinate]]|from which the spell is cast
+**target**|[[DimensionCoordinate]]|target where the spell is intended 
 
 #### Return
 - `bool` : boolean, true if the spell can be cast on that tile
@@ -144,8 +148,8 @@ name|type|description
 **spell**|[[Spell]]|Spell intended
 **condition**|[[SpellCondition]]|SpellCondition tested
 **caster**|[[Entity]]|Entity trying to cast the spell
-**origin**|`DimensionCoordinate`|from which the spell is cast
-**target**|`DimensionCoordinate`|target where the spell is intended 
+**origin**|[[DimensionCoordinate]]|from which the spell is cast
+**target**|[[DimensionCoordinate]]|target where the spell is intended 
 
 #### Return
 - `bool` : boolean, true if the SpellCondition is validated
