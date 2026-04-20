@@ -1,0 +1,31 @@
+# Nodes :
+BoardEngine: {
+    Coordinate: Coordinate {
+       link: Coordinate
+    }
+}
+WorldEngine: {
+    DimensionEngine: {
+        Dimension: Dimension {
+           link: Dimension
+        }
+    }
+    CanvasEngine: {
+        Cell: Cell {
+           link: Cell
+        }
+    }
+}
+WorldGeneratorEngine: {
+    Tools: {
+        QuickPainter: Quick Painter {
+           link: QuickPainter
+        }
+    }
+}
+
+# Links :
+BoardEngine.Coordinate -- WorldEngine.CanvasEngine.DimensionCanvas: {style.stroke-dash: 3}
+WorldEngine.DimensionEngine.Dimension -- WorldEngine.CanvasEngine.DimensionCanvas: {style.stroke-dash: 3}
+WorldEngine.CanvasEngine.DimensionCanvas -- WorldGeneratorEngine.Tools.QuickPainter: {style.stroke-dash: 3}
+WorldEngine.CanvasEngine.Cell -- WorldEngine.CanvasEngine.DimensionCanvas: {style.stroke-dash: 3}

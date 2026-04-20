@@ -9,49 +9,30 @@ tag:
 ManicManager is a class used for processing SpellEffect  
 ```d2
 # Nodes :
-GameplayManager: {
-    GameManager: Game Manager {
-       link: GameManager
-    }
-}
 BoardEngine: {
-    AreaMaker: Area Maker {
-       link: AreaMaker
-    }
     BoardManager: Board Manager {
        link: BoardManager
     }
-    Coordinate: Coordinate {
-       link: Coordinate
+    AreaMaker: Area Maker {
+       link: AreaMaker
     }
 }
-MagicEngine: {
-    Spells: {
-        SpellCondition: Spell Condition {
-           link: SpellCondition
-        }
-        Spell: Spell {
-           link: Spell
-        }
-        SpellEffect: Spell Effect {
-           link: SpellEffect
-        }
+SpellEngine: {
+    SpellCondition: Spell Condition {
+       link: SpellCondition
+    }
+    Spell: Spell {
+       link: Spell
+    }
+    SpellEffect: Spell Effect {
+       link: SpellEffect
     }
 }
 
 # Links :
-BoardEngine.Coordinate -- MagicEngine.MagicManager: {style.stroke-dash: 3}
-MagicEngine.MagicManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
-MagicEngine.MagicManager -- MagicEngine.Spells.SpellEffect: {style.stroke-dash: 3}
-MagicEngine.MagicManager -- MagicEngine.Spells.SpellCondition: {style.stroke-dash: 3}
-GameplayManager.GameManager -> MagicEngine.MagicManager: Cast Player's spells {
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-GameplayManager.GameManager -> MagicEngine.MagicManager: Cast Telefrag {
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
+MagicEngine.MagicManager -- SpellEngine.Spell: {style.stroke-dash: 3}
+MagicEngine.MagicManager -- SpellEngine.SpellEffect: {style.stroke-dash: 3}
+MagicEngine.MagicManager -- SpellEngine.SpellCondition: {style.stroke-dash: 3}
 BoardEngine.AreaMaker -> MagicEngine.MagicManager: Get Spells' AoE {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
@@ -69,7 +50,6 @@ name|description
 [[#Cast\|Cast]] | `Cast a spell on a target`
 [[#CastEffect\|CastEffect]] | `Execute a spellEffect`
 [[#ValidateEntity\|ValidateEntity]] | `Check if a SpellEffect is valid on an entity and can be applied on it`
-[[#ValidatePlayerSpellConditions\|ValidatePlayerSpellConditions]] | `Check if a Spell can be casted by the player on a target (from player position)`
 [[#ValidateSpellRange\|ValidateSpellRange]] | `Check if a caster can cast a spell from a point to a target (validate range Condition)`
 [[#ValidateSpellConditions\|ValidateSpellConditions]] | `Check if a caster can cast a spell from a point to a target (validate all SpellCondition)`
 [[#ValidateCondition\|ValidateCondition]] | `Validate a single SpellCondition`
@@ -86,8 +66,8 @@ name|type|description
 -----|-----|-----
 **spell**|[[Spell]]|Spell being casted
 **caster**|[[Entity]]|Entity casting the spell
-**origin**|[[Coordinate]]|Coordinate from which the spell is casted
-**target**|[[Coordinate]]|Coordinate on which the spell is casted
+**origin**|`DimensionCoordinate`|DimensionCoordinate from which the spell is cast
+**target**|`DimensionCoordinate`|DimensionCoordinate on which the spell is cast
 
 ---
 ### CastEffect
@@ -98,9 +78,9 @@ name|type|description
 -----|-----|-----
 **spell**|[[Spell]]|The spell from which the effect is from
 **caster**|[[Entity]]|Entity casting the spell
-**effect**|[[SpellEffect]]|The effect being casted
-**origin**|[[Coordinate]]|Coordinate from which the spell is casted
-**target**|[[Coordinate]]|Coordinate on which the spell is casted
+**effect**|[[SpellEffect]]|The effect being cast
+**origin**|`DimensionCoordinate`|DimensionCoordinate from which the spell is cast
+**target**|`DimensionCoordinate`|DimensionCoordinate on which the spell is cast
 
 #### Exceptions
 - `ArgumentOutOfRangeException` : 
@@ -123,19 +103,6 @@ name|type|description
 - `ArgumentOutOfRangeException` : unknown Criteria
 
 ---
-### ValidatePlayerSpellConditions
-Check if a Spell can be casted by the player on a target (from player position)
-
-#### Parameters
-name|type|description
------|-----|-----
-**spell**|[[Spell]]|Spell intended
-**target**|[[Coordinate]]|Target intended
-
-#### Return
-- `bool` : boolean, true if the spell can be cast on that tile
-
----
 ### ValidateSpellRange
 Check if a caster can cast a spell from a point to a target (validate range Condition)
 
@@ -143,9 +110,8 @@ Check if a caster can cast a spell from a point to a target (validate range Cond
 name|type|description
 -----|-----|-----
 **spell**|[[Spell]]|Spell intended
-**caster**|[[Entity]]|Entity trying to cast the spell
-**origin**|[[Coordinate]]|from which the spell is casted
-**target**|[[Coordinate]]|target where the spell is intended 
+**origin**|`DimensionCoordinate`|from which the spell is cast
+**target**|`DimensionCoordinate`|target where the spell is intended 
 
 #### Return
 - `bool` : boolean, true if the spell can be cast on that tile
@@ -159,8 +125,8 @@ name|type|description
 -----|-----|-----
 **spell**|[[Spell]]|Spell intended
 **caster**|[[Entity]]|Entity trying to cast the spell
-**origin**|[[Coordinate]]|from which the spell is casted
-**target**|[[Coordinate]]|target where the spell is intended 
+**origin**|`DimensionCoordinate`|from which the spell is cast
+**target**|`DimensionCoordinate`|target where the spell is intended 
 
 #### Return
 - `bool` : boolean, true if the spell can be cast on that tile
@@ -178,8 +144,8 @@ name|type|description
 **spell**|[[Spell]]|Spell intended
 **condition**|[[SpellCondition]]|SpellCondition tested
 **caster**|[[Entity]]|Entity trying to cast the spell
-**origin**|[[Coordinate]]|from which the spell is casted
-**target**|[[Coordinate]]|target where the spell is intended 
+**origin**|`DimensionCoordinate`|from which the spell is cast
+**target**|`DimensionCoordinate`|target where the spell is intended 
 
 #### Return
 - `bool` : boolean, true if the SpellCondition is validated

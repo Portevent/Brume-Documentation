@@ -8,73 +8,234 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "AnimationEngine",
+      "query": "GameEngine",
       "color": {
         "a": 1,
-        "rgb": 653312
+        "rgb": 15990991
       }
     },
     {
-      "query": "UI",
+      "query": "Test",
       "color": {
         "a": 1,
-        "rgb": 27890
-      }
-    },
-    {
-      "query": "Misc",
-      "color": {
-        "a": 1,
-        "rgb": 63529
-      }
-    },
-    {
-      "query": "GameplayManager",
-      "color": {
-        "a": 1,
-        "rgb": 16158976
-      }
-    },
-    {
-      "query": "BoardEngine",
-      "color": {
-        "a": 1,
-        "rgb": 129024
-      }
-    },
-    {
-      "query": "WorldEngine",
-      "color": {
-        "a": 1,
-        "rgb": 16056418
-      }
-    },
-    {
-      "query": "MagicEngine",
-      "color": {
-        "a": 1,
-        "rgb": 13104896
+        "rgb": 7602420
       }
     },
     {
       "query": "EntityEngine",
       "color": {
         "a": 1,
-        "rgb": 5502976
+        "rgb": 2488320
       }
     },
     {
-      "query": "AI",
+      "query": "EntityComposition",
       "color": {
         "a": 1,
-        "rgb": 63839
+        "rgb": 16246016
       }
     },
     {
-      "query": "Spells",
+      "query": "\u043d_Experiencable",
       "color": {
         "a": 1,
-        "rgb": 15859956
+        "rgb": 16056473
+      }
+    },
+    {
+      "query": "\u0432_Positional",
+      "color": {
+        "a": 1,
+        "rgb": 8061172
+      }
+    },
+    {
+      "query": "\u0441_Entity",
+      "color": {
+        "a": 1,
+        "rgb": 63911
+      }
+    },
+    {
+      "query": "\u043a_Alive",
+      "color": {
+        "a": 1,
+        "rgb": 16131584
+      }
+    },
+    {
+      "query": "\u043b_Afflictable",
+      "color": {
+        "a": 1,
+        "rgb": 6643
+      }
+    },
+    {
+      "query": "EntityManagement",
+      "color": {
+        "a": 1,
+        "rgb": 16121869
+      }
+    },
+    {
+      "query": "BoardEngine",
+      "color": {
+        "a": 1,
+        "rgb": 5306368
+      }
+    },
+    {
+      "query": "TilemapEngine",
+      "color": {
+        "a": 1,
+        "rgb": 5240832
+      }
+    },
+    {
+      "query": "WorldEngine",
+      "color": {
+        "a": 1,
+        "rgb": 14811380
+      }
+    },
+    {
+      "query": "DimensionEngine",
+      "color": {
+        "a": 1,
+        "rgb": 63819
+      }
+    },
+    {
+      "query": "CanvasEngine",
+      "color": {
+        "a": 1,
+        "rgb": 13172980
+      }
+    },
+    {
+      "query": "WorldGenerationEngine",
+      "color": {
+        "a": 1,
+        "rgb": 63950
+      }
+    },
+    {
+      "query": "WorldGeneratorEngine",
+      "color": {
+        "a": 1,
+        "rgb": 8061172
+      }
+    },
+    {
+      "query": "Tools",
+      "color": {
+        "a": 1,
+        "rgb": 4847616
+      }
+    },
+    {
+      "query": "ToClean",
+      "color": {
+        "a": 1,
+        "rgb": 2883827
+      }
+    },
+    {
+      "query": "RuleTile",
+      "color": {
+        "a": 1,
+        "rgb": 16056511
+      }
+    },
+    {
+      "query": "WaveFunctionCollapse",
+      "color": {
+        "a": 1,
+        "rgb": 2684928
+      }
+    },
+    {
+      "query": "LocalPattern",
+      "color": {
+        "a": 1,
+        "rgb": 63514
+      }
+    },
+    {
+      "query": "ColorsAndImages",
+      "color": {
+        "a": 1,
+        "rgb": 16056478
+      }
+    },
+    {
+      "query": "InteractionEngine",
+      "color": {
+        "a": 1,
+        "rgb": 63888
+      }
+    },
+    {
+      "query": "SpellEngine",
+      "color": {
+        "a": 1,
+        "rgb": 63960
+      }
+    },
+    {
+      "query": "MagicEngine",
+      "color": {
+        "a": 1,
+        "rgb": 43506
+      }
+    },
+    {
+      "query": "GrimoireEngine",
+      "color": {
+        "a": 1,
+        "rgb": 10286848
+      }
+    },
+    {
+      "query": "Misc",
+      "color": {
+        "a": 1,
+        "rgb": 16056343
+      }
+    },
+    {
+      "query": "Builder",
+      "color": {
+        "a": 1,
+        "rgb": 16134912
+      }
+    },
+    {
+      "query": "Editors",
+      "color": {
+        "a": 1,
+        "rgb": 16056511
+      }
+    },
+    {
+      "query": "Helper",
+      "color": {
+        "a": 1,
+        "rgb": 16056384
+      }
+    },
+    {
+      "query": "SocialEngine",
+      "color": {
+        "a": 1,
+        "rgb": 16056371
+      }
+    },
+    {
+      "query": "CharacterEngine",
+      "color": {
+        "a": 1,
+        "rgb": 16056401
       }
     }
   ],

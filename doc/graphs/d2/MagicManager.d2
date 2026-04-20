@@ -1,47 +1,28 @@
 # Nodes :
-GameplayManager: {
-    GameManager: Game Manager {
-       link: GameManager
-    }
-}
 BoardEngine: {
-    AreaMaker: Area Maker {
-       link: AreaMaker
-    }
     BoardManager: Board Manager {
        link: BoardManager
     }
-    Coordinate: Coordinate {
-       link: Coordinate
+    AreaMaker: Area Maker {
+       link: AreaMaker
     }
 }
-MagicEngine: {
-    Spells: {
-        SpellCondition: Spell Condition {
-           link: SpellCondition
-        }
-        Spell: Spell {
-           link: Spell
-        }
-        SpellEffect: Spell Effect {
-           link: SpellEffect
-        }
+SpellEngine: {
+    SpellCondition: Spell Condition {
+       link: SpellCondition
+    }
+    Spell: Spell {
+       link: Spell
+    }
+    SpellEffect: Spell Effect {
+       link: SpellEffect
     }
 }
 
 # Links :
-BoardEngine.Coordinate -- MagicEngine.MagicManager: {style.stroke-dash: 3}
-MagicEngine.MagicManager -- MagicEngine.Spells.Spell: {style.stroke-dash: 3}
-MagicEngine.MagicManager -- MagicEngine.Spells.SpellEffect: {style.stroke-dash: 3}
-MagicEngine.MagicManager -- MagicEngine.Spells.SpellCondition: {style.stroke-dash: 3}
-GameplayManager.GameManager -> MagicEngine.MagicManager: Cast Player's spells {
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
-GameplayManager.GameManager -> MagicEngine.MagicManager: Cast Telefrag {
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
+MagicEngine.MagicManager -- SpellEngine.Spell: {style.stroke-dash: 3}
+MagicEngine.MagicManager -- SpellEngine.SpellEffect: {style.stroke-dash: 3}
+MagicEngine.MagicManager -- SpellEngine.SpellCondition: {style.stroke-dash: 3}
 BoardEngine.AreaMaker -> MagicEngine.MagicManager: Get Spells' AoE {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}

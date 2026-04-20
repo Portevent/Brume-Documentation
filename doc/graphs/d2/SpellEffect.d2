@@ -1,9 +1,4 @@
 # Nodes :
-AnimationEngine: {
-    AnimationTrigger: Animation Trigger {
-       link: AnimationTrigger
-    }
-}
 MagicEngine: {
     MagicManager: Magic Manager {
        link: MagicManager
@@ -11,8 +6,4 @@ MagicEngine: {
 }
 
 # Links :
-MagicEngine.MagicManager -- MagicEngine.Spells.SpellEffect: {style.stroke-dash: 3}
-MagicEngine.Spells.SpellEffect -> AnimationEngine.AnimationTrigger: Has {
-source-arrowhead: {}
-target-arrowhead: {shape: arrow}
-}
+MagicEngine.MagicManager -- SpellEngine.SpellEffect: {style.stroke-dash: 3}

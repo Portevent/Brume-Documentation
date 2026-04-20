@@ -1,0 +1,11 @@
+# Nodes :
+WorldEngine: {
+    WorldGenerationEngine: {
+        WorldGenerator: World Generator {
+           link: WorldGenerator
+        }
+    }
+}
+
+# Links :
+WorldEngine.DimensionEngine.DimensionEntrance -- WorldEngine.WorldGenerationEngine.WorldGenerator: {style.stroke-dash: 3}

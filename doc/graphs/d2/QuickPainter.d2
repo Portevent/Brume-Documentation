@@ -1,0 +1,17 @@
+# Nodes :
+BoardEngine: {
+    Coordinate: Coordinate {
+       link: Coordinate
+    }
+}
+WorldEngine: {
+    CanvasEngine: {
+        DimensionCanvas: Dimension Canvas {
+           link: DimensionCanvas
+        }
+    }
+}
+
+# Links :
+BoardEngine.Coordinate -- WorldGeneratorEngine.Tools.QuickPainter: {style.stroke-dash: 3}
+WorldEngine.CanvasEngine.DimensionCanvas -- WorldGeneratorEngine.Tools.QuickPainter: {style.stroke-dash: 3}

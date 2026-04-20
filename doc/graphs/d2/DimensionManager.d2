@@ -1,0 +1,20 @@
+# Nodes :
+BoardEngine: {
+    BoardManager: Board Manager {
+       link: BoardManager
+    }
+}
+WorldEngine: {
+    DimensionEngine: {
+        Dimension: Dimension {
+           link: Dimension
+        }
+    }
+}
+
+# Links :
+WorldEngine.DimensionEngine.Dimension -- WorldEngine.DimensionEngine.DimensionManager: {style.stroke-dash: 3}
+WorldEngine.DimensionEngine.DimensionManager -> BoardEngine.BoardManager: Get active Dimension {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}

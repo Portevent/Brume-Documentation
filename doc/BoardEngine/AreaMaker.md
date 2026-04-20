@@ -10,9 +10,6 @@ Convert Area to Coordinates[]
 ```d2
 # Nodes :
 BoardEngine: {
-    SelectionManager: Selection Manager {
-       link: SelectionManager
-    }
     Area: Area {
        link: Area
     }
@@ -39,7 +36,7 @@ BoardEngine.AreaMaker -> MagicEngine.MagicManager: Get Spells' AoE {style.stroke
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
-BoardEngine.AreaMaker -> BoardEngine.SelectionManager: Get Spells' range cast {style.stroke-dash: 3
+BoardEngine.AreaMaker -> SelectionManager: Get Spells' range cast {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -96,7 +93,8 @@ name|type|description
 **area**|[[Area]]|The Area to compare to
 
 #### Return
-- `bool` : A boolean:
+- `bool` : 
+A boolean:
 True if the coordinate is contains within the pattern
 False otherwise
 

@@ -6,17 +6,14 @@ alias:
 tag: 
 - class
 ---
-Use the [[WorldManager]] to compute existing cell ([[Coordinate]]) and free cell toward/away.
+Use the [[DimensionManager]] to compute existing cell ([[DimensionCoordinate]]) and free cell toward/away.
 Also communicate with [[EntityManager]] to determine if a cell is free.  
 ```d2
 # Nodes :
-BoardEngine: {
-    Coordinate: Coordinate {
-       link: Coordinate
-    }
-    WorldEngine: {
-        WorldManager: World Manager {
-           link: WorldManager
+WorldEngine: {
+    DimensionEngine: {
+        DimensionManager: Dimension Manager {
+           link: DimensionManager
         }
     }
 }
@@ -27,8 +24,7 @@ MagicEngine: {
 }
 
 # Links :
-BoardEngine.BoardManager -- BoardEngine.Coordinate: {style.stroke-dash: 3}
-BoardEngine.WorldEngine.WorldManager -> BoardEngine.BoardManager: Get active World {style.stroke-dash: 3
+WorldEngine.DimensionEngine.DimensionManager -> BoardEngine.BoardManager: Get active Dimension {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }
@@ -38,23 +34,3 @@ target-arrowhead: {shape: arrow}
 }
 
 ```
----
-# Summary :
-name|description
-----|----
-[[#CellFree\|CellFree]] | `Determinate if a cell is free (cell exist and no entity there)`
-
----
-# Functions :
-
----
-### CellFree
-Determinate if a cell is free (cell exist and no entity there)
-
-#### Parameters
-name|type|description
------|-----|-----
-**coordinates**|[[Coordinate]]|
-
-#### Return
-- `bool` : 

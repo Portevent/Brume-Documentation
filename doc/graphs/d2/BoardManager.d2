@@ -1,11 +1,8 @@
 # Nodes :
-BoardEngine: {
-    Coordinate: Coordinate {
-       link: Coordinate
-    }
-    WorldEngine: {
-        WorldManager: World Manager {
-           link: WorldManager
+WorldEngine: {
+    DimensionEngine: {
+        DimensionManager: Dimension Manager {
+           link: DimensionManager
         }
     }
 }
@@ -16,8 +13,7 @@ MagicEngine: {
 }
 
 # Links :
-BoardEngine.BoardManager -- BoardEngine.Coordinate: {style.stroke-dash: 3}
-BoardEngine.WorldEngine.WorldManager -> BoardEngine.BoardManager: Get active World {style.stroke-dash: 3
+WorldEngine.DimensionEngine.DimensionManager -> BoardEngine.BoardManager: Get active Dimension {style.stroke-dash: 3
 source-arrowhead: {}
 target-arrowhead: {shape: arrow}
 }

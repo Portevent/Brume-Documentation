@@ -1,0 +1,23 @@
+# Nodes :
+WorldEngine: {
+    DimensionEngine: {
+        DimensionManager: Dimension Manager {
+           link: DimensionManager
+        }
+    }
+    CanvasEngine: {
+        DimensionCanvas: Dimension Canvas {
+           link: DimensionCanvas
+        }
+    }
+    WorldGenerationEngine: {
+        WorldGenerator: World Generator {
+           link: WorldGenerator
+        }
+    }
+}
+
+# Links :
+WorldEngine.DimensionEngine.Dimension -- WorldEngine.CanvasEngine.DimensionCanvas: {style.stroke-dash: 3}
+WorldEngine.DimensionEngine.Dimension -- WorldEngine.DimensionEngine.DimensionManager: {style.stroke-dash: 3}
+WorldEngine.DimensionEngine.Dimension -- WorldEngine.WorldGenerationEngine.WorldGenerator: {style.stroke-dash: 3}

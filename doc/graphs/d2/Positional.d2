@@ -1,0 +1,20 @@
+# Nodes :
+EntityEngine: {
+    EntityManagement: {
+        EntityRegistry: Entity Registry {
+           link: EntityRegistry
+        }
+    }
+}
+BoardEngine: {
+    Coordinate: Coordinate {
+       link: Coordinate
+    }
+}
+
+# Links :
+BoardEngine.Coordinate -- EntityEngine.EntityComposition.в_Positional.Positional: {style.stroke-dash: 3}
+EntityEngine.EntityManagement.EntityRegistry -> EntityEngine.EntityComposition.в_Positional.Positional: Has {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}

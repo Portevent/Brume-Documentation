@@ -1,0 +1,22 @@
+# Nodes :
+EntityEngine: {
+    EntityComposition: {
+        в_Positional: {
+            Positional: Positional {
+               link: Positional
+            }
+        }
+        с_Entity: {
+            Entity: Entity {
+               link: Entity
+            }
+        }
+    }
+}
+
+# Links :
+EntityEngine.EntityComposition.с_Entity.Entity -- EntityEngine.EntityManagement.EntityRegistry: {style.stroke-dash: 3}
+EntityEngine.EntityManagement.EntityRegistry -> EntityEngine.EntityComposition.в_Positional.Positional: Has {style.stroke-dash: 3
+source-arrowhead: {}
+target-arrowhead: {shape: arrow}
+}

@@ -1,0 +1,17 @@
+# Nodes :
+BoardEngine: {
+    Coordinate: Coordinate {
+       link: Coordinate
+    }
+}
+WorldEngine: {
+    CanvasEngine: {
+        Cell: Cell {
+           link: Cell
+        }
+    }
+}
+
+# Links :
+BoardEngine.Coordinate -- WorldEngine.CanvasEngine.DimensionCanvasTilemap: {style.stroke-dash: 3}
+WorldEngine.CanvasEngine.Cell -- WorldEngine.CanvasEngine.DimensionCanvasTilemap: {style.stroke-dash: 3}
