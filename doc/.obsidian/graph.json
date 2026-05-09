@@ -11,231 +11,231 @@
       "query": "GameEngine",
       "color": {
         "a": 1,
-        "rgb": 16122112
+        "rgb": 15603
       }
     },
     {
       "query": "Test",
       "color": {
         "a": 1,
-        "rgb": 15988480
+        "rgb": 6422772
       }
     },
     {
       "query": "EntityEngine",
       "color": {
         "a": 1,
-        "rgb": 16246016
+        "rgb": 63944
       }
     },
     {
       "query": "EntityComposition",
       "color": {
         "a": 1,
-        "rgb": 63941
+        "rgb": 49650
       }
     },
     {
       "query": "\u043d_Experiencable",
       "color": {
         "a": 1,
-        "rgb": 2031859
+        "rgb": 63950
       }
     },
     {
       "query": "\u0432_Positional",
       "color": {
         "a": 1,
-        "rgb": 16146688
+        "rgb": 4454400
       }
     },
     {
       "query": "\u0441_Entity",
       "color": {
         "a": 1,
-        "rgb": 11466496
+        "rgb": 55026
       }
     },
     {
       "query": "\u043a_Alive",
       "color": {
         "a": 1,
-        "rgb": 16056427
+        "rgb": 10944756
       }
     },
     {
       "query": "\u043b_Afflictable",
       "color": {
         "a": 1,
-        "rgb": 26098
+        "rgb": 41714
       }
     },
     {
       "query": "EntityManagement",
       "color": {
         "a": 1,
-        "rgb": 7796736
+        "rgb": 6619380
       }
     },
     {
       "query": "BoardEngine",
       "color": {
         "a": 1,
-        "rgb": 16056337
+        "rgb": 4129011
       }
     },
     {
       "query": "TilemapEngine",
       "color": {
         "a": 1,
-        "rgb": 8058624
+        "rgb": 16056496
       }
     },
     {
       "query": "WorldEngine",
       "color": {
         "a": 1,
-        "rgb": 13304052
+        "rgb": 16125440
       }
     },
     {
       "query": "DimensionEngine",
       "color": {
         "a": 1,
-        "rgb": 6223872
+        "rgb": 51698
       }
     },
     {
       "query": "CanvasEngine",
       "color": {
         "a": 1,
-        "rgb": 14087936
+        "rgb": 63496
       }
     },
     {
       "query": "WorldGenerationEngine",
       "color": {
         "a": 1,
-        "rgb": 3012608
+        "rgb": 63535
       }
     },
     {
       "query": "WorldGeneratorEngine",
       "color": {
         "a": 1,
-        "rgb": 16165376
+        "rgb": 19699
       }
     },
     {
       "query": "Tools",
       "color": {
         "a": 1,
-        "rgb": 16121860
+        "rgb": 63900
       }
     },
     {
       "query": "ToClean",
       "color": {
         "a": 1,
-        "rgb": 16163072
+        "rgb": 16245248
       }
     },
     {
       "query": "RuleTile",
       "color": {
         "a": 1,
-        "rgb": 10551540
+        "rgb": 39154
       }
     },
     {
       "query": "WaveFunctionCollapse",
       "color": {
         "a": 1,
-        "rgb": 55794
+        "rgb": 52466
       }
     },
     {
       "query": "LocalPattern",
       "color": {
         "a": 1,
-        "rgb": 14284544
+        "rgb": 63559
       }
     },
     {
       "query": "ColorsAndImages",
       "color": {
         "a": 1,
-        "rgb": 63848
+        "rgb": 10024704
       }
     },
     {
       "query": "InteractionEngine",
       "color": {
         "a": 1,
-        "rgb": 50674
+        "rgb": 13828340
       }
     },
     {
       "query": "SpellEngine",
       "color": {
         "a": 1,
-        "rgb": 3315
+        "rgb": 23795
       }
     },
     {
       "query": "MagicEngine",
       "color": {
         "a": 1,
-        "rgb": 4391155
+        "rgb": 9631488
       }
     },
     {
       "query": "GrimoireEngine",
       "color": {
         "a": 1,
-        "rgb": 8845056
+        "rgb": 16125184
       }
     },
     {
       "query": "Misc",
       "color": {
         "a": 1,
-        "rgb": 16056484
+        "rgb": 2029568
       }
     },
     {
       "query": "Builder",
       "color": {
         "a": 1,
-        "rgb": 9240820
+        "rgb": 16056423
       }
     },
     {
       "query": "Editors",
       "color": {
         "a": 1,
-        "rgb": 24563
+        "rgb": 11466496
       }
     },
     {
       "query": "Helper",
       "color": {
         "a": 1,
-        "rgb": 41458
+        "rgb": 16147968
       }
     },
     {
       "query": "SocialEngine",
       "color": {
         "a": 1,
-        "rgb": 1505280
+        "rgb": 63882
       }
     },
     {
       "query": "CharacterEngine",
       "color": {
         "a": 1,
-        "rgb": 4718835
+        "rgb": 16236288
       }
     }
   ],
